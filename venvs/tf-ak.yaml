@@ -1,4 +1,4 @@
-name: tf-optuna
+name: tf-ak
 channels:
   - defaults
   - conda-forge
@@ -43,6 +43,7 @@ dependencies:
       - alembic==1.14.0
       - asttokens==2.4.1
       - astunparse==1.6.3
+      - autokeras==2.0.0
       - certifi==2024.8.30
       - charset-normalizer==3.4.0
       - colorlog==6.9.0
@@ -100,7 +101,6 @@ dependencies:
       - nvidia-nvjitlink-cu12==12.5.82
       - opt-einsum==3.4.0
       - optree==0.13.1
-      - optuna==4.1.0
       - packaging==24.2
       - pandas==2.2.3
       - parso==0.8.4
