@@ -6,51 +6,14 @@
 """
 Kernel Process Monitor
 ----------------------
-This script reads a PID from a file and monitors whether the corresponding 
+This script reads a PID and monitors whether the corresponding 
 process is still running. If the process dies, an alert is logged and an 
 email notification is sent.
-
-Usage:
-    python monitor.py --pid_path kernel_pid.txt
-
-Example:
-    Saving the kernel PID to a file:
-    ```python
-    import os
-    pid = os.getpid()
-    with open("kernel_pid.txt", "w") as f:
-        f.write(str(pid))
-    print(f"[INFO] Kernel PID saved to kernel_pid.txt: {pid}")
-    ```
 """
 
-import os
 import time
 import psutil
 import argparse
-
-
-def read_pid_from_file(pid_file: str) -> int | None:
-    """
-    Reads the kernel PID from the given file.
-
-    Args:
-        pid_file (str): Path to the file storing the PID.
-
-    Returns:
-        int | None: The PID if found and valid, otherwise None.
-    """
-    if not os.path.exists(pid_file):
-        print(f"[ERROR] PID file '{pid_file}' not found!")
-        return None
-
-    try:
-        with open(pid_file, "r") as f:
-            return int(f.read().strip())
-    except (ValueError, FileNotFoundError):
-        print(f"[ERROR] Invalid PID file format: '{pid_file}'")
-        return None
-
 
 def send_alert_email(pid: int, status: str):
     """
@@ -102,7 +65,7 @@ def send_alert_email(pid: int, status: str):
         print(f"[ERROR] Failed to send email notification for PID {pid}: {e}")
 
 
-def monitor_kernel(pid: int, check_interval: int = 3):
+def monitor_kernel(pid: int, check_interval: int = 10):
     """
     Monitors a running kernel process by checking if the PID exists.
 
@@ -133,26 +96,10 @@ def monitor_kernel(pid: int, check_interval: int = 3):
         time.sleep(check_interval)
 
 
-def start_monitoring(pid_path: str, check_interval: int = 3):
-    """
-    Starts the kernel monitoring process by reading the PID from a file.
-
-    Args:
-        pid_path (str): Path to the file containing the PID.
-        check_interval (int): Time in seconds between health checks.
-    """
-    pid = read_pid_from_file(pid_path)
-    if pid is None:
-        print("[ERROR] No valid PID found. Exiting.")
-        return
-
-    monitor_kernel(pid, check_interval)
-
-
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Monitor a kernel process by PID.")
-    parser.add_argument("--pid_path", type=str, required=True, help="Path to the file containing the PID")
-    parser.add_argument("--interval", type=int, default=3, help="Check interval in seconds (default: 3)")
+    parser.add_argument("--pid", type=int, required=True, help="PID")
+    parser.add_argument("--interval", type=int, default=10, help="Check interval in seconds (default: 10)")
 
     args = parser.parse_args()
-    start_monitoring(args.pid_path, args.interval)
+    monitor_kernel(args.pid, args.interval)
