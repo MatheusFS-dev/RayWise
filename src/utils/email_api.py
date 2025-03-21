@@ -139,6 +139,9 @@ def run_with_notification(
         send_email(subject, body, recipients_file, credentials_file, text_type)
         print("[INFO] Success email sent.")
     except Exception as e:
+        print(f"[ERROR] Task failed with an error: {e}")
+        print(f"[ERROR] Traceback: {traceback.format_exc()}")
+        
         # Capture the error and send an error email
         error_message = traceback.format_exc()
         subject = "❌ Task Failed with an Error"
