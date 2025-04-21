@@ -1,13 +1,14 @@
 # ---------------------------------------------------------------------------- #
 #                      Authored by Matheus Ferreira Silva                      #
 #                           github.com/MatheusFS-dev                           #
-# ---------------------------------------------------------------------------- #    
+# ---------------------------------------------------------------------------- #
 
 import json
 import smtplib
 import traceback
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
+from typing import *
 
 
 def get_credentials(file_path: str) -> tuple[str, str]:
@@ -139,9 +140,6 @@ def run_with_notification(
         send_email(subject, body, recipients_file, credentials_file, text_type)
         print("[INFO] Success email sent.")
     except Exception as e:
-        print(f"[ERROR] Task failed with an error: {e}")
-        print(f"[ERROR] Traceback: {traceback.format_exc()}")
-        
         # Capture the error and send an error email
         error_message = traceback.format_exc()
         subject = "❌ Task Failed with an Error"
@@ -163,6 +161,89 @@ def run_with_notification(
         """
         send_email(subject, body, recipients_file, credentials_file, text_type)
         print("[INFO] Error email sent.")
+
+
+def notify_training_success(
+    recipients_file: str,
+    credentials_file: str,
+    *,
+    subject: str = "🎉 Task Completed Successfully",
+    body: Optional[str] = None,
+    text_type: str = "html",
+) -> None:
+    """
+    Send a standardized “training succeeded” email notification.
+
+    Args:
+        recipients_file: Path to JSON file containing recipient emails.
+        credentials_file: Path to JSON file containing sender credentials.
+        subject: Email subject line.
+        body: Full HTML or plain‑text body. If None, a default HTML template will be used.
+        text_type: MIME text type, e.g. "html" or "plain".
+    """
+    default_body = """
+    <html>
+      <body style="font-family:Arial,sans-serif;line-height:1.6;color:#333;">
+        <h2 style="color:#28a745;">✔️ Task Completed</h2>
+        <p>Your training job has finished successfully.</p>
+        <p>Thank you for using our system.</p>
+        <footer style="margin-top:20px;text-align:center;font-size:14px;color:#888;">
+          <p>Best regards,</p>
+          <p><strong>The Bot Mailman</strong></p>
+        </footer>
+      </body>
+    </html>
+    """.strip()
+
+    final_body = body if body is not None else default_body
+    send_email(subject, final_body, recipients_file, credentials_file, text_type)
+
+
+def notify_warning(
+    recipients_file: str,
+    credentials_file: str,
+    *,
+    error: Optional[Exception] = None,
+    subject: str = "❌ Task Failed with Error",
+    text_type: str = "html",
+) -> None:
+    """
+    Send a detailed warning email when an exception is caught.
+
+    This should be called from within an `except:` block.
+
+    Args:
+        recipients_file: Path to JSON file containing recipient emails.
+        credentials_file: Path to JSON file containing sender credentials.
+        error: The exception instance (if available). If None, traceback will still be captured.
+        subject: Email subject line.
+        text_type: MIME text type, e.g. "html" or "plain".
+    """
+    # Capture full traceback
+    error_details = (
+        traceback.format_exc() if error is None else traceback.format_exception_only(type(error), error)
+    )
+    error_html = "<br>".join(line.replace(" ", "&nbsp;") for line in error_details)
+
+    body = f"""
+    <html>
+      <body style="font-family:Arial,sans-serif;line-height:1.6;color:#333;">
+        <h2 style="color:#dc3545;">❌ Task Failed</h2>
+        <p>The task encountered an error. See details below:</p>
+        <div style="background-color:#f8d7da;color:#721c24;padding:10px;border-radius:5px;
+                    font-family:monospace;font-size:14px;white-space:pre-wrap;">
+          {error_html}
+        </div>
+        <p>Please investigate and retry.</p>
+        <footer style="margin-top:20px;text-align:center;font-size:14px;color:#888;">
+          <p>Best regards,</p>
+          <p><strong>The Bot Mailman</strong></p>
+        </footer>
+      </body>
+    </html>
+    """.strip()
+
+    send_email(subject, body, recipients_file, credentials_file, text_type)
 
 
 # Example usage
