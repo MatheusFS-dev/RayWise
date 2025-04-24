@@ -5,6 +5,7 @@
 
 import numpy as np
 
+
 def inspect_npy_file(file_path: str, num_elements: int = 5) -> None:
     """
     Reads a .npy file and prints relevant information about the dataset.
@@ -35,7 +36,7 @@ def inspect_npy_file(file_path: str, num_elements: int = 5) -> None:
 
         # Print first few elements
         print("\nFirst few elements:")
-        print(data[:num_elements] if hasattr(data, '__getitem__') else "Cannot display elements")
+        print(data[:num_elements] if hasattr(data, "__getitem__") else "Cannot display elements")
 
         # Additional insights
         if isinstance(data, np.ndarray) and np.issubdtype(data.dtype, np.number):
@@ -47,7 +48,7 @@ def inspect_npy_file(file_path: str, num_elements: int = 5) -> None:
 
     except Exception as e:
         print(f"Error reading the .npy file: {e}")
-        
+
 
 if __name__ == "__main__":
     # Dict of file paths
@@ -58,10 +59,9 @@ if __name__ == "__main__":
         "image_v2_input": "./data/s009/image_v2_input/inputs.npy",
         "lidar_input": "./data/s009/lidar_input/input.npy",
     }
-    
+
     # For each file path print name and inspect
     for file_name, file_path in file_paths.items():
         print(f"\n{file_name}")
         inspect_npy_file(file_path, num_elements=1)
         print("----------------------------------------------------------")
-
