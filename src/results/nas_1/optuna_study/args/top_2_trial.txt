@@ -1,0 +1,33 @@
+rank: 2
+trial_id: 4
+loss: 1.667808175086975
+sampler: TPESampler
+Parameters:
+  scaler: StandardScaler
+  lidar_layers: 3
+  lidar_filters_layer_0: 32
+  lidar_filter_decay_factor: 0.30000000000000004
+  lidar_kernel_decay_factor: 0.6000000000000001
+  lidar_kernel_height_0: 1
+  lidar_kernel_width_0: 2
+  lidar_activation_layer_0: tanh
+  lidar_use_batch_norm_layer_0: True
+  lidar_kernel_height_1: 1
+  lidar_kernel_width_1: 1
+  lidar_activation_layer_1: relu
+  lidar_use_batch_norm_layer_1: True
+  lidar_kernel_height_2: 1
+  lidar_kernel_width_2: 1
+  lidar_activation_layer_2: relu
+  lidar_use_batch_norm_layer_2: True
+  coord_layers: 2
+  coord_units_layer_0: 64
+  coord_decay_factor: 0.8
+  coord_activation_layer_0: relu
+  coord_use_batch_norm_layer_0: True
+  coord_dropout_layer_0: 0.2
+  coord_activation_layer_1: relu
+  coord_use_batch_norm_layer_1: False
+  coord_dropout_layer_1: 0.0
+  optimizer: SGD
+  learning_rate: 0.00027167983351495794

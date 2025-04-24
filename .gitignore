@@ -7,6 +7,9 @@ __pycache__/
 .Python
 .venv/
 
+*.h5
+*.keras
+
 credentials.json
 recipients.json
 runs/
