@@ -1,0 +1,1 @@
+use cnn3d rather than cnn2d
