@@ -1,0 +1,12 @@
+"Parameter","Category","Fraction","Count"
+params_lidar_activation_layer_0,relu,0.8804597701149425,383
+params_lidar_activation_layer_0,sigmoid,0.07816091954022988,34
+params_lidar_activation_layer_0,tanh,0.041379310344827586,18
+params_lidar_activation_layer_1,tanh,0.425,34
+params_lidar_activation_layer_1,sigmoid,0.4125,33
+params_lidar_activation_layer_1,relu,0.1625,13
+params_lidar_activation_layer_2,sigmoid,0.5,11
+params_lidar_activation_layer_2,relu,0.2727272727272727,6
+params_lidar_activation_layer_2,tanh,0.22727272727272727,5
+params_optimizer,AdamW,0.9536423841059603,144
+params_optimizer,SGD,0.046357615894039736,7
