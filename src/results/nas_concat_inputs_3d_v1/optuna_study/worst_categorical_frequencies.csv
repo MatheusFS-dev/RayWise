@@ -1,0 +1,12 @@
+"Parameter","Category","Fraction","Count"
+params_cnn3d_activation_layer_0,relu,0.7189189189189189,133
+params_cnn3d_activation_layer_0,tanh,0.24324324324324326,45
+params_cnn3d_activation_layer_0,sigmoid,0.03783783783783784,7
+params_cnn3d_activation_layer_1,sigmoid,0.7391304347826086,51
+params_cnn3d_activation_layer_1,relu,0.17391304347826086,12
+params_cnn3d_activation_layer_1,tanh,0.08695652173913043,6
+params_cnn3d_activation_layer_2,tanh,0.6190476190476191,39
+params_cnn3d_activation_layer_2,relu,0.2698412698412698,17
+params_cnn3d_activation_layer_2,sigmoid,0.1111111111111111,7
+params_optimizer,AdamW,0.9852941176470589,67
+params_optimizer,SGD,0.014705882352941176,1

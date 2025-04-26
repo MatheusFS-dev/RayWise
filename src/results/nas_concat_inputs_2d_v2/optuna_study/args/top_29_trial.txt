@@ -1,0 +1,20 @@
+rank: 29
+trial_id: 182
+loss: 1.4518901109695435
+val_accuracy: 0.6403061151504517
+train_accuracy: 0.9872449040412903
+test_accuracy: 0.3652209937572479
+sampler: TPESampler
+Parameters:
+  pool_dim1: 1
+  pool_dim2: 6
+  lidar_layers: 1
+  lidar_filters_layer_0: 336
+  lidar_filter_decay_factor: 0.4
+  lidar_kernel_decay_factor: 0.2
+  lidar_kernel_height_0: 1
+  lidar_kernel_width_0: 3
+  lidar_activation_layer_0: relu
+  add_extra_dnn: False
+  learning_rate: 0.001192299150838276
+  batch_size: 32

@@ -1,0 +1,22 @@
+rank: 48
+trial_id: 58
+loss: 2.4286410808563232
+val_accuracy: None
+train_accuracy: None
+test_accuracy: None
+sampler: TPESampler
+Parameters:
+  pool_dim1: 2
+  pool_dim2: 2
+  pool_dim3: 2
+  cnn3d_layers: 1
+  cnn3d_filters_layer_0: 32
+  cnn3d_filter_decay_factor: 0.7000000000000001
+  cnn3d_kernel_decay_factor: 0.5
+  cnn3d_kernel_depth_0: 1
+  cnn3d_kernel_height_0: 2
+  cnn3d_kernel_width_0: 3
+  cnn3d_activation_layer_0: relu
+  optimizer: AdamW
+  learning_rate: 0.00034187172560154184
+  batch_size: 64
