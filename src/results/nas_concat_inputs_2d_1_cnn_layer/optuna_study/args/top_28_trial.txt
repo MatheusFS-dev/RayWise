@@ -1,0 +1,16 @@
+rank: 28
+trial_id: 90
+loss: 1.610334873199463
+val_accuracy: None
+train_accuracy: None
+test_accuracy: None
+sampler: TPESampler
+Parameters:
+  pool_dim1: 5
+  pool_dim2: 6
+  cnn_kernel_height: 1
+  cnn_kernel_width: 4
+  cnn_activation_layer_0: relu
+  cnn_filters_layer_0: 288
+  learning_rate: 0.000839516798601484
+  batch_size: 32
