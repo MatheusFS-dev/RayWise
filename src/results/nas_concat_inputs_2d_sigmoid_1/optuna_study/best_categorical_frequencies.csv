@@ -1,0 +1,7 @@
+"Parameter","Category","Fraction","Count"
+params_extra_activation_layer_0,relu,1,17
+params_lidar_activation_layer_0,relu,0.9865771812080537,147
+params_lidar_activation_layer_0,tanh,0.013422818791946308,2
+params_lidar_activation_layer_1,tanh,0.8523489932885906,127
+params_lidar_activation_layer_1,relu,0.1476510067114094,22
+params_lidar_activation_layer_2,relu,1,1
