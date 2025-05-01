@@ -1,15 +1,18 @@
-# ---------------------------------------------------------------------------- #
-#                      Authored by Matheus Ferreira Silva                      #
-#                           github.com/MatheusFS-dev                           #
-# ---------------------------------------------------------------------------- #
-
 """
-Kernel Process Monitor
-----------------------
 This script reads a PID and monitors whether the corresponding
 process is still running. If the process dies, an alert is logged and an
 email notification is sent. You can optionally supply a custom title
 to identify the monitored process.
+
+Functions:
+    - send_alert_email: Sends an email notification about the process status.
+    - monitor_process: Monitors a running process by checking if the PID exists.
+    - parse_args: Parses command-line arguments.
+
+Example usage:
+    python _monitor_kernel_life.py --pid 12345 --interval 10
+
+#! Move this script to the base directory where the code you want to monitor is located.
 """
 
 import time
@@ -20,24 +23,39 @@ from typing import Optional
 
 def send_alert_email(pid: int, status: str, custom_title: Optional[str] = None) -> None:
     """
-    Sends an email notification about the process status.
+    Sends a styled email notification reporting a process crash or termination.
+
+    Logic:
+        -> Import `send_email` utility (with error fallback)
+        -> Construct email subject and body with process details
+        -> Send the email using configured sender and recipient files
 
     Args:
-        pid (int): The process ID of the monitored process.
-        status (str): Either "crashed" or "terminated".
-        custom_title (Optional[str]): Custom name for the monitored process;
-            if None, defaults to "Kernel process".
+        pid (int): The process ID that was being monitored.
+        status (str): Status of the process. Expected values are "crashed" or "terminated".
+        custom_title (Optional[str]): A descriptive name for the process; defaults to "Kernel process".
+
+    Returns:
+        None
+
+    Example:
+        send_alert_email(pid=1234, status="crashed", custom_title="Data Ingestion Job")
     """
-    # Determine the display title
+    # Determine fallback title if no custom title is provided
     process_title = custom_title or "Kernel process"
 
     try:
-        from utils.email_api import send_email
+        # Attempt to import the email utility function
+        from utils.email_utils import send_email
     except ImportError as imp_err:
+        # If import fails, print error and abort
         print(f"[ERROR] Email API import failed: {imp_err}")
         return
 
+    # Construct email subject line
     email_subject = f"{process_title} (PID {pid}) {status.capitalize()}"
+
+    # Construct rich HTML-formatted body
     email_body = f"""
     <html>
         <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;
@@ -73,6 +91,7 @@ def send_alert_email(pid: int, status: str, custom_title: Optional[str] = None) 
     """
 
     try:
+        # Attempt to send the email using utility function
         send_email(
             subject=email_subject,
             body=email_body,
@@ -82,71 +101,83 @@ def send_alert_email(pid: int, status: str, custom_title: Optional[str] = None) 
         )
         print(f"[INFO] Email sent: {process_title} (PID {pid}) {status}.")
     except Exception as e:
+        # Print error if sending fails
         print(f"[ERROR] Failed to send email for {process_title} (PID {pid}): {e}")
 
 
-def monitor_process(
-    pid: int,
-    check_interval: int = 10,
-    custom_title: Optional[str] = None
-) -> None:
+def monitor_process(pid: int, check_interval: int = 10, custom_title: Optional[str] = None) -> None:
     """
-    Monitors a running process by checking if the PID exists. When the
-    process stops, logs an alert and sends an email.
+    Continuously monitors a process by PID and triggers an alert if it crashes or terminates.
+
+    Logic:
+        -> Print monitoring startup message
+        -> Loop:
+            -> Attempt to locate process by PID
+            -> If not running or zombie → alert (crash)
+            -> If not found → alert (terminated)
+            -> Else → sleep and recheck
 
     Args:
         pid (int): The process ID to monitor.
-        check_interval (int): Seconds between health checks.
-        custom_title (Optional[str]): Custom name for the monitored process.
+        check_interval (int): Interval (in seconds) between each health check.
+        custom_title (Optional[str]): Optional descriptive label for the process.
+
+    Returns:
+        None
+
+    Example:
+        monitor_process(pid=4567, check_interval=5, custom_title="Data ETL Worker")
     """
     process_title = custom_title or "Kernel process"
     print(f"[INFO] Monitoring '{process_title}' with PID {pid}...")
 
     while True:
         try:
+            # Attempt to access the process
             proc = psutil.Process(pid)
+
+            # Check if process is running or has become a zombie
             if not proc.is_running() or proc.status() == psutil.STATUS_ZOMBIE:
                 print(f"[ALERT] {process_title} (PID {pid}) has crashed!")
                 send_alert_email(pid, "crashed", custom_title)
                 break
 
         except psutil.NoSuchProcess:
+            # If process no longer exists, trigger alert for termination
             print(f"[ALERT] {process_title} (PID {pid}) no longer exists!")
             send_alert_email(pid, "terminated", custom_title)
             break
 
+        # Wait before checking again
         time.sleep(check_interval)
 
 
 def parse_args() -> argparse.Namespace:
     """
-    Parses command-line arguments.
+    Parses command-line arguments for PID monitoring.
+
+    Logic:
+        -> Define expected arguments
+        -> Parse them using argparse
+        -> Return the parsed object
 
     Returns:
-        argparse.Namespace: The parsed arguments.
+        argparse.Namespace: Object containing parsed command-line arguments.
+
+    Example:
+        args = parse_args()
+        monitor_process(pid=args.pid, ...)
     """
-    parser = argparse.ArgumentParser(
-        description="Monitor a process by PID and send alerts if it stops."
-    )
+    parser = argparse.ArgumentParser(description="Monitor a process by PID and send alerts if it stops.")
+    parser.add_argument("--pid", type=int, required=True, help="Process ID to monitor.")
+    parser.add_argument("--interval", type=int, default=10, help="Check interval in seconds (default: 10).")
     parser.add_argument(
-        "--pid", type=int, required=True,
-        help="Process ID to monitor."
-    )
-    parser.add_argument(
-        "--interval", type=int, default=10,
-        help="Check interval in seconds (default: 10)."
-    )
-    parser.add_argument(
-        "--custom-title", type=str, default=None,
-        help="Optional custom name for the monitored process."
+        "--custom-title", type=str, default=None, help="Optional custom name for the monitored process."
     )
     return parser.parse_args()
 
 
 if __name__ == "__main__":
+    # Entry point: parse arguments and start monitoring
     args = parse_args()
-    monitor_process(
-        pid=args.pid,
-        check_interval=args.interval,
-        custom_title=args.custom_title
-    )
+    monitor_process(pid=args.pid, check_interval=args.interval, custom_title=args.custom_title)
