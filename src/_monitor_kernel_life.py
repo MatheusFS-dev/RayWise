@@ -19,7 +19,7 @@ import time
 import psutil
 import argparse
 from typing import Optional
-
+from tensoroo.email.email_utils import send_email
 
 def send_alert_email(pid: int, status: str, custom_title: Optional[str] = None) -> None:
     """
@@ -43,14 +43,6 @@ def send_alert_email(pid: int, status: str, custom_title: Optional[str] = None) 
     """
     # Determine fallback title if no custom title is provided
     process_title = custom_title or "Kernel process"
-
-    try:
-        # Attempt to import the email utility function
-        from utils.email_utils import send_email
-    except ImportError as imp_err:
-        # If import fails, print error and abort
-        print(f"[ERROR] Email API import failed: {imp_err}")
-        return
 
     # Construct email subject line
     email_subject = f"{process_title} (PID {pid}) {status.capitalize()}"

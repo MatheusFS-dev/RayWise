@@ -58,3 +58,4 @@ from optuna.integration import KerasPruningCallback
 # ————————————————————————————————— TensorRoo ———————————————————————————————— #
 import tensoroo as troo
 from tensoroo.callbacks.nan_loss_pruner import NanLossPrunerCallback
+from tensoroo.email.email_utils import send_email, notify_training_success
