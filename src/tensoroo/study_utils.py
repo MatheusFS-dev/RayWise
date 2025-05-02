@@ -178,16 +178,31 @@ def analyze_study(
     display(freq_table(worst_df, categorical_cols))
 
     # Step 5: Create visualizations
+    max_rows = 4
     total_plots = len(numeric_cols) + len(categorical_cols)
-    cols = 3  # Number of columns in subplot grid
+
+    # Determine number of columns so that rows ≤ max_rows
+    if total_plots > max_rows:
+        cols = math.ceil(total_plots / max_rows)
+    else:
+        cols = total_plots or 1
     rows = math.ceil(total_plots / cols)
-    fig, axes = plt.subplots(rows, cols, figsize=(cols * 4, rows * 4))
-    axes_flat = axes.flatten()
+
+    # Compute figure size
+    fig_width = cols * 4   # e.g. 4 inches per column
+    fig_height = rows * 4  # e.g. 4 inches per row
+    fig, axes = plt.subplots(rows, cols, figsize=(fig_width, fig_height))
+
+    # Flatten axes array for easy iteration
+    if isinstance(axes, np.ndarray):
+        axes_flat = axes.flatten()
+    else:
+        axes_flat = [axes]
 
     # Plot numeric parameter histograms
     for i, col in enumerate(numeric_cols):
         ax = axes_flat[i]
-        ax.hist(df[col], bins=30, edgecolor="black")
+        ax.hist(df[col], bins=30, edgecolor="black", color="black")
         ax.set_title(col)
         ax.set_xlabel(col)
         ax.set_ylabel("Frequency")
@@ -196,7 +211,7 @@ def analyze_study(
     for j, col in enumerate(categorical_cols, start=len(numeric_cols)):
         ax = axes_flat[j]
         counts = df[col].value_counts()
-        ax.bar(counts.index.astype(str), counts.values)
+        ax.bar(counts.index.astype(str), counts.values, color="black", edgecolor="black")
         ax.set_title(col)
         ax.set_xlabel(col)
         ax.set_ylabel("Count")
