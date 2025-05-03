@@ -1,5 +1,7 @@
-Divide Line of sight and no line of sight
-Train with S008 and test with S009
+### Task Overview
+- **Divide S009:** Split data into “Line of sight” and “No line of sight” categories.
 
+### Implementation Notes
+- **Vision Transformers (VITs):** Leverage Vision Transformers for improving model performance.
+    - More details: [Roboflow Vision Transformers](https://blog.roboflow.com/vision-transformers/?utm_campaign=Newsletter+-+5%2F1%2F2025+-+%5Bfletcher%5D&utm_content=Newsletter+-+5%2F1%2F2025+-+%5Bfletcher%5D&utm_medium=email_action&utm_source=email)
 
-Use VITs -> https://blog.roboflow.com/vision-transformers/?utm_campaign=Newsletter+-+5%2F1%2F2025+-+%5Bfletcher%5D&utm_content=Newsletter+-+5%2F1%2F2025+-+%5Bfletcher%5D&utm_medium=email_action&utm_source=email
