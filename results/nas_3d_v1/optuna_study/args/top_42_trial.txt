@@ -1,0 +1,24 @@
+rank: 42
+trial_id: 411
+loss: 1.383528709411621
+val_accuracy: 0.6224489808082581
+train_accuracy: 0.8411989808082581
+test_accuracy: 0.34197965264320374
+sampler: TPESampler
+Parameters:
+  cnn_num_layers: 1
+  cnn3d_pool_size_dim1_0: 4
+  cnn3d_pool_size_dim2_0: 12
+  cnn3d_pool_size_dim3_0: 4
+  cnn3d_filters_layer_0: 124
+  cnn3d_kernel_depth_0: 4
+  cnn3d_kernel_height_0: 5
+  cnn3d_kernel_width_0: 2
+  cnn3d_activation_layer_0: leaky_relu
+  cnn3d_use_batch_norm_layer_0: False
+  num_dense_layers: 1
+  dense_1_units: 320
+  dense_1_activation: tanh
+  optimizer: Adam
+  learning_rate: 0.0008012250346084221
+  batch_size: 128
