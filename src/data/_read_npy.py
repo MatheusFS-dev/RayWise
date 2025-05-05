@@ -53,11 +53,12 @@ def inspect_npy_file(file_path: str, num_elements: int = 5) -> None:
 if __name__ == "__main__":
     # Dict of file paths
     file_paths = {
-        "beam_output": "./data/s009/beam_output/output_classification.npy",
-        "coord_input": "./data/s009/coord_input/coordinates.npy",
-        "image_input": "./data/s009/image_input/inputs.npy",
-        "image_v2_input": "./data/s009/image_v2_input/inputs.npy",
-        "lidar_input": "./data/s009/lidar_input/input.npy",
+        # "beam_output": "./data/s009/beam_output/output_classification.npy",
+        # "coord_input": "./data/s009/coord_input/coordinates.npy",
+        # "image_input": "./data/s009/image_input/inputs.npy",
+        # "image_v2_input": "./data/s009/image_v2_input/inputs.npy",
+        # "lidar_input": "./data/s009/lidar_input/input.npy",
+        "beam_output_test": "./batool/beam_output/beams_output_test.npz"
     }
 
     # For each file path print name and inspect
