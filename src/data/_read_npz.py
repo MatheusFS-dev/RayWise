@@ -56,7 +56,7 @@ def main() -> None:
     LIDAR INPUT VALIDATION -> 'input': shape=(1960, 20, 200, 10), dtype=int8
     
     """
-    npz_path = "./batool/lidar_input/lidar_test.npz"
+    npz_path = "./s009_test/beam_output/beams_output_test.npz"
     try:
         data_dict = load_npz_file(npz_path)
     except Exception as e:
