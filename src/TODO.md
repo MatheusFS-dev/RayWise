@@ -1,5 +1,6 @@
 ### Task Overview
 - **Divide S009:** Split data into “Line of sight” and “No line of sight” categories.
+- x_train = s008_train && x_val = s008_val + s009_val && x_test = s009_test
 
 ### Implementation Notes
 - **Vision Transformers (VITs):** Leverage Vision Transformers for improving model performance.
