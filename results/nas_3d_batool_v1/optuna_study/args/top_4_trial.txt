@@ -1,0 +1,48 @@
+rank: 4
+trial_id: 192
+loss: 1.4744677543640137
+val_accuracy: 0.609183669090271
+train_accuracy: 0.567034900188446
+test_accuracy: 0.43536004424095154
+sampler: TPESampler
+Parameters:
+  cnn3d_pool_size_dim1_0: 2
+  cnn3d_pool_size_dim2_0: 3
+  cnn3d_pool_size_dim3_0: 1
+  cnn3d_filters_layer_0: 100
+  cnn3d_kernel_depth_0: 5
+  cnn3d_kernel_height_0: 3
+  cnn3d_kernel_width_0: 2
+  cnn3d_activation_layer_0: relu
+  cnn3d_use_batch_norm_layer_0: False
+  cnn3d_pool_size_dim1_1: 2
+  cnn3d_pool_size_dim2_1: 2
+  cnn3d_pool_size_dim3_1: 1
+  cnn3d_filters_layer_1: 116
+  cnn3d_kernel_depth_1: 1
+  cnn3d_kernel_height_1: 2
+  cnn3d_kernel_width_1: 3
+  cnn3d_activation_layer_1: tanh
+  cnn3d_use_batch_norm_layer_1: False
+  cnn3d_pool_size_dim1_2: 1
+  cnn3d_pool_size_dim2_2: 2
+  cnn3d_pool_size_dim3_2: 1
+  cnn3d_filters_layer_2: 120
+  cnn3d_kernel_depth_2: 3
+  cnn3d_kernel_height_2: 4
+  cnn3d_kernel_width_2: 4
+  cnn3d_activation_layer_2: swish
+  cnn3d_use_batch_norm_layer_2: False
+  cnn3d_pool_size_dim1_3: 1
+  cnn3d_pool_size_dim2_3: 2
+  cnn3d_pool_size_dim3_3: 1
+  cnn3d_filters_layer_3: 48
+  cnn3d_kernel_depth_3: 4
+  cnn3d_kernel_height_3: 4
+  cnn3d_kernel_width_3: 4
+  cnn3d_activation_layer_3: relu
+  cnn3d_use_batch_norm_layer_3: False
+  num_dense_layers: 0
+  optimizer: Nadam
+  learning_rate: 4.578368884055004e-05
+  batch_size: 32
