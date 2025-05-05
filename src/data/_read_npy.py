@@ -58,7 +58,8 @@ if __name__ == "__main__":
         # "image_input": "./data/s009/image_input/inputs.npy",
         # "image_v2_input": "./data/s009/image_v2_input/inputs.npy",
         # "lidar_input": "./data/s009/lidar_input/input.npy",
-        "beam_output_test": "./batool/beam_output/beams_output_test.npz"
+        "beam_output_train": "./s008_test/beam_output/beams_output_train.npz",
+        "beam_output_validation": "./s008_test/beam_output/beams_output_validation.npz",
     }
 
     # For each file path print name and inspect
