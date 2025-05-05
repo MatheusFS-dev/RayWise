@@ -1,0 +1,44 @@
+rank: 2
+trial_id: 440
+loss: 1.254172921180725
+val_accuracy: 0.6505101919174194
+train_accuracy: 0.7136479616165161
+test_accuracy: 0.3518364727497101
+sampler: TPESampler
+Parameters:
+  cnn_pool_size_dim1_0: 2
+  cnn_pool_size_dim2_0: 2
+  cnn_filters_layer_0: 24
+  cnn_kernel_height_0: 1
+  cnn_kernel_width_0: 3
+  cnn_activation_layer_0: swish
+  cnn_use_batch_norm_layer_0: False
+  cnn_pool_size_dim1_1: 1
+  cnn_pool_size_dim2_1: 3
+  cnn_filters_layer_1: 16
+  cnn_kernel_height_1: 4
+  cnn_kernel_width_1: 5
+  cnn_activation_layer_1: leaky_relu
+  cnn_use_batch_norm_layer_1: False
+  cnn_pool_size_dim1_2: 1
+  cnn_pool_size_dim2_2: 3
+  cnn_filters_layer_2: 68
+  cnn_kernel_height_2: 5
+  cnn_kernel_width_2: 6
+  cnn_activation_layer_2: swish
+  cnn_use_batch_norm_layer_2: True
+  cnn_pool_size_dim1_3: 1
+  cnn_pool_size_dim2_3: 2
+  cnn_filters_layer_3: 40
+  cnn_kernel_height_3: 5
+  cnn_kernel_width_3: 2
+  cnn_activation_layer_3: elu
+  cnn_use_batch_norm_layer_3: True
+  num_dense_layers: 2
+  dense_1_units: 256
+  dense_1_activation: leaky_relu
+  dense_2_units: 256
+  dense_2_activation: leaky_relu
+  optimizer: Nadam
+  learning_rate: 0.001228479222579054
+  batch_size: 32
