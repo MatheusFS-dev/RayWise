@@ -1,0 +1,10 @@
+Parameter,Category,Fraction,Count
+params_cnn_activation_layer_0,leaky_relu,0.9375,15
+params_cnn_activation_layer_0,swish,0.0625,1
+params_cnn_activation_layer_1,swish,0.875,14
+params_cnn_activation_layer_1,leaky_relu,0.0625,1
+params_cnn_activation_layer_1,tanh,0.0625,1
+params_cnn_activation_layer_2,relu,1.0,16
+params_dense_1_activation,sigmoid,1.0,16
+params_optimizer,Nadam,0.9375,15
+params_optimizer,Adam,0.0625,1
