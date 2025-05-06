@@ -1,0 +1,40 @@
+rank: 42
+trial_id: 135
+loss: 1.7169101238250732
+val_accuracy: 0.558435320854187
+train_accuracy: 0.7190396189689636
+test_accuracy: 0.5468223094940186
+sampler: TPESampler
+Parameters:
+  cnn3d_pool_size_dim1_0: 1
+  cnn3d_pool_size_dim2_0: 4
+  cnn3d_pool_size_dim3_0: 2
+  cnn3d_filters_layer_0: 52
+  cnn3d_kernel_depth_0: 1
+  cnn3d_kernel_height_0: 2
+  cnn3d_kernel_width_0: 1
+  cnn3d_activation_layer_0: elu
+  cnn3d_use_batch_norm_layer_0: True
+  cnn3d_pool_size_dim1_1: 2
+  cnn3d_pool_size_dim2_1: 4
+  cnn3d_pool_size_dim3_1: 2
+  cnn3d_filters_layer_1: 116
+  cnn3d_kernel_depth_1: 2
+  cnn3d_kernel_height_1: 3
+  cnn3d_kernel_width_1: 3
+  cnn3d_activation_layer_1: relu
+  cnn3d_use_batch_norm_layer_1: False
+  cnn3d_pool_size_dim1_2: 2
+  cnn3d_pool_size_dim2_2: 3
+  cnn3d_pool_size_dim3_2: 1
+  cnn3d_filters_layer_2: 124
+  cnn3d_kernel_depth_2: 2
+  cnn3d_kernel_height_2: 1
+  cnn3d_kernel_width_2: 2
+  cnn3d_activation_layer_2: relu
+  cnn3d_use_batch_norm_layer_2: True
+  num_dense_layers: 1
+  dense_1_units: 320
+  dense_1_activation: tanh
+  optimizer: AdamW
+  learning_rate: 0.0003311567185897738
