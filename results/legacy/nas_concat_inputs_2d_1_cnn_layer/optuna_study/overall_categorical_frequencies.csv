@@ -1,4 +1,0 @@
-"Parameter","Category","Fraction","Count"
-params_cnn_activation_layer_0,relu,0.8159912376779846,745
-params_cnn_activation_layer_0,tanh,0.14238773274917854,130
-params_cnn_activation_layer_0,sigmoid,0.0416210295728368,38
