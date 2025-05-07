@@ -1,0 +1,46 @@
+rank: 9
+trial_id: 129
+loss: 1.6354708671569824
+val_accuracy: 0.5675545930862427
+train_accuracy: 0.5943048596382141
+test_accuracy: 0.5701686143875122
+test_accuracy_full: 0.5746005177497864
+sampler: TPESampler
+Parameters:
+  lidar_norm: none
+  coord_norm: standard
+  num_layers: 3
+  cnn3d_pool_size_dim1_0: 2
+  cnn3d_pool_size_dim2_0: 3
+  cnn3d_pool_size_dim3_0: 2
+  cnn3d_filters_layer_0: 232
+  cnn3d_kernel_depth_0: 4
+  cnn3d_kernel_height_0: 5
+  cnn3d_kernel_width_0: 5
+  cnn3d_activation_layer_0: leaky_relu
+  cnn3d_use_batch_norm_layer_0: False
+  cnn3d_pool_size_dim1_1: 2
+  cnn3d_pool_size_dim2_1: 3
+  cnn3d_pool_size_dim3_1: 2
+  cnn3d_filters_layer_1: 168
+  cnn3d_kernel_depth_1: 1
+  cnn3d_kernel_height_1: 4
+  cnn3d_kernel_width_1: 1
+  cnn3d_activation_layer_1: relu
+  cnn3d_use_batch_norm_layer_1: False
+  cnn3d_pool_size_dim1_2: 1
+  cnn3d_pool_size_dim2_2: 4
+  cnn3d_pool_size_dim3_2: 2
+  cnn3d_filters_layer_2: 144
+  cnn3d_kernel_depth_2: 1
+  cnn3d_kernel_height_2: 4
+  cnn3d_kernel_width_2: 2
+  cnn3d_activation_layer_2: sigmoid
+  cnn3d_use_batch_norm_layer_2: False
+  num_dense_layers: 2
+  dense_1_units: 320
+  dense_1_activation: swish
+  dense_2_units: 256
+  dense_2_activation: elu
+  optimizer: Nadam
+  learning_rate: 0.000547803501121399
