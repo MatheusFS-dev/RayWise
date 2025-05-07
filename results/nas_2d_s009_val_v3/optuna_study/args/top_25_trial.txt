@@ -1,0 +1,47 @@
+rank: 25
+trial_id: 63
+loss: 1.9465394020080566
+val_accuracy: 0.4907607436180115
+train_accuracy: 0.5806812047958374
+test_accuracy: 0.5041504502296448
+test_accuracy_full: 0.49854740500450134
+sampler: TPESampler
+Parameters:
+  lidar_norm: none
+  coord_norm: minmax
+  num_layers: 4
+  cnn_pool_size_dim1_0: 2
+  cnn_pool_size_dim2_0: 1
+  cnn_filters_layer_0: 168
+  cnn_kernel_height_0: 5
+  cnn_kernel_width_0: 7
+  cnn_activation_layer_0: swish
+  cnn_use_batch_norm_layer_0: False
+  cnn_pool_size_dim1_1: 1
+  cnn_pool_size_dim2_1: 2
+  cnn_filters_layer_1: 16
+  cnn_kernel_height_1: 4
+  cnn_kernel_width_1: 2
+  cnn_activation_layer_1: relu
+  cnn_use_batch_norm_layer_1: False
+  cnn_pool_size_dim1_2: 2
+  cnn_pool_size_dim2_2: 2
+  cnn_filters_layer_2: 88
+  cnn_kernel_height_2: 1
+  cnn_kernel_width_2: 7
+  cnn_activation_layer_2: relu
+  cnn_use_batch_norm_layer_2: False
+  cnn_pool_size_dim1_3: 1
+  cnn_pool_size_dim2_3: 1
+  cnn_filters_layer_3: 200
+  cnn_kernel_height_3: 2
+  cnn_kernel_width_3: 2
+  cnn_activation_layer_3: relu
+  cnn_use_batch_norm_layer_3: False
+  num_dense_layers: 2
+  dense_1_units: 256
+  dense_1_activation: tanh
+  dense_2_units: 64
+  dense_2_activation: relu
+  optimizer: Adam
+  learning_rate: 0.0004169980613042839

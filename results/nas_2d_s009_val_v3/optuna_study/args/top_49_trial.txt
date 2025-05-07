@@ -1,0 +1,38 @@
+rank: 49
+trial_id: 27
+loss: 2.3196558952331543
+val_accuracy: None
+train_accuracy: None
+test_accuracy: None
+test_accuracy_full: None
+sampler: TPESampler
+Parameters:
+  lidar_norm: none
+  coord_norm: minmax
+  num_layers: 3
+  cnn_pool_size_dim1_0: 1
+  cnn_pool_size_dim2_0: 2
+  cnn_filters_layer_0: 32
+  cnn_kernel_height_0: 4
+  cnn_kernel_width_0: 2
+  cnn_activation_layer_0: leaky_relu
+  cnn_use_batch_norm_layer_0: False
+  cnn_pool_size_dim1_1: 1
+  cnn_pool_size_dim2_1: 3
+  cnn_filters_layer_1: 120
+  cnn_kernel_height_1: 4
+  cnn_kernel_width_1: 3
+  cnn_activation_layer_1: swish
+  cnn_use_batch_norm_layer_1: False
+  cnn_pool_size_dim1_2: 1
+  cnn_pool_size_dim2_2: 4
+  cnn_filters_layer_2: 128
+  cnn_kernel_height_2: 5
+  cnn_kernel_width_2: 5
+  cnn_activation_layer_2: relu
+  cnn_use_batch_norm_layer_2: False
+  num_dense_layers: 1
+  dense_1_units: 448
+  dense_1_activation: swish
+  optimizer: Adam
+  learning_rate: 7.042274832647984e-05
