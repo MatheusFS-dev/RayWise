@@ -7,3 +7,5 @@
 
 - **Use LWM Models: ** Large Wireless models.
     - More details: [LWM Models](https://lwm-wireless.net/)
+
+- Idea, fix backbone and find a good seed
