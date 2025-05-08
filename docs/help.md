@@ -9,6 +9,7 @@ This document is a concise compilation of tips, theoretical explanations, and pr
   - [Regularizers](#regularizers)
   - [Multi-objective Optimization](#multi-objective-optimization)
     - [How Optuna handles multi-objective studies](#how-optuna-handles-multi-objective-studies)
+  - [Multi-class classification vs multi-label classification](#multi-class-classification-vs-multi-label-classification)
 
 ---
 
@@ -48,3 +49,15 @@ Multi-objective optimization tackles problems where you must optimize two or mor
        return loss, float(param_count)
    ```  
    Optuna automatically treats the first return as objective 1 and the second as objective 2.
+
+---
+
+## Multi-class classification vs multi-label classification
+
+- **Multi-class classification**: Each instance belongs to one and only one class. For example, classifying images of animals into categories like "cat," "dog," or "bird." The model outputs a single label for each instance.
+- **Multi-label classification**: Each instance can belong to multiple classes simultaneously. For example, tagging an image with multiple labels like "cat," "cute," and "pet." The model outputs a set of labels for each instance.
+- **Key Differences**:
+  - **Output Layer**: Multi-class uses softmax for a single label, while multi-label uses sigmoid for independent probabilities.
+  - **Loss Function**: Multi-class typically uses categorical cross-entropy, while multi-label uses binary cross-entropy.
+  - **Evaluation Metrics**: Multi-class often uses accuracy or F1-score, while multi-label may use hamming loss or subset accuracy.
+- **Use Cases**: Multi-class is for exclusive categories, while multi-label is for overlapping categories.
