@@ -9,3 +9,7 @@
     - More details: [LWM Models](https://lwm-wireless.net/)
 
 - Idea, fix backbone and find a good seed
+
+### Paper Writing
+
+- Prove that the work from batool might have been luck. Use k-fold cross-validation to show the variance (s009), or another statistical method.
