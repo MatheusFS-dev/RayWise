@@ -1,0 +1,44 @@
+rank: 2
+trial_id: 28
+loss: 0.04399075731635094
+val_accuracy: 0.13342931866645813
+train_accuracy: 0.07336683571338654
+test_accuracy: 0.09286640584468842
+test_accuracy_full: 0.0928615927696228
+num_params: 18809760
+model_size_mb: 71.7535400390625
+sampler: TPESampler
+Parameters:
+  cnn3d_pool_size_dim1_0: 2
+  cnn3d_pool_size_dim2_0: 2
+  cnn3d_pool_size_dim3_0: 2
+  cnn3d_filters_layer_0: 224
+  cnn3d_kernel_depth_0: 2
+  cnn3d_kernel_height_0: 1
+  cnn3d_kernel_width_0: 3
+  cnn3d_activation_layer_0: swish
+  cnn3d_use_batch_norm_layer_0: False
+  cnn3d_pool_size_dim1_1: 1
+  cnn3d_pool_size_dim2_1: 1
+  cnn3d_pool_size_dim3_1: 2
+  cnn3d_filters_layer_1: 160
+  cnn3d_kernel_depth_1: 5
+  cnn3d_kernel_height_1: 1
+  cnn3d_kernel_width_1: 1
+  cnn3d_activation_layer_1: leaky_relu
+  cnn3d_use_batch_norm_layer_1: False
+  cnn3d_pool_size_dim1_2: 2
+  cnn3d_pool_size_dim2_2: 4
+  cnn3d_pool_size_dim3_2: 1
+  cnn3d_filters_layer_2: 160
+  cnn3d_kernel_depth_2: 3
+  cnn3d_kernel_height_2: 2
+  cnn3d_kernel_width_2: 4
+  cnn3d_activation_layer_2: sigmoid
+  cnn3d_use_batch_norm_layer_2: True
+  dense_1_units: 448
+  dense_1_activation: elu
+  dense_2_units: 128
+  dense_2_activation: relu
+  optimizer: Lion
+  learning_rate: 5.799584259204671e-05

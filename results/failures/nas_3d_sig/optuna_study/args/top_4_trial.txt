@@ -1,0 +1,44 @@
+rank: 4
+trial_id: 24
+loss: 0.04719454050064087
+val_accuracy: 0.03911687061190605
+train_accuracy: 0.05203796923160553
+test_accuracy: 0.02529182843863964
+test_accuracy_full: 0.02521269954741001
+num_params: 108188928
+model_size_mb: 412.7080078125
+sampler: TPESampler
+Parameters:
+  cnn3d_pool_size_dim1_0: 2
+  cnn3d_pool_size_dim2_0: 2
+  cnn3d_pool_size_dim3_0: 1
+  cnn3d_filters_layer_0: 256
+  cnn3d_kernel_depth_0: 2
+  cnn3d_kernel_height_0: 1
+  cnn3d_kernel_width_0: 5
+  cnn3d_activation_layer_0: tanh
+  cnn3d_use_batch_norm_layer_0: False
+  cnn3d_pool_size_dim1_1: 1
+  cnn3d_pool_size_dim2_1: 1
+  cnn3d_pool_size_dim3_1: 2
+  cnn3d_filters_layer_1: 96
+  cnn3d_kernel_depth_1: 5
+  cnn3d_kernel_height_1: 3
+  cnn3d_kernel_width_1: 1
+  cnn3d_activation_layer_1: tanh
+  cnn3d_use_batch_norm_layer_1: False
+  cnn3d_pool_size_dim1_2: 2
+  cnn3d_pool_size_dim2_2: 1
+  cnn3d_pool_size_dim3_2: 1
+  cnn3d_filters_layer_2: 96
+  cnn3d_kernel_depth_2: 2
+  cnn3d_kernel_height_2: 2
+  cnn3d_kernel_width_2: 3
+  cnn3d_activation_layer_2: swish
+  cnn3d_use_batch_norm_layer_2: True
+  dense_1_units: 448
+  dense_1_activation: sigmoid
+  dense_2_units: 256
+  dense_2_activation: tanh
+  optimizer: RMSprop
+  learning_rate: 0.009710383811642668
