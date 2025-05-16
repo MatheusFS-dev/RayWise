@@ -1,0 +1,14 @@
+Parameter,Category,Fraction,Count
+params_cnn1d_activation_0,swish,0.42857142857142855,9
+params_cnn1d_activation_0,relu,0.38095238095238093,8
+params_cnn1d_activation_0,elu,0.19047619047619047,4
+params_cnn1d_activation_1,elu,0.8095238095238095,17
+params_cnn1d_activation_1,relu,0.19047619047619047,4
+params_cnn1d_activation_2,elu,0.9047619047619048,19
+params_cnn1d_activation_2,swish,0.09523809523809523,2
+params_cnn1d_activation_3,sigmoid,1.0,21
+params_cnn1d_use_batch_norm_3,False,1.0,21
+params_dense_1_activation,swish,0.8095238095238095,17
+params_dense_1_activation,relu,0.19047619047619047,4
+params_dense_2_activation,elu,1.0,21
+params_optimizer,Nadam,1.0,21

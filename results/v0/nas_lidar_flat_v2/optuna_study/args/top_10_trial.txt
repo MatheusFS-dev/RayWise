@@ -1,0 +1,41 @@
+rank: 10
+trial_id: 271
+loss: 1.5854978561401367
+val_accuracy: 0.6001920104026794
+train_accuracy: 0.5943048596382141
+test_accuracy: 0.611154317855835
+test_accuracy_full: 0.6150653958320618
+num_params: 1683360
+model_size_mb: 6.4215087890625
+sampler: TPESampler
+Parameters:
+  num_layers: 4
+  cnn1d_pool_size_0: 6
+  cnn1d_filters_0: 64
+  cnn1d_kernel_size_0: 5
+  cnn1d_activation_0: swish
+  cnn1d_use_batch_norm_0: False
+  cnn1d_pool_size_1: 6
+  cnn1d_filters_1: 416
+  cnn1d_kernel_size_1: 5
+  cnn1d_activation_1: elu
+  cnn1d_use_batch_norm_1: False
+  cnn1d_pool_size_2: 3
+  cnn1d_filters_2: 448
+  cnn1d_kernel_size_2: 1
+  cnn1d_activation_2: elu
+  cnn1d_use_batch_norm_2: False
+  cnn1d_pool_size_3: 5
+  cnn1d_filters_3: 256
+  cnn1d_kernel_size_3: 3
+  cnn1d_activation_3: sigmoid
+  cnn1d_use_batch_norm_3: False
+  dense_1_units: 512
+  dense_1_activation: relu
+  dense_1_dropout: 0.0
+  dense_2_units: 128
+  dense_2_activation: elu
+  dense_2_dropout: 0.30000000000000004
+  optimizer: Nadam
+  learning_rate: 0.0010706242959353102
+  batch_size: 128
