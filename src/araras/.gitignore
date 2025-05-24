@@ -1,0 +1,14 @@
+# Python caches and compiled files
+__pycache__/
+*.py[cod]
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment directories
+.Python
+.venv/
+
+# IDE directories
+.vscode/
+

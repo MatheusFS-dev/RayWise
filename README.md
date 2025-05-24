@@ -1,14 +1,16 @@
-![header](https://capsule-render.vercel.app/api?height=190&type=waving&color=6272a4&section=header&text=Project%20Title&fontColor=f8f8f2&fontSize=40)
+![header](https://capsule-render.vercel.app/api?height=190&type=blur&color=4ea7f7&section=header&text=Project%20Title&fontColor=f8f8f2&fontSize=40)
 
 
-<div align="center" style="margin: -10px 0; margin-top: -45px">
-  <img src="https://readme-typing-svg.demolab.com?font=Times+New+Roman&weight=600&pause=1000&color=007FFF&center=true&vCenter=true&width=435&lines=👋+Welcome!" alt="Typing SVG"/>
-</div>
+<p align="center">
+<a href="https://github.com/DenverCoder1/readme-typing-svg"><img src="https://readme-typing-svg.herokuapp.com?font=Time+New+Roman&color=%234ea7f7&size=25&center=true&vCenter=true&width=600&height=30&lines=👋+Welcome!"></a>
+</p>
 
-![GitHub License](https://img.shields.io/github/license/yourusername/your-repo)
-![GitHub Issues](https://img.shields.io/github/issues/yourusername/your-repo)
-![GitHub Forks](https://img.shields.io/github/forks/yourusername/your-repo)
-![GitHub Stars](https://img.shields.io/github/stars/yourusername/your-repo)
+<p align="center">
+  <img src="https://img.shields.io/github/license/MatheusFS-dev/[repo]" alt="GitHub License">
+  <img src="https://img.shields.io/github/issues/MatheusFS-dev/[repo]" alt="GitHub Issues">
+  <img src="https://img.shields.io/github/forks/MatheusFS-dev/[repo]" alt="GitHub Forks">
+  <img src="https://img.shields.io/github/stars/MatheusFS-dev/[repo]" alt="GitHub Stars">
+</p>
 
 <p align="center">
   <a href="#">
@@ -206,8 +208,10 @@ Options:
 ```
 
 
-
 ## 🤝 Contributing
+
+> [!IMPORTANT]
+> First read the [CONTRIBUTING.md](CONTRIBUTING.md) file.
 
 Contributions are what make the open-source community amazing. To contribute:
 
@@ -226,37 +230,39 @@ This project is licensed under the **[General Public License](LICENSE)**.
 
 ## 🤝 Collaborators
 
+> [!IMPORTANT]
+> Use https://api.github.com/users/your_github_user_name to get your GitHub user information.
+
 We thank the following people who contributed to this project:
 
 <table>
   <tr>
     <td align="center">
-      <a href="#" title="defina o título do link">
-        <img src="https://avatars3.githubusercontent.com/u/31936044" width="100px;" alt="Foto do Iuri Silva no GitHub"/><br>
+      <a href="https://github.com/MatheusFS-dev" title="Matheus Ferreira">
+        <img src="https://avatars.githubusercontent.com/u/99222557" width="100px;" alt="Foto do Matheus Ferreira no GitHub"/><br>
         <sub>
-          <b>Iuri Silva</b>
+          <b>Matheus Ferreira</b>
         </sub>
       </a>
     </td>
     <td align="center">
-      <a href="#" title="defina o título do link">
-        <img src="https://s2.glbimg.com/FUcw2usZfSTL6yCCGj3L3v3SpJ8=/smart/e.glbimg.com/og/ed/f/original/2019/04/25/zuckerberg_podcast.jpg" width="100px;" alt="Foto do Mark Zuckerberg"/><br>
+      <a href="https://github.com/MatheusFS-dev" title="Matheus Ferreira">
+        <img src="https://avatars.githubusercontent.com/u/99222557" width="100px;" alt="Foto do Matheus Ferreira no GitHub"/><br>
         <sub>
-          <b>Mark Zuckerberg</b>
+          <b>Matheus Ferreira</b>
         </sub>
       </a>
     </td>
     <td align="center">
-      <a href="#" title="defina o título do link">
-        <img src="https://miro.medium.com/max/360/0*1SkS3mSorArvY9kS.jpg" width="100px;" alt="Foto do Steve Jobs"/><br>
+      <a href="https://github.com/MatheusFS-dev" title="Matheus Ferreira">
+        <img src="https://avatars.githubusercontent.com/u/99222557" width="100px;" alt="Foto do Matheus Ferreira no GitHub"/><br>
         <sub>
-          <b>Steve Jobs</b>
+          <b>Matheus Ferreira</b>
         </sub>
       </a>
     </td>
   </tr>
 </table>
-
 ## 📖 References
 
 - [Markdown Cheatsheet](https://www.markdownguide.org/cheat-sheet/)

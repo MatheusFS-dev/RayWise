@@ -1,0 +1,3 @@
+[submodule "src/araras"]
+	path = src/araras
+	url = https://github.com/MatheusFS-dev/araras
