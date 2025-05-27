@@ -1,0 +1,13 @@
+rank: 1
+trial_id: 421
+loss: 1.7612913846969604
+num_params: 1194544
+model_size_mb: 4.55682373046875
+sampler: TPESampler
+val_accuracy: 0.5543556809425354
+train_accuracy: 0.5940815210342407
+test_accuracy: 0.5762646198272705
+test_accuracy_full: 0.5761568546295166
+
+Trial hyperparameters:
+  seed: 816
