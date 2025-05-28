@@ -1,0 +1,9 @@
+Parameter,Category,Fraction,Count
+params_conv1d_activation_0,relu,1.0,18
+params_conv1d_activation_1,swish,0.9444444444444444,17
+params_conv1d_activation_1,relu,0.05555555555555555,1
+params_conv1d_activation_2,sigmoid,0.7222222222222222,13
+params_conv1d_activation_2,tanh,0.2777777777777778,5
+params_extra_dense_0_activation_0,sigmoid,1.0,18
+params_extra_dense_1_activation_0,swish,1.0,18
+params_optimizer,Lion,1.0,18
