@@ -68,6 +68,7 @@ from araras.keras.utils.punish import (
     compute_flops_penalized_loss,
     compute_params_penalized_loss,
 )
+from araras.keras.utils.profiler import get_flops, get_macs
 
 # Optuna
 from araras.optuna.analyze import analyze_study
