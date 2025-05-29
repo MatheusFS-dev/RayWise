@@ -1,0 +1,41 @@
+rank: 9
+trial_id: 0
+loss: 1.887883186340332
+num_params: 1511808
+model_size_mb: 5.76708984375
+sampler: TPESampler
+val_accuracy: 0.5070794224739075
+train_accuracy: 0.6769402623176575
+test_accuracy: 0.5173799991607666
+test_accuracy_full: 0.515044629573822
+
+Trial hyperparameters:
+  num_layers: 4
+  conv1d_filters_0: 480
+  conv1d_pool_size_0: 6
+  conv1d_kernel_size_0: 1
+  conv1d_activation_0: swish
+  conv1d_bn_0: True
+  conv1d_filters_1: 32
+  conv1d_pool_size_1: 7
+  conv1d_kernel_size_1: 4
+  conv1d_activation_1: tanh
+  conv1d_bn_1: True
+  conv1d_filters_2: 384
+  conv1d_pool_size_2: 4
+  conv1d_kernel_size_2: 4
+  conv1d_activation_2: swish
+  conv1d_bn_2: True
+  conv1d_filters_3: 256
+  conv1d_pool_size_3: 2
+  conv1d_kernel_size_3: 5
+  conv1d_activation_3: sigmoid
+  conv1d_bn_3: True
+  extra_dense_0_units_0: 300
+  extra_dense_0_activation_0: relu
+  extra_dense_0_dropout_0: 0.4
+  extra_dense_1_units_0: 100
+  extra_dense_1_activation_0: swish
+  extra_dense_1_dropout_0: 0.0
+  optimizer: Lion
+  lr: 4.154631610726645e-05
