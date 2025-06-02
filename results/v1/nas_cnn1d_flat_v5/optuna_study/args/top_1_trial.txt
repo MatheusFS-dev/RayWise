@@ -3,7 +3,7 @@ trial_id: 364
 loss: 1.614579677581787
 num_params: 1540884
 model_size_mb: 5.8780059814453125
-flops: 1375701900
+flops: 1375701900 -> 1.37 GFLOPs
 macs: 687850950
 sampler: TPESampler
 val_accuracy: 0.604991614818573
