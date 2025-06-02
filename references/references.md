@@ -14,6 +14,8 @@
 
 ![alt text](images/image-6.png)
 
+https://github.com/wesleylp/TVT_beam_selection
+
 ### Work from Joanna
 
 [TVT Beam Selection GitHub Repository](https://github.com/batoolsalehi/TVT_beam_selection)

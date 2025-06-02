@@ -61,7 +61,7 @@ from optuna.integration import KerasPruningCallback
 # —————————————————————————————————— Araras —————————————————————————————————— #
 # Keras-related
 from araras.keras.builders.dnn import build_dnn
-from araras.keras.builders.cnn import build_cnn1d, build_cnn3d
+from araras.keras.builders.cnn import build_cnn1d, build_dense_as_conv1d
 from araras.keras.callbacks.nan_loss_pruner import NanLossPrunerCallback
 from araras.keras.hparams import HParams
 from araras.keras.utils.punish import (
