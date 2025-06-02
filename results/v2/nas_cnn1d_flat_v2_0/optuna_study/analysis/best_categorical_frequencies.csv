@@ -1,0 +1,15 @@
+Parameter,Category,Fraction,Count
+params_0_conv1d_activation,swish,0.8947368421052632,17
+params_0_conv1d_activation,relu,0.05263157894736842,1
+params_0_conv1d_activation,tanh,0.05263157894736842,1
+params_0_dense_activation,relu,0.9473684210526315,18
+params_0_dense_activation,swish,0.05263157894736842,1
+params_1_conv1d_activation,swish,0.5789473684210527,11
+params_1_conv1d_activation,sigmoid,0.2631578947368421,5
+params_1_conv1d_activation,tanh,0.10526315789473684,2
+params_1_conv1d_activation,relu,0.05263157894736842,1
+params_1_dense_activation,swish,1.0,19
+params_2_conv1d_activation,tanh,0.7894736842105263,15
+params_2_conv1d_activation,swish,0.21052631578947367,4
+params_3_conv1d_activation,relu,0.9473684210526315,18
+params_3_conv1d_activation,swish,0.05263157894736842,1
