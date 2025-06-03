@@ -1,0 +1,39 @@
+rank: 5
+trial_id: 7
+loss: 2.122133095957031
+num_params: 934426
+model_size_mb: 3.5645523071289062
+flops: 3120010056
+macs: 1560005028
+sampler: TPESampler
+val_accuracy: 0.5109191536903381
+train_accuracy: 0.4362925887107849
+test_accuracy: 0.5601815581321716
+test_accuracy_full: 0.5569620132446289
+
+Trial hyperparameters:
+  strides_layer_0: 1
+  conv1d_layer_0_filters: 90
+  conv1d_layer_0_kernel_size: 1
+  conv1d_layer_0_act: sigmoid
+  strides_layer_1: 2
+  conv1d_layer_1_filters: 20
+  conv1d_layer_1_kernel_size: 5
+  conv1d_layer_1_act: swish
+  strides_layer_2: 1
+  conv1d_layer_2_filters: 10
+  conv1d_layer_2_kernel_size: 1
+  conv1d_layer_2_act: relu
+  strides_layer_3: 1
+  conv1d_layer_3_filters: 100
+  conv1d_layer_3_kernel_size: 3
+  conv1d_layer_3_act: tanh
+  max_dense_layers: 3
+  dense_as_conv1d_layer_0_filters: 900
+  dense_as_conv1d_layer_0_act: relu
+  dense_as_conv1d_layer_1_filters: 450
+  dense_as_conv1d_layer_1_act: relu
+  dense_as_conv1d_layer_2_filters: 600
+  dense_as_conv1d_layer_2_act: tanh
+  output_strategy: global_average_pooling
+  lr: 0.0006811529246130093
