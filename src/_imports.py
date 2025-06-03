@@ -8,8 +8,7 @@ Example usage:
 
 # ———————————————————————————— Standard Libraries ———————————————————————————— #
 import gc, math, signal, shutil, traceback, subprocess
-from IPython.display import clear_output, display, HTML
-from tkinter import Image
+from IPython.display import clear_output, display, HTML, Image
 
 # ———————————————————————————————— Annotations ——————————————————————————————— #
 from typing import *
