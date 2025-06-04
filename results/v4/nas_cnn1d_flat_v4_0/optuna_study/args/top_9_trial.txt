@@ -1,0 +1,27 @@
+rank: 9
+trial_id: 53
+loss: 2.101488548654785
+num_params: 177626
+model_size_mb: 0.6775894165039062
+flops: 357611610
+macs: 178805805
+sampler: TPESampler
+val_accuracy: 0.5087593197822571
+train_accuracy: 0.3823562264442444
+test_accuracy: 0.5523994565010071
+test_accuracy_full: 0.5500103831291199
+
+Trial hyperparameters:
+  conv_layers: 2
+  conv1d_0_filters: 32
+  conv1d_0_kernel_size: 2
+  conv1d_0_act: swish
+  conv1d_1_filters: 272
+  conv1d_1_kernel_size: 5
+  conv1d_1_act: swish
+  output_strategy: global_average_pooling
+  dense_layers: 1
+  dense_0_units: 250
+  dense_0_dropout: 0.2
+  dense_0_act: tanh
+  lr: 0.0006906737705061396
