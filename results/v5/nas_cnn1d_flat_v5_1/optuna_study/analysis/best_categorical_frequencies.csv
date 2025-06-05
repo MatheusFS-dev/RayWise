@@ -1,0 +1,16 @@
+Parameter,Category,Fraction,Count
+params_conv1d_0_act,tanh,1.0,16
+params_conv1d_1_act,tanh,0.8125,13
+params_conv1d_1_act,sigmoid,0.1875,3
+params_conv1d_2_act,swish,1.0,16
+params_conv1d_3_act,sigmoid,1.0,16
+params_conv1d_4_act,swish,0.9375,15
+params_conv1d_4_act,sigmoid,0.0625,1
+params_conv1d_5_act,swish,0.9375,15
+params_conv1d_5_act,sigmoid,0.0625,1
+params_conv1d_6_act,tanh,1.0,16
+params_dense_0_act,swish,1.0,16
+params_dense_1_act,swish,0.9375,15
+params_dense_1_act,tanh,0.0625,1
+params_dense_layer_type,dense,1.0,16
+params_output_strategy,flatten,1.0,16

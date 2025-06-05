@@ -1,0 +1,53 @@
+rank: 1
+trial_id: 52
+loss: 1.9883379936218262
+num_params: 3992640
+model_size_mb: 15.230712890625
+flops: 816068352
+macs: 408034176
+sampler: TPESampler
+val_accuracy: 0.5296376347541809
+train_accuracy: 0.6847571134567261
+test_accuracy: 0.5559014081954956
+test_accuracy_full: 0.5531230568885803
+
+Trial hyperparameters:
+  conv_layers: 8
+  conv1d_0_filters: 32
+  conv1d_0_kernel_size: 2
+  conv1d_0_act: swish
+  pool_size_0: 2
+  conv1d_1_filters: 512
+  conv1d_1_kernel_size: 4
+  conv1d_1_act: tanh
+  pool_size_1: 2
+  conv1d_2_filters: 128
+  conv1d_2_kernel_size: 2
+  conv1d_2_act: swish
+  pool_size_2: 2
+  conv1d_3_filters: 256
+  conv1d_3_kernel_size: 2
+  conv1d_3_act: swish
+  pool_size_3: 2
+  conv1d_4_filters: 64
+  conv1d_4_kernel_size: 5
+  conv1d_4_act: sigmoid
+  pool_size_4: 2
+  conv1d_5_filters: 512
+  conv1d_5_kernel_size: 1
+  conv1d_5_act: tanh
+  pool_size_5: 2
+  conv1d_6_filters: 512
+  conv1d_6_kernel_size: 4
+  conv1d_6_act: tanh
+  pool_size_6: 2
+  conv1d_7_filters: 512
+  conv1d_7_kernel_size: 2
+  conv1d_7_act: swish
+  pool_size_7: 2
+  dense_layer_type: conv1x1
+  dense_conv1x1_0_filters: 64
+  dense_conv1x1_0_act: swish
+  dense_conv1x1_1_filters: 512
+  dense_conv1x1_1_act: sigmoid
+  lr: 5.6528115426507805e-06
