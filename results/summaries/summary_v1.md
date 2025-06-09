@@ -1,0 +1,898 @@
+# v1_0:
+
+loss: 1.6608648300170898
+num_params: 1352690
+model_size_mb: 5.160102844238281
+sampler: TPESampler
+val_accuracy: 0.5879529714584351
+train_accuracy: 0.6020100712776184
+test_accuracy: 0.6057068705558777
+test_accuracy_full: 0.6041709780693054
+
+Trial hyperparameters:
+  num_layers: 3
+  conv1d_filters_0: 512
+  conv1d_pool_size_0: 12
+  conv1d_kernel_size_0: 5
+  conv1d_activation_0: relu
+  conv1d_bn_0: False
+  conv1d_filters_1: 384
+  conv1d_pool_size_1: 11
+  conv1d_kernel_size_1: 4
+  conv1d_activation_1: swish
+  conv1d_bn_1: False
+  conv1d_filters_2: 352
+  conv1d_pool_size_2: 12
+  conv1d_kernel_size_2: 2
+  conv1d_activation_2: sigmoid
+  conv1d_bn_2: True
+  extra_dense_0_units_0: 250
+  extra_dense_0_activation_0: sigmoid
+  extra_dense_0_dropout_0: 0.30000000000000004
+  extra_dense_1_units_0: 200
+  extra_dense_1_activation_0: swish
+  extra_dense_1_dropout_0: 0.1
+  optimizer: Lion
+  lr: 0.0003416995390813586
+
+
+# v1_1:
+
+loss: 1.641574740409851
+num_params: 899768
+model_size_mb: 3.432342529296875
+sampler: TPESampler
+val_accuracy: 0.5893928408622742
+train_accuracy: 0.6049134731292725
+test_accuracy: 0.6029831171035767
+test_accuracy_full: 0.6025108695030212
+
+Trial hyperparameters:
+  num_layers: 5
+  conv1d_filters_0: 288
+  conv1d_pool_size_0: 3
+  conv1d_kernel_size_0: 2
+  conv1d_activation_0: swish
+  conv1d_bn_0: False
+  conv1d_filters_1: 256
+  conv1d_pool_size_1: 4
+  conv1d_kernel_size_1: 2
+  conv1d_activation_1: relu
+  conv1d_bn_1: False
+  conv1d_filters_2: 512
+  conv1d_pool_size_2: 3
+  conv1d_kernel_size_2: 3
+  conv1d_activation_2: tanh
+  conv1d_bn_2: True
+  conv1d_filters_3: 352
+  conv1d_pool_size_3: 5
+  conv1d_kernel_size_3: 1
+  conv1d_activation_3: relu
+  conv1d_bn_3: True
+  conv1d_filters_4: 32
+  conv1d_pool_size_4: 5
+  conv1d_kernel_size_4: 1
+  conv1d_activation_4: sigmoid
+  conv1d_bn_4: False
+  extra_dense_0_units_0: 250
+  extra_dense_0_activation_0: relu
+  extra_dense_0_dropout_0: 0.0
+  extra_dense_1_units_0: 250
+  extra_dense_1_activation_0: tanh
+  extra_dense_1_dropout_0: 0.1
+  optimizer: AdamW
+  lr: 0.0016909766929829693
+
+# v1_2:
+
+loss: 1.640175223350525
+num_params: 478720
+model_size_mb: 1.826171875
+sampler: TPESampler
+val_accuracy: 0.5838732719421387
+train_accuracy: 0.6021217107772827
+test_accuracy: 0.5992217659950256
+test_accuracy_full: 0.5977381467819214
+
+Trial hyperparameters:
+  num_layers: 5
+  conv1d_filters_0: 320
+  conv1d_pool_size_0: 4
+  conv1d_kernel_size_0: 2
+  conv1d_activation_0: swish
+  conv1d_bn_0: False
+  conv1d_filters_1: 128
+  conv1d_pool_size_1: 4
+  conv1d_kernel_size_1: 5
+  conv1d_activation_1: relu
+  conv1d_bn_1: False
+  conv1d_filters_2: 96
+  conv1d_pool_size_2: 3
+  conv1d_kernel_size_2: 2
+  conv1d_activation_2: tanh
+  conv1d_bn_2: True
+  conv1d_filters_3: 352
+  conv1d_pool_size_3: 5
+  conv1d_kernel_size_3: 3
+  conv1d_activation_3: relu
+  conv1d_bn_3: True
+  conv1d_filters_4: 128
+  conv1d_pool_size_4: 5
+  conv1d_kernel_size_4: 1
+  conv1d_activation_4: sigmoid
+  conv1d_bn_4: False
+  extra_dense_0_units_0: 50
+  extra_dense_0_activation_0: relu
+  extra_dense_0_dropout_0: 0.1
+  extra_dense_1_units_0: 250
+  extra_dense_1_activation_0: tanh
+  extra_dense_1_dropout_0: 0.1
+  optimizer: AdamW
+  lr: 0.001299558463705041
+
+# v1_3:
+
+loss: 1.7857099771499634
+num_params: 1228404
+model_size_mb: 4.6859893798828125
+sampler: TPESampler
+val_accuracy: 0.5749940276145935
+train_accuracy: 0.523283064365387
+test_accuracy: 0.5929961204528809
+test_accuracy_full: 0.5909940004348755
+
+Trial hyperparameters:
+  num_layers: 5
+  conv1d_filters_0: 512
+  conv1d_pool_size_0: 5
+  conv1d_kernel_size_0: 4
+  conv1d_activation_0: relu
+  conv1d_bn_0: False
+  conv1d_filters_1: 288
+  conv1d_pool_size_1: 3
+  conv1d_kernel_size_1: 3
+  conv1d_activation_1: tanh
+  conv1d_bn_1: True
+  conv1d_filters_2: 320
+  conv1d_pool_size_2: 4
+  conv1d_kernel_size_2: 4
+  conv1d_activation_2: relu
+  conv1d_bn_2: True
+  conv1d_filters_3: 128
+  conv1d_pool_size_3: 2
+  conv1d_kernel_size_3: 2
+  conv1d_activation_3: sigmoid
+  conv1d_bn_3: False
+  conv1d_filters_4: 256
+  conv1d_pool_size_4: 3
+  conv1d_kernel_size_4: 4
+  conv1d_activation_4: swish
+  conv1d_bn_4: True
+  extra_dense_0_units_0: 50
+  extra_dense_0_activation_0: swish
+  extra_dense_0_dropout_0: 0.0
+  extra_dense_1_units_0: 150
+  extra_dense_1_activation_0: sigmoid
+  extra_dense_1_dropout_0: 0.30000000000000004
+  optimizer: RMSprop
+  lr: 0.004252122797989573
+
+# v1_4:
+
+loss: 1.614579677581787
+num_params: 1540884
+model_size_mb: 5.8780059814453125
+flops: 1375701900 -> 1.37 GFLOPs
+macs: 687850950
+sampler: TPESampler
+val_accuracy: 0.604991614818573
+train_accuracy: 0.5975432991981506
+test_accuracy: 0.6242542266845703
+test_accuracy_full: 0.6212907433509827
+
+Trial hyperparameters:
+  num_layers: 4
+  conv1d_filters_0: 480
+  conv1d_pool_size_0: 5
+  conv1d_kernel_size_0: 4
+  conv1d_activation_0: tanh
+  conv1d_bn_0: False
+  conv1d_filters_1: 288
+  conv1d_pool_size_1: 3
+  conv1d_kernel_size_1: 5
+  conv1d_activation_1: swish
+  conv1d_bn_1: False
+  conv1d_filters_2: 480
+  conv1d_pool_size_2: 5
+  conv1d_kernel_size_2: 2
+  conv1d_activation_2: swish
+  conv1d_bn_2: False
+  conv1d_filters_3: 96
+  conv1d_pool_size_3: 5
+  conv1d_kernel_size_3: 5
+  conv1d_activation_3: sigmoid
+  conv1d_bn_3: True
+  extra_dense_0_units_0: 200
+  extra_dense_0_activation_0: relu
+  extra_dense_0_dropout_0: 0.30000000000000004
+  extra_dense_1_units_0: 300
+  extra_dense_1_activation_0: swish
+  extra_dense_1_dropout_0: 0.2
+  optimizer: Lion
+  lr: 0.00016133019264832338
+
+# v1_5:
+
+loss: 1.6235541105270386
+num_params: 1565108
+model_size_mb: 5.9704132080078125
+flops: 2362042412
+macs: 1181021206
+sampler: TPESampler
+val_accuracy: 0.6028317809104919
+train_accuracy: 0.6096035838127136
+test_accuracy: 0.6145265698432922
+test_accuracy_full: 0.6139240264892578
+
+Trial hyperparameters:
+  num_layers: 4
+  conv1d_filters_0: 512
+  conv1d_pool_size_0: 3
+  conv1d_kernel_size_0: 4
+  conv1d_activation_0: tanh
+  conv1d_bn_0: False
+  conv1d_filters_1: 288
+  conv1d_pool_size_1: 3
+  conv1d_kernel_size_1: 5
+  conv1d_activation_1: swish
+  conv1d_bn_1: False
+  conv1d_filters_2: 512
+  conv1d_pool_size_2: 5
+  conv1d_kernel_size_2: 2
+  conv1d_activation_2: swish
+  conv1d_bn_2: False
+  conv1d_filters_3: 64
+  conv1d_pool_size_3: 5
+  conv1d_kernel_size_3: 5
+  conv1d_activation_3: sigmoid
+  conv1d_bn_3: True
+  extra_dense_0_units_0: 200
+  extra_dense_0_activation_0: relu
+  extra_dense_0_dropout_0: 0.30000000000000004
+  extra_dense_1_units_0: 300
+  extra_dense_1_activation_0: swish
+  extra_dense_1_dropout_0: 0.0
+  optimizer: Lion
+  lr: 6.621086674201905e-05
+
+# v1_6:
+
+loss: 1.6458691358566284
+num_params: 1536404
+model_size_mb: 5.8609161376953125
+flops: 2343815852
+macs: 1171907926
+sampler: TPESampler
+val_accuracy: 0.6100311875343323
+train_accuracy: 0.6217755675315857
+test_accuracy: 0.613359272480011
+test_accuracy_full: 0.6138203144073486
+
+Trial hyperparameters:
+  num_layers: 4
+  conv1d_filters_0: 512
+  conv1d_pool_size_0: 3
+  conv1d_kernel_size_0: 4
+  conv1d_activation_0: tanh
+  conv1d_bn_0: False
+  conv1d_filters_1: 288
+  conv1d_pool_size_1: 3
+  conv1d_kernel_size_1: 5
+  conv1d_activation_1: swish
+  conv1d_bn_1: False
+  conv1d_filters_2: 480
+  conv1d_pool_size_2: 5
+  conv1d_kernel_size_2: 2
+  conv1d_activation_2: swish
+  conv1d_bn_2: False
+  conv1d_filters_3: 64
+  conv1d_pool_size_3: 5
+  conv1d_kernel_size_3: 5
+  conv1d_activation_3: sigmoid
+  conv1d_bn_3: True
+  extra_dense_0_units_0: 200
+  extra_dense_0_activation_0: relu
+  extra_dense_0_dropout_0: 0.30000000000000004
+  extra_dense_1_units_0: 300
+  extra_dense_1_activation_0: swish
+  extra_dense_1_dropout_0: 0.0
+  optimizer: Lion
+  lr: 8.750800931034758e-05
+
+# v1_7:
+
+loss: 1.6567270755767822
+num_params: 1338356
+model_size_mb: 5.1054229736328125
+flops: 1919614388
+macs: 959807194
+sampler: TPESampler
+val_accuracy: 0.6047516465187073
+train_accuracy: 0.6154103875160217
+test_accuracy: 0.6146562695503235
+test_accuracy_full: 0.6137165427207947
+
+Trial hyperparameters:
+  num_layers: 4
+  conv1d_filters_0: 416
+  conv1d_pool_size_0: 3
+  conv1d_kernel_size_0: 4
+  conv1d_activation_0: tanh
+  conv1d_bn_0: False
+  conv1d_filters_1: 288
+  conv1d_pool_size_1: 3
+  conv1d_kernel_size_1: 5
+  conv1d_activation_1: swish
+  conv1d_bn_1: False
+  conv1d_filters_2: 416
+  conv1d_pool_size_2: 5
+  conv1d_kernel_size_2: 2
+  conv1d_activation_2: swish
+  conv1d_bn_2: False
+  conv1d_filters_3: 64
+  conv1d_pool_size_3: 5
+  conv1d_kernel_size_3: 5
+  conv1d_activation_3: sigmoid
+  conv1d_bn_3: True
+  extra_dense_0_units_0: 200
+  extra_dense_0_activation_0: relu
+  extra_dense_0_dropout_0: 0.30000000000000004
+  extra_dense_1_units_0: 300
+  extra_dense_1_activation_0: relu
+  extra_dense_1_dropout_0: 0.0
+  optimizer: Lion
+  lr: 6.926373901523348e-05
+
+
+# v1_8:
+
+loss: 1.6400642395019531
+num_params: 1518228
+model_size_mb: 5.7915802001953125
+flops: 2232793164
+macs: 1116396582
+sampler: TPESampler
+val_accuracy: 0.5992320775985718
+train_accuracy: 0.6053601503372192
+test_accuracy: 0.6132295727729797
+test_accuracy_full: 0.6126790046691895
+
+Trial hyperparameters:
+  num_layers: 4
+  conv1d_filters_0: 480
+  conv1d_pool_size_0: 3
+  conv1d_kernel_size_0: 4
+  conv1d_activation_0: tanh
+  conv1d_bn_0: False
+  conv1d_filters_1: 288
+  conv1d_pool_size_1: 3
+  conv1d_kernel_size_1: 5
+  conv1d_activation_1: swish
+  conv1d_bn_1: False
+  conv1d_filters_2: 512
+  conv1d_pool_size_2: 5
+  conv1d_kernel_size_2: 2
+  conv1d_activation_2: swish
+  conv1d_bn_2: False
+  conv1d_filters_3: 64
+  conv1d_pool_size_3: 5
+  conv1d_kernel_size_3: 5
+  conv1d_activation_3: sigmoid
+  conv1d_bn_3: True
+  extra_dense_0_units_0: 200
+  extra_dense_0_activation_0: relu
+  extra_dense_0_dropout_0: 0.30000000000000004
+  extra_dense_1_units_0: 300
+  extra_dense_1_activation_0: swish
+  extra_dense_1_dropout_0: 0.0
+  optimizer: Lion
+  lr: 0.00010444033262226747
+
+# v6_0:
+
+loss: 1.6454864740371704
+num_params: 2444306
+model_size_mb: 9.324287414550781
+flops: 794175062
+macs: 397087531
+sampler: TPESampler
+val_accuracy: 0.5872330069541931
+train_accuracy: 0.7298715710639954
+test_accuracy: 0.5994811654090881
+test_accuracy_full: 0.5987756848335266
+
+Trial hyperparameters:
+  conv1d_0_filters: 128
+  conv1d_0_kernel_size: 2
+  conv1d_0_act: swish
+  pool_size_0: 2
+  conv1d_1_filters: 128
+  conv1d_1_kernel_size: 5
+  conv1d_1_act: swish
+  pool_size_1: 5
+  conv1d_2_filters: 512
+  conv1d_2_kernel_size: 7
+  conv1d_2_act: swish
+  pool_size_2: 2
+  conv1d_3_filters: 128
+  conv1d_3_kernel_size: 3
+  conv1d_3_act: swish
+  pool_size_3: 4
+  output_strategy: flatten
+  dense_0_units: 250
+  dense_0_dropout: 0.0
+  dense_0_act: swish
+  dense_1_units: 200
+  dense_1_dropout: 0.5
+  dense_1_act: tanh
+  lr: 7.188164657870384e-05
+  batch_size: 64
+
+# v6_1:
+
+loss: 1.6529513597488403
+num_params: 2453272
+model_size_mb: 9.358489990234375
+flops: 938404912
+macs: 469202456
+sampler: TPESampler
+val_accuracy: 0.588672935962677
+train_accuracy: 0.7555555701255798
+test_accuracy: 0.5980544686317444
+test_accuracy_full: 0.5965967774391174
+
+Trial hyperparameters:
+  conv1d_0_filters: 128
+  conv1d_0_kernel_size: 2
+  conv1d_0_act: swish
+  pool_size_0: 2
+  conv1d_1_filters: 128
+  conv1d_1_kernel_size: 8
+  conv1d_1_act: swish
+  pool_size_1: 5
+  conv1d_2_filters: 512
+  conv1d_2_kernel_size: 6
+  conv1d_2_act: swish
+  pool_size_2: 2
+  conv1d_3_filters: 128
+  conv1d_3_kernel_size: 3
+  conv1d_3_act: swish
+  pool_size_3: 4
+  output_strategy: flatten
+  dense_0_units: 250
+  dense_0_dropout: 0.0
+  dense_0_act: swish
+  dense_1_units: 250
+  dense_1_dropout: 0.4
+  dense_1_act: tanh
+  lr: 6.818102194992548e-05
+  batch_size: 64
+
+
+# v6_2:
+
+loss: 1.6183115243911743
+num_params: 2763026
+model_size_mb: 10.540107727050781
+flops: 1876723542
+macs: 938361771
+sampler: TPESampler
+val_accuracy: 0.5932325124740601
+train_accuracy: 0.7929648160934448
+test_accuracy: 0.5933852195739746
+test_accuracy_full: 0.5937954187393188
+
+Trial hyperparameters:
+  conv1d_0_filters: 128
+  conv1d_0_kernel_size: 2
+  conv1d_0_act: swish
+  pool_size_0: 2
+  conv1d_1_filters: 256
+  conv1d_1_kernel_size: 3
+  conv1d_1_act: swish
+  pool_size_1: 3
+  conv1d_2_filters: 512
+  conv1d_2_kernel_size: 8
+  conv1d_2_act: relu
+  pool_size_2: 4
+  conv1d_3_filters: 128
+  conv1d_3_kernel_size: 3
+  conv1d_3_act: swish
+  pool_size_3: 4
+  output_strategy: flatten
+  dense_0_units: 250
+  dense_0_dropout: 0.0
+  dense_0_act: swish
+  dense_1_units: 200
+  dense_1_dropout: 0.5
+  dense_1_act: tanh
+  lr: 3.700644368495743e-05
+  batch_size: 64
+
+# v6_3:
+
+loss: 1.672059416770935
+num_params: 2074904
+model_size_mb: 7.915130615234375
+flops: 668937008
+macs: 334468504
+sampler: TPESampler
+val_accuracy: 0.5841132998466492
+train_accuracy: 0.7335566878318787
+test_accuracy: 0.5963683724403381
+test_accuracy_full: 0.593484103679657
+
+Trial hyperparameters:
+  conv1d_0_filters: 128
+  conv1d_0_kernel_size: 2
+  conv1d_0_act: swish
+  pool_size_0: 2
+  conv1d_1_filters: 128
+  conv1d_1_kernel_size: 8
+  conv1d_1_act: swish
+  pool_size_1: 5
+  conv1d_2_filters: 128
+  conv1d_2_kernel_size: 6
+  conv1d_2_act: swish
+  pool_size_2: 2
+  conv1d_3_filters: 128
+  conv1d_3_kernel_size: 7
+  conv1d_3_act: swish
+  pool_size_3: 4
+  output_strategy: flatten
+  dense_0_units: 250
+  dense_0_dropout: 0.0
+  dense_0_act: swish
+  dense_1_units: 250
+  dense_1_dropout: 0.4
+  dense_1_act: tanh
+  lr: 6.856840434152933e-05
+  batch_size: 64
+
+# v6_4:
+
+loss: 1.615399718284607
+num_params: 2763026
+model_size_mb: 10.540107727050781
+flops: 1876723542
+macs: 938361771
+sampler: TPESampler
+val_accuracy: 0.5977921485900879
+train_accuracy: 0.7295365929603577
+test_accuracy: 0.5932555198669434
+test_accuracy_full: 0.5933803915977478
+
+Trial hyperparameters:
+  conv1d_0_filters: 128
+  conv1d_0_kernel_size: 2
+  conv1d_0_act: swish
+  pool_size_0: 2
+  conv1d_1_filters: 256
+  conv1d_1_kernel_size: 3
+  conv1d_1_act: swish
+  pool_size_1: 3
+  conv1d_2_filters: 512
+  conv1d_2_kernel_size: 8
+  conv1d_2_act: relu
+  pool_size_2: 4
+  conv1d_3_filters: 128
+  conv1d_3_kernel_size: 3
+  conv1d_3_act: swish
+  pool_size_3: 4
+  output_strategy: flatten
+  dense_0_units: 250
+  dense_0_dropout: 0.0
+  dense_0_act: swish
+  dense_1_units: 200
+  dense_1_dropout: 0.5
+  dense_1_act: tanh
+  lr: 4.741086722880849e-05
+  batch_size: 64
+
+# v7_0:
+
+loss: 1.6423026323318481
+num_params: 1956654
+model_size_mb: 7.464042663574219
+flops: 151229438
+macs: 75614719
+sampler: TPESampler
+val_accuracy: 0.5937125086784363
+train_accuracy: 0.7434952259063721
+test_accuracy: 0.5984435677528381
+test_accuracy_full: 0.5997095108032227
+
+Trial hyperparameters:
+  conv1d_0_filters: 128
+  conv1d_0_kernel_size: 2
+  conv1d_0_act: swish
+  pool_size_0: 2
+  conv1d_1_filters: 64
+  conv1d_1_kernel_size: 2
+  conv1d_1_act: swish
+  pool_size_1: 2
+  conv1d_2_filters: 128
+  conv1d_2_kernel_size: 3
+  conv1d_2_act: swish
+  pool_size_2: 3
+  conv1d_3_filters: 64
+  conv1d_3_kernel_size: 3
+  conv1d_3_act: swish
+  pool_size_3: 3
+  dense_1_act: tanh
+  dense_2_units: 220
+  dense_2_act: swish
+  lr: 6.33383617701618e-05
+  batch_size: 64
+
+
+# v7_1:
+
+loss: 1.6364569664001465
+num_params: 2066228
+model_size_mb: 7.8820343017578125
+flops: 439841468
+macs: 219920734
+sampler: TPESampler
+val_accuracy: 0.5953923463821411
+train_accuracy: 0.7088777422904968
+test_accuracy: 0.5994811654090881
+test_accuracy_full: 0.5982568860054016
+
+Trial hyperparameters:
+  conv1d_0_filters: 256
+  conv1d_0_kernel_size: 2
+  conv1d_0_act: swish
+  pool_size_0: 2
+  conv1d_1_filters: 128
+  conv1d_1_kernel_size: 2
+  conv1d_1_act: swish
+  pool_size_1: 2
+  conv1d_2_filters: 128
+  conv1d_2_kernel_size: 4
+  conv1d_2_act: swish
+  pool_size_2: 3
+  conv1d_3_filters: 64
+  conv1d_3_kernel_size: 2
+  conv1d_3_act: swish
+  pool_size_3: 3
+  dense_1_act: tanh
+  dense_2_units: 270
+  dense_2_act: swish
+  lr: 4.785188995815529e-05
+  batch_size: 64
+
+
+# v7_2:
+
+loss: 1.6390979290008545
+num_params: 2066228
+model_size_mb: 7.8820343017578125
+flops: 439841468
+macs: 219920734
+sampler: TPESampler
+val_accuracy: 0.5910727381706238
+train_accuracy: 0.7535455226898193
+test_accuracy: 0.5985732674598694
+test_accuracy_full: 0.5973231196403503
+
+Trial hyperparameters:
+  conv1d_0_filters: 256
+  conv1d_0_kernel_size: 2
+  conv1d_0_act: swish
+  pool_size_0: 2
+  conv1d_1_filters: 128
+  conv1d_1_kernel_size: 2
+  conv1d_1_act: swish
+  pool_size_1: 2
+  conv1d_2_filters: 128
+  conv1d_2_kernel_size: 4
+  conv1d_2_act: swish
+  pool_size_2: 3
+  conv1d_3_filters: 64
+  conv1d_3_kernel_size: 2
+  conv1d_3_act: swish
+  pool_size_3: 3
+  dense_1_act: tanh
+  dense_2_units: 270
+  dense_2_act: swish
+  lr: 4.043224115103371e-05
+  batch_size: 64
+
+
+# v7_3:
+
+loss: 1.6364647150039673
+num_params: 2066228
+model_size_mb: 7.8820343017578125
+flops: 439841468
+macs: 219920734
+sampler: TPESampler
+val_accuracy: 0.5913127064704895
+train_accuracy: 0.7513121366500854
+test_accuracy: 0.5954604148864746
+test_accuracy_full: 0.5956630110740662
+
+Trial hyperparameters:
+  conv1d_0_filters: 256
+  conv1d_0_kernel_size: 2
+  conv1d_0_act: swish
+  pool_size_0: 2
+  conv1d_1_filters: 128
+  conv1d_1_kernel_size: 2
+  conv1d_1_act: swish
+  pool_size_1: 2
+  conv1d_2_filters: 128
+  conv1d_2_kernel_size: 4
+  conv1d_2_act: swish
+  pool_size_2: 3
+  conv1d_3_filters: 64
+  conv1d_3_kernel_size: 2
+  conv1d_3_act: swish
+  pool_size_3: 3
+  dense_1_act: tanh
+  dense_2_units: 270
+  dense_2_act: swish
+  lr: 4.7614338521817954e-05
+  batch_size: 64
+
+
+# v7_4:
+
+
+loss: 1.6368169784545898
+num_params: 3309614
+model_size_mb: 12.625175476074219
+flops: 3806610758
+macs: 1903305379
+sampler: TPESampler
+val_accuracy: 0.5920326113700867
+train_accuracy: 0.73891681432724
+test_accuracy: 0.5953307151794434
+test_accuracy_full: 0.5955592393875122
+
+Trial hyperparameters:
+  conv1d_0_filters: 512
+  conv1d_0_kernel_size: 2
+  conv1d_0_act: swish
+  pool_size_0: 2
+  conv1d_1_filters: 512
+  conv1d_1_kernel_size: 2
+  conv1d_1_act: swish
+  pool_size_1: 2
+  conv1d_2_filters: 512
+  conv1d_2_kernel_size: 3
+  conv1d_2_act: swish
+  pool_size_2: 3
+  conv1d_3_filters: 64
+  conv1d_3_kernel_size: 3
+  conv1d_3_act: swish
+  pool_size_3: 3
+  dense_1_act: tanh
+  dense_2_units: 220
+  dense_2_act: tanh
+  lr: 3.3081761752420775e-05
+  batch_size: 64
+
+
+# v7_5:
+
+
+loss: 1.6200929880142212
+num_params: 3804796
+model_size_mb: 14.514144897460938
+flops: 230920716
+macs: 115460358
+sampler: TPESampler
+val_accuracy: 0.6011518836021423
+train_accuracy: 0.7335566878318787
+test_accuracy: 0.6032425165176392
+test_accuracy_full: 0.6018883585929871
+
+Trial hyperparameters:
+  conv1d_0_filters: 128
+  conv1d_0_kernel_size: 2
+  conv1d_0_act: swish
+  pool_size_0: 2
+  conv1d_1_filters: 64
+  conv1d_1_kernel_size: 4
+  conv1d_1_act: swish
+  pool_size_1: 3
+  conv1d_2_filters: 128
+  conv1d_2_kernel_size: 4
+  conv1d_2_act: swish
+  pool_size_2: 4
+  conv1d_3_filters: 256
+  conv1d_3_kernel_size: 3
+  conv1d_3_act: swish
+  pool_size_3: 3
+  dense_1_act: swish
+  dense_2_units: 230
+  dense_2_act: tanh
+  lr: 4.165789817893476e-05
+  batch_size: 64
+
+
+# v7_6:
+
+loss: 1.6442322731018066
+num_params: 5591726
+model_size_mb: 21.33074188232422
+flops: 234494842
+macs: 117247421
+sampler: TPESampler
+val_accuracy: 0.5927525758743286
+train_accuracy: 0.8140703439712524
+test_accuracy: 0.6015564203262329
+test_accuracy_full: 0.5999169945716858
+
+Trial hyperparameters:
+  conv1d_0_filters: 128
+  conv1d_0_kernel_size: 2
+  conv1d_0_act: swish
+  pool_size_0: 2
+  conv1d_1_filters: 64
+  conv1d_1_kernel_size: 4
+  conv1d_1_act: swish
+  pool_size_1: 3
+  conv1d_2_filters: 128
+  conv1d_2_kernel_size: 4
+  conv1d_2_act: swish
+  pool_size_2: 4
+  conv1d_3_filters: 256
+  conv1d_3_kernel_size: 3
+  conv1d_3_act: swish
+  pool_size_3: 2
+  dense_1_act: swish
+  dense_2_units: 220
+  dense_2_act: tanh
+  lr: 3.53244050086663e-05
+  batch_size: 64
+
+
+# v7_7:
+
+
+loss: 1.6434835195541382
+num_params: 3799726
+model_size_mb: 14.494804382324219
+flops: 230910586
+macs: 115455293
+sampler: TPESampler
+val_accuracy: 0.5980321764945984
+train_accuracy: 0.7891680598258972
+test_accuracy: 0.5985732674598694
+test_accuracy_full: 0.5992944836616516
+
+Trial hyperparameters:
+  conv1d_0_filters: 128
+  conv1d_0_kernel_size: 2
+  conv1d_0_act: swish
+  pool_size_0: 2
+  conv1d_1_filters: 64
+  conv1d_1_kernel_size: 4
+  conv1d_1_act: swish
+  pool_size_1: 3
+  conv1d_2_filters: 128
+  conv1d_2_kernel_size: 4
+  conv1d_2_act: swish
+  pool_size_2: 4
+  conv1d_3_filters: 256
+  conv1d_3_kernel_size: 3
+  conv1d_3_act: swish
+  pool_size_3: 3
+  dense_1_act: swish
+  dense_2_units: 220
+  dense_2_act: tanh
+  lr: 4.1534587682689614e-05
+  batch_size: 64
