@@ -9,6 +9,7 @@ Example usage:
 # ———————————————————————————— Standard Libraries ———————————————————————————— #
 import gc, math, signal, shutil, traceback, subprocess
 from IPython.display import clear_output, display, HTML, Image
+from pathlib import Path
 
 # ———————————————————————————————— Annotations ——————————————————————————————— #
 from typing import *
@@ -76,7 +77,8 @@ from araras.optuna.analyze import analyze_study
 from araras.email.utils import send_email, notify_training_success
 
 # Monitoring
-from araras.kernel.monitoring import start_monitor, stop_monitor
+#? If you want a headless monitoring, use the `headless_monitoring` module
+from araras.kernel.terminal_monitoring import start_monitor, stop_monitor
 
 # Plotting
 from araras.plot.configs import config_plt
