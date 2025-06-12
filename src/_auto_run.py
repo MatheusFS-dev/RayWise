@@ -11,7 +11,7 @@ Usage example:
     )
 
 Command line usage:
-    python _auto_run.py ./nas_cnn1d_flat_v9.ipynb
+    python _auto_run.py nas_cnn1d_flat_v9.ipynb --title "ML Training"
 """
 
 import argparse

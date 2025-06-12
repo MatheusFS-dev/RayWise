@@ -13,3 +13,4 @@
 ### Paper Writing
 
 - Prove that the work from batool might have been luck. Use k-fold cross-validation to show the variance (s009), or another statistical method.
+- Use images too, take the dataset from batool git, with the labels. !!!!!!!!!!!!!!!!!!!!
