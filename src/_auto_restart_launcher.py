@@ -21,15 +21,15 @@ def main():
     parser.add_argument("file_path", type=str, help="Path to the file to run")
     parser.add_argument("--success-flag-file", default="/tmp/success.flag", help="Path to success flag file")
     parser.add_argument("--title", default="ML Training", help="Title for the application")
-    parser.add_argument("--max-restarts", type=int, default=10, help="Maximum number of restarts")
-    parser.add_argument("--restart-delay", type=float, default=5.0, help="Delay between restarts in seconds")
+    parser.add_argument("--max-restarts", type=int, default=3, help="Maximum number of restarts")
+    parser.add_argument("--restart-delay", type=float, default=10.0, help="Delay between restarts in seconds")
 
     args = parser.parse_args()
 
     run_auto_restart(
         file_path=args.file_path,
         success_flag_file=args.success_flag_file,
-        title=args.title,
+        title=args.title if args.title else args.file_path,
         max_restarts=args.max_restarts,
         restart_delay=args.restart_delay,
     )
