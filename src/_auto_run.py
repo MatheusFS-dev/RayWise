@@ -10,6 +10,8 @@ Usage example:
         restart_delay=5.0,
     )
 
+Command line usage:
+    python _auto_run.py ./nas_cnn1d_flat_v9.ipynb
 """
 
 import argparse
