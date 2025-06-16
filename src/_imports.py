@@ -27,6 +27,9 @@ import pretty_errors
 
 # —————————————————————————————— DATA PROCESSING ————————————————————————————— #
 import fireducks.pandas as pd
+import matplotlib
+
+matplotlib.use("Agg")  # Use non-interactive backend
 import matplotlib.pyplot as plt
 import numpy as np
 import scipy

@@ -11,7 +11,7 @@ Usage example:
     )
 
 Command line usage:
-    python _auto_run.py nas_cnn1d_flat_v9.ipynb --title "ML Training"
+    python _auto_run.py nas_cnn1d_flat_v9.ipynb --title "ML Training" --restart-after-delay 120
 """
 
 import argparse
@@ -25,6 +25,7 @@ def main():
     parser.add_argument("--title", default=None, help="Title for the application")
     parser.add_argument("--max-restarts", type=int, default=3, help="Maximum number of restarts")
     parser.add_argument("--restart-delay", type=float, default=10.0, help="Delay between restarts in seconds")
+    parser.add_argument("--restart-after-delay", type=float, default=0.0, help="Restart run after delay in seconds")
 
     args = parser.parse_args()
 
@@ -34,6 +35,7 @@ def main():
         title=args.title if args.title else args.file_path,
         max_restarts=args.max_restarts,
         restart_delay=args.restart_delay,
+        restart_after_delay=args.restart_after_delay,
     )
 
 
