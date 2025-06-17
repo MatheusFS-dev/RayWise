@@ -85,7 +85,7 @@ from araras.keras.callbacks.nan_loss_pruner import NanLossPrunerCallback
 from araras.keras.hparams import HParams
 
 # Model analysis and optimization
-from araras.keras.utils.profiler import get_flops, get_macs
+from araras.keras.utils.profiler import get_flops, get_macs, get_memory_and_time
 from araras.keras.utils.punish import (
     compute_flops_penalized_loss,
     compute_params_penalized_loss,
@@ -117,6 +117,14 @@ from araras.utils.misc import (
     format_bytes,
     format_number_commas,
 )
+
+# ————————————————————————————————— Optional ————————————————————————————————— #
+try:
+    import pretty_errors
+except ImportError:
+    print(
+        "WARNING: pretty_errors not found. Install it with `pip install pretty-errors` for better error formatting."
+    )
 
 # ————————————————————————————— PROJECT SPECIFIC ————————————————————————————— #
 from _load_dataset import load_dataset_sparse_labels
