@@ -1,0 +1,12 @@
+"Parameter","Category","Fraction","Count"
+params_conv1d_0_act,swish,0.96,48
+params_conv1d_0_act,tanh,0.04,2
+params_conv1d_1_act,swish,1,50
+params_conv1d_2_act,swish,0.96,48
+params_conv1d_2_act,tanh,0.04,2
+params_conv1d_3_act,swish,0.96,48
+params_conv1d_3_act,tanh,0.04,2
+params_dense_1_act,swish,0.94,47
+params_dense_1_act,tanh,0.06,3
+params_dense_2_act,tanh,0.96,48
+params_dense_2_act,swish,0.04,2

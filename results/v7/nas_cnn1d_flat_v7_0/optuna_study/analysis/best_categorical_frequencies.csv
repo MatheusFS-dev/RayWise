@@ -1,8 +1,0 @@
-Parameter,Category,Fraction,Count
-params_conv1d_0_act,swish,1.0,72
-params_conv1d_1_act,swish,1.0,72
-params_conv1d_2_act,swish,1.0,72
-params_conv1d_3_act,swish,1.0,72
-params_dense_1_act,tanh,1.0,72
-params_dense_2_act,swish,0.9722222222222222,70
-params_dense_2_act,tanh,0.027777777777777776,2

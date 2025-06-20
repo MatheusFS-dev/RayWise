@@ -1,15 +1,19 @@
-rank: 4
-trial_id: 480
-loss: 1.672059416770935
-num_params: 2074904
-model_size_mb: 7.915130615234375
-flops: 668937008
-macs: 334468504
-sampler: TPESampler
-val_accuracy: 0.5841132998466492
-train_accuracy: 0.7335566878318787
-test_accuracy: 0.5963683724403381
-test_accuracy_full: 0.593484103679657
+Rank: 4
+Trial ID: 480
+Loss: 1.6720594168
+Number of parameters: 2,074,904
+Model size: Invalid input: '<' not supported between instances of 'NoneType' and 'int'
+FLOPs: 668.94 MFLOPs
+MACs: 334.47 MMACs
+Peak memory usage: Invalid input: '<' not supported between instances of 'NoneType' and 'int'
+Inference time: Invalid input: must be real number, not NoneTypes
+Sampler: TPESampler
+best_train_accuracy: 0.7335566878318787
+best_val_accuracy: 0.5841132998466492
+test_accuracy_s009: 0.5963683724403381
+test_accuracy_s009_full: 0.593484103679657
+
+Model summary: None
 
 Trial hyperparameters:
   conv1d_0_filters: 128
