@@ -108,7 +108,7 @@ from araras.plot.configs import config_plt
 
 # Utility functions
 from araras.utils.dir import create_run_directory
-from araras.utils.gpu import get_gpu_info
+from araras.utils.gpu import get_gpu_info, get_user_gpu_choice
 from araras.utils.logs import log_resources
 from araras.utils.misc import (
     clear,
