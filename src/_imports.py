@@ -91,6 +91,7 @@ from araras.keras.utils.punish import (
     compute_params_penalized_loss,
 )
 from araras.keras.utils.summary import capture_model_summary
+from araras.tensorflow.utils.model import get_model_usage_stats
 
 # Araras Optuna utilities
 from araras.optuna.analyze import analyze_study

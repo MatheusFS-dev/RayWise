@@ -11,8 +11,17 @@ Usage example:
     )
 
 Command line usage:
-    python _auto_run.py nas_cnn1d_flat_v9.ipynb --title "ML Training" --restart-after-delay 120
+    sudo python _auto_run.py nas_cnn1d_flat_v9.ipynb --title "ML Training"
+
+    For Anaconda environments, use:
+    sudo /home/matheus/anaconda3/envs/tf-optuna/bin/python _auto_run.py nas_cnn1d_flat_v9.ipynb --title "ML Training"
 """
+
+import sys
+
+print("\n\033[91mRun this script with sudo!!\033[0m")
+print(f"\033[94m{sys.executable} is running this script\033[0m")
+print("\033[93mWARNING: If using Anaconda Python environment, ensure you are using the correct Python interpreter.\033[0m\n")
 
 import argparse
 from araras.kernel.monitoring import run_auto_restart
@@ -24,8 +33,10 @@ def main():
     parser.add_argument("--success-flag-file", default="/tmp/success.flag", help="Path to success flag file")
     parser.add_argument("--title", default=None, help="Title for the application")
     parser.add_argument("--max-restarts", type=int, default=10, help="Maximum number of restarts")
-    parser.add_argument("--restart-delay", type=float, default=3.0, help="Delay between restarts in seconds")
-    parser.add_argument("--restart-after-delay", type=float, default=7200.0, help="Restart run after delay in seconds")
+    parser.add_argument("--restart-delay", type=float, default=10.0, help="Delay between restarts in seconds")
+    parser.add_argument("--restart-after-delay", type=float, default=3600.0, help="Restart run after delay in seconds")
+    
+   
 
     args = parser.parse_args()
 
