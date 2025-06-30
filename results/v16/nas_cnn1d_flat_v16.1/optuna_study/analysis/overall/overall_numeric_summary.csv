@@ -1,0 +1,21 @@
+Parameter,Mean,Std,Median,Min (25% quantile),Max (75% quantile),Min (5% quantile),Max (95% quantile)
+params_conv1d_0_filters,296.75,120.85,256,256,256,128,512
+params_conv1d_0_kernel_size,2.03,0.17,2,2,2,2,2
+params_conv1d_1_filters,428.73,153.78,512,512,512,128,512
+params_conv1d_1_kernel_size,3.05,0.29,3,3,3,3,4
+params_conv1d_2_filters,230.75,105.93,256,128,256,64,512
+params_conv1d_2_kernel_size,4.89,2.86,4,2,8,2,8
+params_conv1d_3_filters,76.18,37.43,64,64,64,64,128
+params_conv1d_3_kernel_size,4.0,0.59,4,4,4,3,5
+params_dense_0_dropout,1.88e-02,7.38e-02,0,0,0,0,0.17
+params_dense_0_units,209.41,33.95,200,200,200,200,285
+params_dense_1_dropout,0.24,6.68e-02,0.2,0.2,0.3,0.2,0.3
+params_dense_1_units,387.73,33.96,400,400,400,300,400
+params_ffn_units,224.33,201.62,64,64,512,64,512
+params_key_dim,43.07,23.51,32,32,32,32,102.4
+params_lr,3.57e-05,6.12e-06,3.42e-05,3.19e-05,3.72e-05,3.06e-05,4.55e-05
+params_num_dense_layers,1.95,0.25,2,2,2,2,2
+params_num_heads,8.01,1.99,8,8,8,4,8
+params_pool_size_1,2.19,0.73,2,2,2,2,5
+params_pool_size_2,3.19,0.5,3,3,3,3,4
+params_pool_size_3,3.0,0.48,3,3,3,2,4
