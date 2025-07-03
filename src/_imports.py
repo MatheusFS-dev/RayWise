@@ -79,6 +79,7 @@ from optuna.integration import KerasPruningCallback
 # Model builders
 from araras.keras.builders.cnn import build_cnn1d, build_dense_as_conv1d
 from araras.keras.builders.dnn import build_dnn
+from araras.keras.builders.se import build_squeeze_excite_1d
 
 # Callbacks and utilities
 from araras.keras.callbacks.nan_loss_pruner import NanLossPrunerCallback
