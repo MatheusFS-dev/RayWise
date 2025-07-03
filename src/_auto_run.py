@@ -19,7 +19,7 @@ Command line usage:
 
 import sys
 
-print("\n\033[91mRun this script with sudo!!\033[0m")
+print("\n\033[91mRun this script with sudo if using CPU to measure model stats!!\033[0m")
 print(f"\033[94m{sys.executable} is running this script\033[0m")
 print("\033[93mWARNING: If using Anaconda Python environment, ensure you are using the correct Python interpreter.\033[0m\n")
 
@@ -36,8 +36,6 @@ def main():
     parser.add_argument("--restart-delay", type=float, default=10.0, help="Delay between restarts in seconds")
     parser.add_argument("--restart-after-delay", type=float, default=3600.0, help="Restart run after delay in seconds")
     
-   
-
     args = parser.parse_args()
 
     run_auto_restart(
@@ -47,6 +45,7 @@ def main():
         max_restarts=args.max_restarts,
         restart_delay=args.restart_delay,
         restart_after_delay=args.restart_after_delay,
+        supress_tf_warnings=True,
     )
 
 
