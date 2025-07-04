@@ -74,6 +74,7 @@ from tensorflow.python.profiler.option_builder import ProfileOptionBuilder
 import optuna
 from optuna.trial import TrialState
 from optuna.integration import KerasPruningCallback
+from optuna.terminator import report_cross_validation_scores
 
 # ——————————————————————————————— ARARAS MODULE —————————————————————————————— #
 # Model builders

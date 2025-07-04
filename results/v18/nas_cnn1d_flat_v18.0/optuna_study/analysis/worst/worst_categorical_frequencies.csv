@@ -1,4 +1,4 @@
-"Parameter","Category","Fraction","Count"
+Parameter,Category,Fraction,Count
 params_conv1d_0_act,relu,0.7037,38
 params_conv1d_0_act,swish,0.2407,13
 params_conv1d_0_act,tanh,0.0556,3

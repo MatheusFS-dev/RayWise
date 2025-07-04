@@ -6,7 +6,9 @@ Model size: 12.46 MB
 FLOPs: 1.90 GFLOPs
 MACs: 949.40 MMACs
 Peak memory usage: 1.28 GB
-Inference time: 3.7943×10^-2s
+Inference time: 3.7943×10^-2 s
+Average power consumption: Invalid input: must be real number, not NoneType W
+Average energy consumption: Invalid input: must be real number, not NoneType J
 Sampler: TPESampler
 best_train_accuracy: 0.7592406272888184
 best_val_accuracy: 0.5637149214744568

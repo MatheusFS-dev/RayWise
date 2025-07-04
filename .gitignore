@@ -21,6 +21,7 @@ runs/
 *.keras
 automodel/
 models/
+standalone/
 
 # Sensitive files
 credentials.json

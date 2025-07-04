@@ -12,8 +12,8 @@ params_conv1d_3_filters,226.37,64.26,256,256,256,64,256
 params_conv1d_3_kernel_size,4.96,0.19,5,5,5,5,5
 params_dense_0_dropout,0.41,3.81e-02,0.4,0.4,0.4,0.4,0.5
 params_dense_0_units,300,9.71,300,300,300,300,300
-params_dense_1_dropout,,,,,,,
-params_dense_1_units,,,,,,,
+params_dense_1_dropout,No data,No data,No data,No data,No data,No data,No data
+params_dense_1_units,No data,No data,No data,No data,No data,No data,No data
 params_lr,4.63e-05,2.95e-06,4.61e-05,4.46e-05,4.85e-05,4.18e-05,5.05e-05
 params_num_dense_layers,1,0,1,1,1,1,1
 params_pool_size_1,5,0,5,5,5,5,5
