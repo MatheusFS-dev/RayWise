@@ -78,6 +78,7 @@ from optuna.terminator import report_cross_validation_scores
 from araras.keras.builders.cnn import build_cnn1d, build_dense_as_conv1d
 from araras.keras.builders.dnn import build_dnn
 from araras.keras.builders.se import build_squeeze_excite_1d
+from araras.keras.builders.gnn import build_knn_adjacency, build_cheb
 
 # Callbacks and utilities
 from araras.keras.callbacks.nan_loss_pruner import NanLossPrunerCallback
@@ -102,6 +103,7 @@ from araras.optuna.utils import (
     rename_top_k_files,
     save_top_k_trials,
 )
+from araras.optuna.callbacks.improvement_stagnation import ImprovementStagnationCallback
 
 # Plotting configuration
 from araras.plot.configs import config_plt
