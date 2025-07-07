@@ -22,9 +22,6 @@ from typing import *
 # ————————————————————————————— JUPYTER / IPYTHON ———————————————————————————— #
 from IPython.display import HTML, Image, clear_output, display
 
-# —————————————————————————————— ERROR HANDLING —————————————————————————————— #
-import pretty_errors
-
 # —————————————————————————————— DATA PROCESSING ————————————————————————————— #
 import fireducks.pandas as pd
 import matplotlib
@@ -120,14 +117,6 @@ from araras.utils.misc import (
     format_bytes,
     format_number_commas,
 )
-
-# ————————————————————————————————— Optional ————————————————————————————————— #
-try:
-    import pretty_errors
-except ImportError:
-    print(
-        "WARNING: pretty_errors not found. Install it with `pip install pretty-errors` for better error formatting."
-    )
 
 # ————————————————————————————— PROJECT SPECIFIC ————————————————————————————— #
 from _load_dataset import load_dataset_sparse_labels
