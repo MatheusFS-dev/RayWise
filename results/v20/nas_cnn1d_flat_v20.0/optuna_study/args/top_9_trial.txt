@@ -1,0 +1,121 @@
+Rank: 9
+Trial ID: 480
+Loss: 2.1185848713
+Number of parameters: 687,362
+Model size: 2.62 MB
+FLOPs: 2.17 GFLOPs
+MACs: 1.08 GMACs
+Peak memory usage: 1.49 GB
+Inference time: 1.5597×10^-1 s
+Average power consumption: 1.6961×10^1 W
+Average energy consumption: 7.4209×10^-1 J
+Sampler: TPESampler
+best_train_accuracy: 0.5459519624710083
+best_val_accuracy: 0.5682745575904846
+test_accuracy_s009: 0.5761348605155945
+test_accuracy_s009_full: 0.5805146098136902
+
+Model summary: Model: "functional"
+┏━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━┓
+┃ Layer (type)      ┃ Output Shape    ┃   Param # ┃ Connected to   ┃ Trai… ┃
+┡━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━━━━━━━━━╇━━━━━━━┩
+│ lidar_input       │ (None, 20, 200, │         0 │ -              │   -   │
+│ (InputLayer)      │ 10)             │           │                │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ lidar_transform_… │ (None, 20, 200, │         0 │ lidar_input[0… │   -   │
+│ (Lambda)          │ 4)              │           │                │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ coord_input       │ (None, 2)       │         0 │ -              │   -   │
+│ (InputLayer)      │                 │           │                │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ lidar_flatten_4_… │ (None, 4000, 4) │         0 │ lidar_transfo… │   -   │
+│ (Reshape)         │                 │           │                │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ coord_tile_flat   │ (None, 4000, 2) │         0 │ coord_input[0… │   -   │
+│ (Lambda)          │                 │           │                │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ combine_lidar_co… │ (None, 4000, 6) │         0 │ lidar_flatten… │   -   │
+│ (Concatenate)     │                 │           │ coord_tile_fl… │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ graph_masking     │ [(None, 4000,   │         0 │ combine_lidar… │   -   │
+│ (GraphMasking)    │ 5), (4000,      │           │                │       │
+│                   │ 4000)]          │           │                │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ get_item          │ (None, 4000, 1) │         0 │ combine_lidar… │   -   │
+│ (GetItem)         │                 │           │                │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ cheb_0 (ChebConv) │ (None, 4000,    │     6,656 │ graph_masking… │   Y   │
+│                   │ 256)            │           │ graph_masking… │       │
+│                   │                 │           │ get_item[0][0] │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ cheb_0_dropout    │ (None, 4000,    │         0 │ cheb_0[0][0]   │   -   │
+│ (Dropout)         │ 256)            │           │                │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ cheb_1 (ChebConv) │ (None, 4000,    │   262,400 │ cheb_0_dropou… │   Y   │
+│                   │ 256)            │           │ graph_masking… │       │
+│                   │                 │           │ get_item[0][0] │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ cheb_1_dropout    │ (None, 4000,    │         0 │ cheb_1[0][0]   │   -   │
+│ (Dropout)         │ 256)            │           │                │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ global_pool       │ (None, 256)     │         0 │ cheb_1_dropou… │   -   │
+│ (GlobalAvgPool)   │                 │           │                │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ dense_0 (Dense)   │ (None, 400)     │   102,800 │ global_pool[0… │   Y   │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ dense_0_act       │ (None, 400)     │         0 │ dense_0[0][0]  │   -   │
+│ (Activation)      │                 │           │                │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ dense_0_dropout   │ (None, 400)     │         0 │ dense_0_act[0… │   -   │
+│ (Dropout)         │                 │           │                │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ dense_1 (Dense)   │ (None, 300)     │   120,300 │ dense_0_dropo… │   Y   │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ dense_1_act       │ (None, 300)     │         0 │ dense_1[0][0]  │   -   │
+│ (Activation)      │                 │           │                │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ dense_1_dropout   │ (None, 300)     │         0 │ dense_1_act[0… │   -   │
+│ (Dropout)         │                 │           │                │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ dense_2 (Dense)   │ (None, 350)     │   105,350 │ dense_1_dropo… │   Y   │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ dense_2_act       │ (None, 350)     │         0 │ dense_2[0][0]  │   -   │
+│ (Activation)      │                 │           │                │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ dense_2_dropout   │ (None, 350)     │         0 │ dense_2_act[0… │   -   │
+│ (Dropout)         │                 │           │                │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ output (Dense)    │ (None, 256)     │    89,856 │ dense_2_dropo… │   Y   │
+└───────────────────┴─────────────────┴───────────┴────────────────┴───────┘
+ Total params: 1,374,726 (5.24 MB)
+ Trainable params: 687,362 (2.62 MB)
+ Non-trainable params: 0 (0.00 B)
+ Optimizer params: 687,364 (2.62 MB)
+
+
+Trial hyperparameters:
+  adjacency_type: knn
+  knn_k: 16
+  num_gcn_layers: 3
+  layer_0_type: cheb
+  cheb_0_units: 256
+  cheb_0_activation: relu
+  cheb_0_dropout: 0.2
+  cheb_0_K: 5
+  layer_1_type: cheb
+  cheb_1_units: 256
+  cheb_1_activation: swish
+  cheb_1_dropout: 0.4
+  cheb_1_K: 4
+  layer_2_type: none
+  num_dense_layers: 3
+  dense_0_units: 400
+  dense_0_dropout: 0.0
+  dense_0_act: tanh
+  dense_1_units: 300
+  dense_1_dropout: 0.0
+  dense_1_act: None
+  dense_2_units: 350
+  dense_2_dropout: 0.0
+  dense_2_act: relu
+  lr: 7.050531253295164e-05
