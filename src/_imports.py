@@ -8,32 +8,20 @@ Example usage:
     from _imports import *
 """
 
-# ————————————————————————————— STANDARD LIBRARY ————————————————————————————— #
-import gc
-import math
-import shutil
-import signal
-import subprocess
-import traceback
-from contextlib import redirect_stdout
-from pathlib import Path
 from typing import *
 
-# ————————————————————————————— JUPYTER / IPYTHON ———————————————————————————— #
-from IPython.display import HTML, Image, clear_output, display
+# ————————————————————————————— STANDARD LIBRARY ————————————————————————————— #
+import gc
+import shutil
+import traceback
+from pathlib import Path
 
 # —————————————————————————————— DATA PROCESSING ————————————————————————————— #
-import fireducks.pandas as pd
-import matplotlib
-
-matplotlib.use("Agg")  # Use non-interactive backend
-import matplotlib.pyplot as plt
 import numpy as np
-import scipy
-import seaborn as sns
+import fireducks.pandas as pd
+import matplotlib.pyplot as plt
 
 # ———————————————————————— Scikit-learn preprocessing ———————————————————————— #
-from sklearn.decomposition import PCA
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import (
     MinMaxScaler,
@@ -45,9 +33,6 @@ from sklearn.preprocessing import (
 
 # ———————————————————————————————— TENSORFLOW ———————————————————————————————— #
 import tensorflow as tf
-
-# Configure TensorFlow logging
-tf.get_logger().setLevel("ERROR")
 
 # Keras core modules
 from tensorflow.keras import (
@@ -63,63 +48,46 @@ from tensorflow.keras import (
 )
 from tensorflow.keras.backend import clear_session
 
-# TensorFlow profiling
-from tensorflow.python.profiler.model_analyzer import profile
-from tensorflow.python.profiler.option_builder import ProfileOptionBuilder
-
 # ———————————————————————— HYPERPARAMETER OPTIMIZATION ——————————————————————— #
 import optuna
+import optunahub
 from optuna.trial import TrialState
 from optuna.integration import KerasPruningCallback
 from optuna.terminator import report_cross_validation_scores
 
 # ——————————————————————————————— ARARAS MODULE —————————————————————————————— #
 # Model builders
-from araras.keras.builders.cnn import build_cnn1d, build_dense_as_conv1d
-from araras.keras.builders.dnn import build_dnn
-from araras.keras.builders.se import build_squeeze_excite_1d
-from araras.keras.builders.gnn import build_knn_adjacency, build_cheb
+from araras.keras.builders.cnn import *
+from araras.keras.builders.dnn import *
+from araras.keras.builders.se import *
+from araras.keras.builders.gnn import *
 
 # Callbacks and utilities
-from araras.keras.callbacks.nan_loss_pruner import NanLossPrunerCallback
 from araras.keras.hparams import HParams
+from araras.keras.callbacks.nan_loss_pruner import NanLossPrunerCallback
 
 # Model analysis and optimization
-from araras.keras.utils.profiler import get_flops, get_macs, get_memory_and_time
-from araras.keras.utils.punish import (
-    compute_flops_penalized_loss,
-    compute_params_penalized_loss,
-)
-from araras.keras.utils.summary import capture_model_summary
-from araras.tensorflow.utils.model import get_model_usage_stats
+from araras.keras.utils.profiler import *
+from araras.keras.utils.punish import *
+from araras.keras.utils.summary import *
+from araras.tensorflow.utils.model import *
 
 # Araras Optuna utilities
+from araras.optuna.utils import *
 from araras.optuna.analysis.analyze import analyze_study
-from araras.optuna.viz.study_report import report
-from araras.optuna.utils import (
-    cleanup_non_top_trials,
-    get_remaining_trials,
-    get_top_trials,
-    init_study_dirs,
-    rename_top_k_files,
-    save_top_k_trials,
-)
+from araras.optuna.keras.model_stats import get_model_stats
+from araras.optuna.callbacks.keep_being_pruned import StopIfKeepBeingPruned
 from araras.optuna.callbacks.improvement_stagnation import ImprovementStagnationCallback
 
+
 # Plotting configuration
-from araras.plot.configs import config_plt
+from araras.plot.configs import *
 
 # Utility functions
-from araras.utils.dir import create_run_directory
-from araras.utils.gpu import get_gpu_info, get_user_gpu_choice
-from araras.utils.logs import log_resources
-from araras.utils.misc import (
-    clear,
-    format_number,
-    format_scientific,
-    format_bytes,
-    format_number_commas,
-)
+from araras.utils.dir import *
+from araras.utils.gpu import *
+from araras.utils.logs import *
+from araras.utils.misc import *
 
 # ————————————————————————————— PROJECT SPECIFIC ————————————————————————————— #
 from _load_dataset import load_dataset_sparse_labels
