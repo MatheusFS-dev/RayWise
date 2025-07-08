@@ -1,0 +1,43 @@
+Parameter,Mean,Std,Median,Min (25% quantile),Max (75% quantile),Min (5% quantile),Max (95% quantile)
+params_cheb_0_K,5,,5,5,5,5,5
+params_cheb_0_dropout,0.5,,0.5,0.5,0.5,0.5,0.5
+params_cheb_0_units,128,,128,128,128,128,128
+params_cheb_1_K,3.96,0.54,4,4,4,3.2,4.8
+params_cheb_1_dropout,0.18,9.87e-02,0.2,0.1,0.2,0.1,0.4
+params_cheb_1_units,256,0,256,256,256,256,256
+params_cheb_2_K,No data,No data,No data,No data,No data,No data,No data
+params_cheb_2_dropout,No data,No data,No data,No data,No data,No data,No data
+params_cheb_2_units,No data,No data,No data,No data,No data,No data,No data
+params_cheb_3_K,No data,No data,No data,No data,No data,No data,No data
+params_cheb_3_dropout,No data,No data,No data,No data,No data,No data,No data
+params_cheb_3_units,No data,No data,No data,No data,No data,No data,No data
+params_dense_0_dropout,0.35,9.05e-02,0.4,0.25,0.4,0.2,0.4
+params_dense_0_units,361.54,65.28,400,325,400,250,400
+params_dense_1_dropout,0.22,5.43e-02,0.2,0.2,0.2,0.2,0.35
+params_dense_1_units,303.85,19.61,300,300,300,300,300
+params_dense_2_dropout,0.2,5.90e-02,0.2,0.2,0.2,0.2,0.2
+params_dense_2_units,306.25,22.42,300,300,300,300,342.5
+params_gat_0_dropout,No data,No data,No data,No data,No data,No data,No data
+params_gat_0_heads,No data,No data,No data,No data,No data,No data,No data
+params_gat_0_units,No data,No data,No data,No data,No data,No data,No data
+params_gat_1_dropout,No data,No data,No data,No data,No data,No data,No data
+params_gat_1_heads,No data,No data,No data,No data,No data,No data,No data
+params_gat_1_units,No data,No data,No data,No data,No data,No data,No data
+params_gat_2_dropout,No data,No data,No data,No data,No data,No data,No data
+params_gat_2_heads,No data,No data,No data,No data,No data,No data,No data
+params_gat_2_units,No data,No data,No data,No data,No data,No data,No data
+params_gat_3_dropout,No data,No data,No data,No data,No data,No data,No data
+params_gat_3_heads,No data,No data,No data,No data,No data,No data,No data
+params_gat_3_units,No data,No data,No data,No data,No data,No data,No data
+params_gcn_0_dropout,5.20e-02,0.12,0,0,0,0,0.3
+params_gcn_0_units,110.08,29.33,128,64,128,64,128
+params_gcn_1_dropout,No data,No data,No data,No data,No data,No data,No data
+params_gcn_1_units,No data,No data,No data,No data,No data,No data,No data
+params_gcn_2_dropout,No data,No data,No data,No data,No data,No data,No data
+params_gcn_2_units,No data,No data,No data,No data,No data,No data,No data
+params_gcn_3_dropout,No data,No data,No data,No data,No data,No data,No data
+params_gcn_3_units,No data,No data,No data,No data,No data,No data,No data
+params_knn_k,7.38,1.86,8,8,8,4,8
+params_lr,7.14e-05,7.87e-06,7.39e-05,6.57e-05,7.82e-05,5.65e-05,7.90e-05
+params_num_dense_layers,2.92,0.27,3,3,3,2.25,3
+params_num_gcn_layers,2.08,0.27,2,2,2,2,2.75
