@@ -94,7 +94,8 @@ from araras.keras.utils.summary import capture_model_summary
 from araras.tensorflow.utils.model import get_model_usage_stats
 
 # Araras Optuna utilities
-from araras.optuna.analyze import analyze_study
+from araras.optuna.analysis.analyze import analyze_study
+from araras.optuna.viz.study_report import report
 from araras.optuna.utils import (
     cleanup_non_top_trials,
     get_remaining_trials,
