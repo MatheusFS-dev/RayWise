@@ -33,8 +33,8 @@ def main():
     parser.add_argument("--success-flag-file", default="/tmp/success.flag", help="Path to success flag file")
     parser.add_argument("--title", default=None, help="Title for the application")
     parser.add_argument("--max-restarts", type=int, default=10, help="Maximum number of restarts")
-    parser.add_argument("--restart-delay", type=float, default=10.0, help="Delay between restarts in seconds")
-    parser.add_argument("--restart-after-delay", type=float, default=3600.0, help="Restart run after delay in seconds")
+    parser.add_argument("--restart-delay", type=float, default=5.0, help="Delay between restarts in seconds")
+    parser.add_argument("--restart-after-delay", type=float, default=7200.0, help="Restart run after delay in seconds")
     
     args = parser.parse_args()
 
