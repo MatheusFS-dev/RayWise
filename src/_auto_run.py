@@ -51,6 +51,7 @@ def main():
         restart_delay=args.restart_delay,
         restart_after_delay=args.restart_after_delay,
         supress_tf_warnings=True,
+        resource_usage_log_file=f"{args.title}.log" if args.title else f"{args.file_path}.log"
     )
 
 
