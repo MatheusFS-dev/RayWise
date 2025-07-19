@@ -84,7 +84,7 @@ from araras.ml.optuna.model_tools import set_user_attr_model_stats
 from araras.visualization.configs import config_plt
 
 # Utility functions
-
+from araras.utils.io import get_caller_stem
 from araras.utils.system import get_gpu_info, log_resources
 from araras.utils.misc import clear
 

@@ -15,6 +15,7 @@ __pycache__/
 # Logging and runtime directories
 logs/
 runs/
+temp/
 
 # Model files and directories
 *.h5
