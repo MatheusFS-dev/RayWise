@@ -12,10 +12,11 @@ __pycache__/
 # IDE directories
 .vscode/
 
-# Logging and runtime directories
+# Logging and runtime directories and files
 logs/
 runs/
 temp/
+temp_*
 
 # Model files and directories
 *.h5
