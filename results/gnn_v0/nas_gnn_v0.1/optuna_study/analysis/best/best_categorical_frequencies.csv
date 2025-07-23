@@ -1,0 +1,11 @@
+Parameter,Category,Fraction,Count
+params_cheb_0_act,elu,0.5,1
+params_cheb_0_act,tanh,0.5,1
+params_cheb_1_act,elu,0.5,1
+params_cheb_1_act,relu,0.5,1
+params_dense_0_act,gelu,1.0,2
+params_dense_1_act,none,0.5,1
+params_dense_1_act,silu,0.5,1
+params_dense_2_act,tanh,0.5,1
+params_dense_2_act,elu,0.5,1
+params_optimizer,lion,1.0,2
