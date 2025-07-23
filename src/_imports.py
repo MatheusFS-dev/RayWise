@@ -76,6 +76,7 @@ from araras.ml.optuna.utils import (
     get_top_trials,
     save_top_k_trials,
     init_study_dirs,
+    log_trial_error,
 )
 from araras.ml.optuna.analyzer import analyze_study
 from araras.ml.optuna.model_tools import set_user_attr_model_stats

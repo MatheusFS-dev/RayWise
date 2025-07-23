@@ -1,9 +1,0 @@
-Parameter,Category,Fraction,Count
-params_conv1d_0_act,gelu,1.0,3
-params_conv1d_1_act,silu,1.0,3
-params_conv1d_2_act,relu,1.0,2
-params_dense_0_act,sigmoid,0.6667,2
-params_dense_0_act,silu,0.3333,1
-params_dense_1_act,relu,1.0,3
-params_optimizer,adamw,0.6667,2
-params_optimizer,adam,0.3333,1
