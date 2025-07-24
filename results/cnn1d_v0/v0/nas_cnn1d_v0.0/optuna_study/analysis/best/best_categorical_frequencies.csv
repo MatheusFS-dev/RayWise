@@ -1,0 +1,11 @@
+Parameter,Category,Fraction,Count
+params_conv1d_0_act,none,0.75,3
+params_conv1d_0_act,relu,0.25,1
+params_conv1d_1_act,none,1.0,4
+params_conv1d_2_act,elu,0.75,3
+params_conv1d_2_act,sigmoid,0.25,1
+params_conv1d_3_act,gelu,1.0,4
+params_dense_0_act,sigmoid,1.0,4
+params_dense_1_act,relu,1.0,4
+params_optimizer,adamw,1.0,4
+params_pooling_type,flatten,1.0,4
