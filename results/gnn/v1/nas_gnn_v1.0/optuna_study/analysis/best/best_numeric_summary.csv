@@ -1,0 +1,22 @@
+Parameter,Mean,Std,Median,Min (25% quantile),Max (75% quantile),Min (5% quantile),Max (95% quantile)
+params_cheb_0_dropout,6.36e-02,5.95e-02,5.00e-02,0.0,0.1,0,0.15
+params_cheb_0_units,270,37.15,270,260.0,295,205,310.0
+params_cheb_1_dropout,0.27,0.16,0.3,0.15,0.4,5.00e-02,0.48
+params_cheb_1_units,328.18,36.56,330,305.0,350,280,380.0
+params_cheb_2_dropout,3.18e-02,5.13e-02,0,0.0,5.00e-02,0,0.12
+params_cheb_2_units,201.82,57.59,190,160.0,230,150,295.0
+params_cheb_3_dropout,0.24,6.74e-02,0.2,0.2,0.28,0.18,0.35
+params_cheb_3_units,307.27,41.01,320,290.0,330,235,350.0
+params_cheb_4_dropout,0.2,,0.2,0.2,0.2,0.2,0.2
+params_cheb_4_units,330,,330,330.0,330,330,330.0
+params_dense_0_dropout,0.15,0.18,0,0.0,0.3,0,0.4
+params_dense_0_units,295.45,90.7,250,250.0,300,250,450.0
+params_dense_1_dropout,7.27e-02,0.1,0,0.0,0.2,0,0.2
+params_dense_1_units,504.55,75.68,500,500.0,550,375,600.0
+params_dense_2_dropout,7.27e-02,0.1,0,0.0,0.2,0,0.2
+params_dense_2_units,495.45,65.02,500,450.0,550,400,575.0
+params_dense_3_dropout,0.2,0,0.2,0.2,0.2,0.2,0.2
+params_dense_3_units,350,59.16,350,325.0,400,250,400.0
+params_knn_k,11.64,1.75,12,10.0,13,10,14.0
+params_num_dense_layers,4,0,4,4.0,4,4,4.0
+params_num_gnn_layers,4.09,0.3,4,4.0,4,4,4.5
