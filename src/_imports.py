@@ -36,6 +36,7 @@ from tensorflow.keras import (
     regularizers,
 )
 from tensorflow.keras.backend import clear_session
+from tensorflow.keras.utils import set_random_seed
 
 # —————————————————————————————————— Optuna —————————————————————————————————— #
 import optuna, optunahub
