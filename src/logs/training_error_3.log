@@ -1,0 +1,158 @@
+An error occurred during training:
+Graph execution error:
+
+Detected at node functional_1/conv1d_1_1/convolution defined at (most recent call last):
+  File "/home/matheus/src/RayWise/src/temp_monitor_nas_cnn1d_v0.2.py", line 478, in <module>
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/optuna/study/study.py", line 475, in optimize
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/optuna/study/_optimize.py", line 63, in _optimize
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/optuna/study/_optimize.py", line 160, in _optimize_sequential
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/optuna/study/_optimize.py", line 197, in _run_trial
+
+  File "/home/matheus/src/RayWise/src/temp_monitor_nas_cnn1d_v0.2.py", line 479, in <lambda>
+
+  File "/home/matheus/src/RayWise/src/temp_monitor_nas_cnn1d_v0.2.py", line 361, in objective
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/keras/src/utils/traceback_utils.py", line 117, in error_handler
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/keras/src/backend/tensorflow/trainer.py", line 320, in fit
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/keras/src/backend/tensorflow/trainer.py", line 121, in one_step_on_iterator
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/keras/src/backend/tensorflow/trainer.py", line 108, in one_step_on_data
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/keras/src/backend/tensorflow/trainer.py", line 51, in train_step
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/keras/src/utils/traceback_utils.py", line 117, in error_handler
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/keras/src/layers/layer.py", line 899, in __call__
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/keras/src/utils/traceback_utils.py", line 117, in error_handler
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/keras/src/ops/operation.py", line 46, in __call__
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/keras/src/utils/traceback_utils.py", line 156, in error_handler
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/keras/src/models/functional.py", line 182, in call
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/keras/src/ops/function.py", line 171, in _run_through_graph
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/keras/src/models/functional.py", line 584, in call
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/keras/src/utils/traceback_utils.py", line 117, in error_handler
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/keras/src/layers/layer.py", line 899, in __call__
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/keras/src/utils/traceback_utils.py", line 117, in error_handler
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/keras/src/ops/operation.py", line 46, in __call__
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/keras/src/utils/traceback_utils.py", line 156, in error_handler
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/keras/src/layers/convolutional/conv1d.py", line 151, in call
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/keras/src/ops/nn.py", line 901, in conv
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/keras/src/backend/tensorflow/nn.py", line 258, in conv
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/keras/src/backend/tensorflow/nn.py", line 231, in _conv
+
+CUDNN failed to allocate the scratch space for the runner or to find a working no-scratch runner.
+	 [[{{node functional_1/conv1d_1_1/convolution}}]] [Op:__inference_one_step_on_iterator_2618969]
+Traceback (most recent call last):
+  File "/home/matheus/src/RayWise/src/temp_monitor_nas_cnn1d_v0.2.py", line 478, in <module>
+    study.optimize(
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/optuna/study/study.py", line 475, in optimize
+    _optimize(
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/optuna/study/_optimize.py", line 63, in _optimize
+    _optimize_sequential(
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/optuna/study/_optimize.py", line 160, in _optimize_sequential
+    frozen_trial = _run_trial(study, func, catch)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/optuna/study/_optimize.py", line 248, in _run_trial
+    raise func_err
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/optuna/study/_optimize.py", line 197, in _run_trial
+    value_or_values = func(trial)
+                      ^^^^^^^^^^^
+  File "/home/matheus/src/RayWise/src/temp_monitor_nas_cnn1d_v0.2.py", line 479, in <lambda>
+    lambda trial: objective(
+                  ^^^^^^^^^^
+  File "/home/matheus/src/RayWise/src/temp_monitor_nas_cnn1d_v0.2.py", line 449, in objective
+    log_trial_error(
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/araras/ml/optuna/utils.py", line 317, in log_trial_error
+    raise exc
+  File "/home/matheus/src/RayWise/src/temp_monitor_nas_cnn1d_v0.2.py", line 361, in objective
+    history = model.fit(
+              ^^^^^^^^^^
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/keras/src/utils/traceback_utils.py", line 122, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/tensorflow/python/eager/execute.py", line 59, in quick_execute
+    except TypeError as e:
+tensorflow.python.framework.errors_impl.UnknownError: Graph execution error:
+
+Detected at node functional_1/conv1d_1_1/convolution defined at (most recent call last):
+  File "/home/matheus/src/RayWise/src/temp_monitor_nas_cnn1d_v0.2.py", line 478, in <module>
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/optuna/study/study.py", line 475, in optimize
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/optuna/study/_optimize.py", line 63, in _optimize
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/optuna/study/_optimize.py", line 160, in _optimize_sequential
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/optuna/study/_optimize.py", line 197, in _run_trial
+
+  File "/home/matheus/src/RayWise/src/temp_monitor_nas_cnn1d_v0.2.py", line 479, in <lambda>
+
+  File "/home/matheus/src/RayWise/src/temp_monitor_nas_cnn1d_v0.2.py", line 361, in objective
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/keras/src/utils/traceback_utils.py", line 117, in error_handler
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/keras/src/backend/tensorflow/trainer.py", line 320, in fit
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/keras/src/backend/tensorflow/trainer.py", line 121, in one_step_on_iterator
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/keras/src/backend/tensorflow/trainer.py", line 108, in one_step_on_data
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/keras/src/backend/tensorflow/trainer.py", line 51, in train_step
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/keras/src/utils/traceback_utils.py", line 117, in error_handler
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/keras/src/layers/layer.py", line 899, in __call__
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/keras/src/utils/traceback_utils.py", line 117, in error_handler
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/keras/src/ops/operation.py", line 46, in __call__
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/keras/src/utils/traceback_utils.py", line 156, in error_handler
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/keras/src/models/functional.py", line 182, in call
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/keras/src/ops/function.py", line 171, in _run_through_graph
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/keras/src/models/functional.py", line 584, in call
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/keras/src/utils/traceback_utils.py", line 117, in error_handler
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/keras/src/layers/layer.py", line 899, in __call__
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/keras/src/utils/traceback_utils.py", line 117, in error_handler
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/keras/src/ops/operation.py", line 46, in __call__
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/keras/src/utils/traceback_utils.py", line 156, in error_handler
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/keras/src/layers/convolutional/conv1d.py", line 151, in call
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/keras/src/ops/nn.py", line 901, in conv
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/keras/src/backend/tensorflow/nn.py", line 258, in conv
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/keras/src/backend/tensorflow/nn.py", line 231, in _conv
+
+CUDNN failed to allocate the scratch space for the runner or to find a working no-scratch runner.
+	 [[{{node functional_1/conv1d_1_1/convolution}}]] [Op:__inference_one_step_on_iterator_2618969]
+
+
