@@ -80,7 +80,7 @@ from araras.ml.optuna.utils import (
     log_trial_error,
 )
 from araras.ml.optuna.analyzer import analyze_study
-from araras.ml.optuna.model_tools import set_user_attr_model_stats
+from araras.ml.optuna.model_tools import set_user_attr_model_stats, prune_model_by_config
 
 # Plotting configuration
 from araras.visualization.configs import config_plt
