@@ -1,0 +1,115 @@
+Trial: 59
+Params: {'num_conv_layers': 3, 'conv1d_0_filters': 64, 'conv1d_0_kernel_size': 5, 'conv1d_0_act': 'relu', 'pool_size_0': 4, 'conv1d_1_filters': 512, 'conv1d_1_kernel_size': 5, 'conv1d_1_act': 'relu', 'pool_size_1': 2, 'conv1d_2_filters': 256, 'conv1d_2_kernel_size': 7, 'conv1d_2_act': 'gelu', 'pool_size_2': 1, 'use_cnn_as_dense': False, 'num_dense_layers': 3, 'pooling_type': 'flatten', 'dense_0_units': 500, 'dense_0_dropout': 0.2, 'dense_0_act': 'silu', 'dense_1_units': 400, 'dense_1_dropout': 0.4, 'dense_1_act': 'silu', 'dense_2_units': 400, 'dense_2_dropout': 0.2, 'dense_2_act': 'relu', 'optimizer': 'adam'}
+User Attributes: {}
+Exception Type: ResourceExhaustedError
+Exception Message: Graph execution error:
+
+Detected at node adam/Sub_38 defined at (most recent call last):
+  File "/home/matheus/src/RayWise/src/temp_monitor_nas_cnn1d_v0.0.py", line 478, in <module>
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/optuna/study/study.py", line 475, in optimize
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/optuna/study/_optimize.py", line 63, in _optimize
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/optuna/study/_optimize.py", line 160, in _optimize_sequential
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/optuna/study/_optimize.py", line 197, in _run_trial
+
+  File "/home/matheus/src/RayWise/src/temp_monitor_nas_cnn1d_v0.0.py", line 479, in <lambda>
+
+  File "/home/matheus/src/RayWise/src/temp_monitor_nas_cnn1d_v0.0.py", line 361, in objective
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/keras/src/utils/traceback_utils.py", line 117, in error_handler
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/keras/src/backend/tensorflow/trainer.py", line 320, in fit
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/keras/src/backend/tensorflow/trainer.py", line 121, in one_step_on_iterator
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/keras/src/backend/tensorflow/trainer.py", line 108, in one_step_on_data
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/keras/src/backend/tensorflow/trainer.py", line 73, in train_step
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/keras/src/optimizers/base_optimizer.py", line 344, in apply_gradients
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/keras/src/optimizers/base_optimizer.py", line 409, in apply
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/keras/src/optimizers/base_optimizer.py", line 472, in _backend_apply_gradients
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/keras/src/backend/tensorflow/optimizer.py", line 122, in _backend_update_step
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/keras/src/backend/tensorflow/optimizer.py", line 136, in _distributed_tf_update_step
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/keras/src/backend/tensorflow/optimizer.py", line 133, in apply_grad_to_update_var
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/keras/src/optimizers/adam.py", line 133, in update_step
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/keras/src/ops/numpy.py", line 5803, in subtract
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/keras/src/backend/tensorflow/sparse.py", line 493, in sparse_wrapper
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/keras/src/backend/tensorflow/numpy.py", line 346, in subtract
+
+failed to allocate memory
+	 [[{{node adam/Sub_38}}]]
+Hint: If you want to see a list of allocated tensors when OOM happens, add report_tensor_allocations_upon_oom to RunOptions for current allocation info. This isn't available when running in Eager mode.
+ [Op:__inference_one_step_on_iterator_3141688]
+Traceback:
+Traceback (most recent call last):
+  File "/home/matheus/src/RayWise/src/temp_monitor_nas_cnn1d_v0.0.py", line 361, in objective
+    history = model.fit(
+              ^^^^^^^^^^
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/keras/src/utils/traceback_utils.py", line 122, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/tensorflow/python/eager/execute.py", line 59, in quick_execute
+    except TypeError as e:
+tensorflow.python.framework.errors_impl.ResourceExhaustedError: Graph execution error:
+
+Detected at node adam/Sub_38 defined at (most recent call last):
+  File "/home/matheus/src/RayWise/src/temp_monitor_nas_cnn1d_v0.0.py", line 478, in <module>
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/optuna/study/study.py", line 475, in optimize
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/optuna/study/_optimize.py", line 63, in _optimize
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/optuna/study/_optimize.py", line 160, in _optimize_sequential
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/optuna/study/_optimize.py", line 197, in _run_trial
+
+  File "/home/matheus/src/RayWise/src/temp_monitor_nas_cnn1d_v0.0.py", line 479, in <lambda>
+
+  File "/home/matheus/src/RayWise/src/temp_monitor_nas_cnn1d_v0.0.py", line 361, in objective
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/keras/src/utils/traceback_utils.py", line 117, in error_handler
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/keras/src/backend/tensorflow/trainer.py", line 320, in fit
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/keras/src/backend/tensorflow/trainer.py", line 121, in one_step_on_iterator
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/keras/src/backend/tensorflow/trainer.py", line 108, in one_step_on_data
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/keras/src/backend/tensorflow/trainer.py", line 73, in train_step
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/keras/src/optimizers/base_optimizer.py", line 344, in apply_gradients
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/keras/src/optimizers/base_optimizer.py", line 409, in apply
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/keras/src/optimizers/base_optimizer.py", line 472, in _backend_apply_gradients
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/keras/src/backend/tensorflow/optimizer.py", line 122, in _backend_update_step
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/keras/src/backend/tensorflow/optimizer.py", line 136, in _distributed_tf_update_step
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/keras/src/backend/tensorflow/optimizer.py", line 133, in apply_grad_to_update_var
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/keras/src/optimizers/adam.py", line 133, in update_step
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/keras/src/ops/numpy.py", line 5803, in subtract
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/keras/src/backend/tensorflow/sparse.py", line 493, in sparse_wrapper
+
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/keras/src/backend/tensorflow/numpy.py", line 346, in subtract
+
+failed to allocate memory
+	 [[{{node adam/Sub_38}}]]
+Hint: If you want to see a list of allocated tensors when OOM happens, add report_tensor_allocations_upon_oom to RunOptions for current allocation info. This isn't available when running in Eager mode.
+ [Op:__inference_one_step_on_iterator_3141688]

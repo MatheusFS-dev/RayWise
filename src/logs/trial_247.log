@@ -1,0 +1,22 @@
+Trial: 247
+Params: {'num_conv_layers': 3, 'conv1d_0_filters': 256, 'conv1d_0_kernel_size': 5, 'conv1d_0_act': 'relu', 'pool_size_0': 3, 'conv1d_1_filters': 128, 'conv1d_1_kernel_size': 5, 'conv1d_1_act': 'silu', 'pool_size_1': 2, 'conv1d_2_filters': 512, 'conv1d_2_kernel_size': 7, 'conv1d_2_act': 'gelu', 'pool_size_2': 2, 'use_cnn_as_dense': False, 'num_dense_layers': 3, 'pooling_type': 'flatten', 'dense_0_units': 600, 'dense_0_dropout': 0.2}
+User Attributes: {}
+Exception Type: ResourceExhaustedError
+Exception Message: {{function_node __wrapped__Mul_device_/job:localhost/replica:0/task:0/device:GPU:0}} failed to allocate memory [Op:Mul] name: 
+Traceback:
+Traceback (most recent call last):
+  File "/home/matheus/src/RayWise/src/temp_monitor_nas_cnn1d_v0.0.py", line 358, in objective
+    model = build_model(trial=trial, kparams=kparams, show_summary=False)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/matheus/src/RayWise/src/temp_monitor_nas_cnn1d_v0.0.py", line 260, in build_model
+    x = build_dnn(
+        ^^^^^^^^^^
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/araras/ml/model/builders/dnn.py", line 81, in build_dnn
+    x = layers.Dense(
+        ^^^^^^^^^^^^^
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/keras/src/utils/traceback_utils.py", line 122, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "/home/matheus/anaconda3/envs/tf-optuna/lib/python3.11/site-packages/keras/src/backend/tensorflow/random.py", line 34, in uniform
+    return tf.random.stateless_uniform(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tensorflow.python.framework.errors_impl.ResourceExhaustedError: {{function_node __wrapped__Mul_device_/job:localhost/replica:0/task:0/device:GPU:0}} failed to allocate memory [Op:Mul] name: 
