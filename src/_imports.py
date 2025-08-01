@@ -58,7 +58,7 @@ from araras.ml.model.builders.dnn import *
 from araras.ml.model.builders.cnn import *
 from araras.ml.model.builders.gnn import *
 
-from araras.ml.model.builders.skip import trial_skip_connections
+from araras.ml.model.builders.skip import trial_skip_connections_cnn1d
 
 # Callbacks
 from araras.ml.optuna.callbacks import (
