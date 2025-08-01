@@ -58,12 +58,15 @@ from araras.ml.model.builders.dnn import *
 from araras.ml.model.builders.cnn import *
 from araras.ml.model.builders.gnn import *
 
+from araras.ml.model.builders.skip import trial_skip_connections
+
 # Callbacks
 from araras.ml.optuna.callbacks import (
     NanLossPrunerOptuna,
     get_callbacks_study,
     StopIfKeepBeingPruned,
     ImprovementStagnation,
+    StopWhenNoValueImprovement,
 )
 from araras.ml.model.callbacks import get_callbacks_model
 
