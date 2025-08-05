@@ -58,7 +58,7 @@ from araras.ml.model.builders.dnn import *
 from araras.ml.model.builders.cnn import *
 from araras.ml.model.builders.gnn import *
 
-from araras.ml.model.builders.skip import trial_skip_connections_cnn1d
+from araras.ml.model.builders.skip import *
 
 # Callbacks
 from araras.ml.optuna.callbacks import (
@@ -81,6 +81,7 @@ from araras.ml.optuna.utils import (
     save_top_k_trials,
     init_study_dirs,
     log_trial_error,
+    run_study,
 )
 from araras.ml.optuna.analyzer import analyze_study
 from araras.ml.optuna.model_tools import set_user_attr_model_stats, prune_model_by_config
