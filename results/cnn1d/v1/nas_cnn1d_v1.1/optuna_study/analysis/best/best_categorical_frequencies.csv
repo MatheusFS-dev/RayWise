@@ -1,0 +1,9 @@
+Parameter,Category,Fraction,Count
+params_skip_from_cnn1_to_cnn2,False,0.5,3
+params_skip_from_cnn1_to_cnn2,True,0.5,3
+params_skip_from_cnn1_to_cnn3,True,1.0,6
+params_skip_from_cnn1_to_cnn4,False,1.0,6
+params_skip_from_cnn2_to_cnn3,True,0.6667,4
+params_skip_from_cnn2_to_cnn3,False,0.3333,2
+params_skip_from_cnn2_to_cnn4,False,1.0,6
+params_skip_from_cnn3_to_cnn4,False,1.0,6
