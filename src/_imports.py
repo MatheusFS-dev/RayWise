@@ -59,6 +59,7 @@ from araras.ml.model.builders.cnn import *
 from araras.ml.model.builders.gnn import *
 
 from araras.ml.model.builders.skip import *
+from araras.ml.model.builders.skip import _resize_1d as resize_for_skip_1d
 
 # Callbacks
 from araras.ml.optuna.callbacks import (
@@ -72,7 +73,7 @@ from araras.ml.model.callbacks import get_callbacks_model
 
 # Araras utilities
 from araras.ml.model.hyperparams import KParams
-from araras.ml.model.tools import punish_model
+from araras.ml.model.tools import punish_model, save_model_plot
 from araras.ml.optuna.utils import (
     get_remaining_trials,
     cleanup_non_top_trials,
