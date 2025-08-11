@@ -70,6 +70,7 @@ from araras.ml.optuna.callbacks import (
     StopWhenNoValueImprovement,
 )
 from araras.ml.model.callbacks import get_callbacks_model
+from araras.ml.model.stats import write_model_stats_to_file
 
 # Araras utilities
 from araras.ml.model.hyperparams import KParams
