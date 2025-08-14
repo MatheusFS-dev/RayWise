@@ -1,0 +1,7 @@
+Parameter,Category,Fraction,Count
+params_dense_0_act,elu,0.75,3
+params_dense_0_act,sigmoid,0.25,1
+params_dense_1_act,elu,1.0,2
+params_optimizer,sgd,0.6,3
+params_optimizer,adam,0.2,1
+params_optimizer,adamw,0.2,1
