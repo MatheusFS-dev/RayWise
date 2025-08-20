@@ -1,0 +1,2 @@
+Parameter,Mean,Std,Median,Min (25% quantile),Max (75% quantile),Min (5% quantile),Max (95% quantile)
+params_data_seed,238.31,247.64,152,72.25,258.75,35,727.5
