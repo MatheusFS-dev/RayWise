@@ -208,5 +208,9 @@ def load_raymobtime_dataset(dataset_dir: str) -> Tuple[Tuple[np.ndarray, np.ndar
     y_los = np.ones(len(los_features), dtype=int)
     X_nlos = np.array(nlos_features)
     y_nlos = np.zeros(len(nlos_features), dtype=int)
+    
+    # Print the shapes of the resulting arrays for debugging purposes
+    print(f"LOS features shape: {X_los.shape}, LOS labels shape: {y_los.shape}")
+    print(f"NLOS features shape: {X_nlos.shape}, NLOS labels shape: {y_nlos.shape}")
 
     return (X_los, y_los), (X_nlos, y_nlos)
