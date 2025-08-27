@@ -210,11 +210,3 @@ def load_raymobtime_dataset(dataset_dir: str) -> Tuple[Tuple[np.ndarray, np.ndar
     y_nlos = np.zeros(len(nlos_features), dtype=int)
 
     return (X_los, y_los), (X_nlos, y_nlos)
-
-
-(X_los, y_los), (X_nlos, y_nlos) = load_raymobtime_dataset(
-    "/home/matheus/src/datasets/RayWise/Raymobtime_s008/raw_data/ray_tracing_data_s008_carrier60GHz"
-)
-
-print(f"LOS features shape: {X_los.shape}, LOS labels shape: {y_los.shape}")
-print(f"NLOS features shape: {X_nlos.shape}, NLOS labels shape: {y_nlos.shape}")
