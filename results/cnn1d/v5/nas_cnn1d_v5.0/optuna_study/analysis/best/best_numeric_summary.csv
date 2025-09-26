@@ -1,0 +1,2 @@
+Parameter,Mean,Std,Median,Min (25% quantile),Max (75% quantile),Min (5% quantile),Max (95% quantile)
+params_train_frac_s009,0.45,8.75e-03,0.44,0.44,0.46,0.44,0.46
