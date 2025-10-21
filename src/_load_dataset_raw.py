@@ -1,216 +1,149 @@
-"""
-raymobtime_loader.py
-====================
-
-This module provides utilities to load the raw HDF5 channel data from the
-Raymobtime datasets and organise it into separate Line‑of‑Sight (LOS) and
-Non‑Line‑of‑Sight (NLOS) subsets.  Each Raymobtime dataset is composed of
-multiple HDF5 files (one per episode).  The file format is described in the
-Raymobtime wiki: the `allEpisodeData` array stored in each file is a 4‑D
-tensor with dimensions corresponding to the number of scenes, number of
-transmitter/receiver pairs, maximum number of rays (paths) and the number of
-path parameters【664931960144665†L276-L286】.  The path parameters include
-received power, time of arrival, elevation and azimuth angles of departure
-and arrival, a flag indicating whether a ray is line of sight, the ray
-phase (available only when the dataset was generated with Wireless Insite
-version ≥3.3) and, for some mobile datasets like ``s008`` and ``s009``, the
-orientation of the vehicle【664931960144665†L294-L299】.
-
-The loading functions defined here iterate over all episodes in a dataset,
-extract every channel (scene × receiver) and classify it as LOS or NLOS
-depending on whether at least one valid path has the LOS flag equal to 1.  All
-channels containing only invalid rays (i.e. rows filled with NaNs) are
-discarded.  Channels are flattened into a one‑dimensional feature vector to
-facilitate subsequent use in machine learning pipelines.  NaN entries are
-replaced with zeros.
-
-Example
--------
-
-```python
-from raymobtime_loader import load_raymobtime_dataset
-
-# Replace these with the local paths where you have extracted the HDF5 files
-path_s008 = "/data/raymobtime/ray_tracing_data_s008_carrier60GHz"
-path_s009 = "/data/raymobtime/ray_tracing_data_s009_carrier60GHz"
-
-# Process the s008 dataset
-(X_s008_los, y_s008_los), (X_s008_nlos, y_s008_nlos) = load_raymobtime_dataset(path_s008)
-print(f"s008: {len(X_s008_los)} LOS channels, {len(X_s008_nlos)} NLOS channels")
-
-# Process the s009 dataset
-(X_s009_los, y_s009_los), (X_s009_nlos, y_s009_nlos) = load_raymobtime_dataset(path_s009)
-print(f"s009: {len(X_s009_los)} LOS channels, {len(X_s009_nlos)} NLOS channels")
-```
-
-The resulting feature arrays ``X_s008_los``, ``X_s008_nlos``, etc., contain
-flattened channel descriptions where the first axis enumerates the channels
-and the second axis enumerates all rays (including invalid ones) and
-parameters.  The corresponding label arrays ``y_*`` are filled with ones for
-LOS samples and zeros for NLOS samples.
-"""
-
-from __future__ import annotations
-
 import os
-from typing import List, Tuple
+import re
+import glob
+from typing import Dict, List, Tuple, Union
 
 import h5py
 import numpy as np
+import pandas as pd
 
-def _load_episode(file_path: str) -> Tuple[np.ndarray, int, int, int, int]:
-    """Load a single HDF5 episode file and return its channel tensor.
 
-    The HDF5 file is expected to contain an array named ``allEpisodeData``
-    following the Raymobtime format.  According to the dataset documentation,
-    this array has the shape ``(num_scenes, num_pairs, max_num_rays, num_params)``
-    where the last dimension enumerates the path parameters in the order given
-    in the wiki【664931960144665†L276-L286】.  NaN values are used to mark
-    invalid rays.
-
-    Parameters
-    ----------
-    file_path:
-        Path to an HDF5 file.
-
-    Returns
-    -------
-    tuple
-        A tuple containing the array of channel data and the numbers of
-        scenes, pairs, rays and parameters.  The array is loaded into
-        memory as a NumPy array of type ``float64``.
+def load_hdf5_file(
+    file_path: str,
+    dataset_key: str = "allEpisodeData",
+) -> np.ndarray:
     """
-    with h5py.File(file_path, "r") as h5_file:
-        # Load the entire `allEpisodeData` dataset.  The indexing order is
-        # (scenes, pairs, rays, parameters) as documented.
-        data = h5_file["allEpisodeData"][()]
+    Load a single Raymobtime .hdf5 episode file and return its dataset as a NumPy array.
 
-    # Extract dimensions for convenience
-    num_scenes, num_pairs, max_num_rays, num_params = data.shape
-    return data, num_scenes, num_pairs, max_num_rays, num_params
+    Args:
+        file_path: Full path to the .hdf5 file.
+        dataset_key: Dataset key inside the HDF5 file to load. Defaults to "allEpisodeData".
 
+    Returns:
+        A NumPy array with the contents of the specified dataset.
 
-def _flatten_channel(channel: np.ndarray) -> np.ndarray:
-    """Replace NaN entries with zeros and flatten a channel into a 1‑D vector.
-
-    Each channel is a 2‑D matrix of shape ``(max_num_rays, num_params)``.  NaNs
-    denote invalid rays or missing parameters.  They are replaced by zeros
-    before flattening.
-
-    Parameters
-    ----------
-    channel:
-        Array of shape ``(max_num_rays, num_params)`` containing the raw
-        path parameters for a given scene/receiver pair.
-
-    Returns
-    -------
-    numpy.ndarray
-        A one‑dimensional vector of length ``max_num_rays * num_params``.
+    Raises:
+        FileNotFoundError: If the file does not exist.
+        KeyError: If the dataset key is not present in the file.
     """
-    # Replace NaNs with zeros
-    channel_clean = np.nan_to_num(channel, nan=0.0)
-    return channel_clean.flatten()
+    if not os.path.isfile(file_path):
+        raise FileNotFoundError(f"HDF5 file not found: {file_path}")
+
+    with h5py.File(file_path, "r") as f:
+        if dataset_key not in f:
+            available = ", ".join(list(f.keys()))
+            raise KeyError(
+                f"Dataset key '{dataset_key}' not found in {file_path}. Available keys: {available}"
+            )
+        data = f[dataset_key][...]
+    return data
 
 
-def _is_los(channel: np.ndarray, los_index: int = 6) -> bool:
-    """Determine if a channel contains at least one line‑of‑sight path.
-
-    Parameters
-    ----------
-    channel:
-        Array of shape ``(max_num_rays, num_params)`` containing the path
-        parameters for a channel.  It may include NaN rows for invalid rays.
-
-    los_index:
-        Column index of the LOS flag in the parameter dimension.  By
-        convention this is the 7th parameter (index 6)【664931960144665†L276-L286】.
-
-    Returns
-    -------
-    bool
-        ``True`` if there is at least one valid ray with ``isLOS == 1`` and
-        ``False`` otherwise.  Rays with NaN entries in the LOS column are
-        ignored.
-    """
-    # Extract the LOS flag column
-    los_column = channel[:, los_index]
-    # Identify valid flags (exclude NaNs)
-    valid_mask = ~np.isnan(los_column)
-    if not np.any(valid_mask):
-        # No valid rays in this channel
-        return False
-    # Determine if any ray is LOS
-    return np.any(los_column[valid_mask] == 1)
-
-
-def load_raymobtime_dataset(dataset_dir: str) -> Tuple[Tuple[np.ndarray, np.ndarray], Tuple[np.ndarray, np.ndarray]]:
-    """Load all HDF5 episodes from a Raymobtime dataset and separate channels by LOS/NLOS.
-
-    This function iterates over all ``.hdf5`` files in ``dataset_dir`` (the
-    directory containing the per‑episode HDF5 files such as
-    ``ray_tracing_data_s008_carrier60GHz/rosslyn_mobile_60GHz_ts0.1s_V_Lidar_e0.hdf5``) and
-    collects every channel (scene × receiver) into one of two lists depending
-    on the presence of a line‑of‑sight path.  Invalid channels (where all
-    rays are NaN) are skipped.
-
-    Parameters
-    ----------
-    dataset_dir:
-        Path to the directory containing the HDF5 episode files for a given
-        Raymobtime simulation (e.g. the extracted ``ray_tracing_data_s008_carrier60GHz`` directory).
-
-    Returns
-    -------
-    tuple
-        A pair ``((X_los, y_los), (X_nlos, y_nlos))``.  ``X_los`` and
-        ``X_nlos`` are two‑dimensional NumPy arrays where each row is a
-        flattened channel.  ``y_los`` and ``y_nlos`` are one‑dimensional
-        arrays filled with ones and zeros respectively.
-    """
-    # Prepare containers for features and labels
-    los_features: List[np.ndarray] = []
-    nlos_features: List[np.ndarray] = []
-
-    # Gather all HDF5 files in the directory.  Different datasets may use
-    # different extensions (e.g. `.hdf5` or `.h5`), so we accept any of
-    # these.
-    hdf5_files = [fname for fname in os.listdir(dataset_dir) if fname.lower().endswith((".hdf5", ".h5"))]
-    hdf5_files.sort()
-
-    for fname in hdf5_files:
-        file_path = os.path.join(dataset_dir, fname)
+def _extract_episode_number(filename: str) -> Union[int, None]:
+    """Extract episode number from filenames like '..._e123.hdf5'."""
+    m = re.search(r"[_\-]e(\d+)\.hdf5$", filename)
+    if m:
         try:
-            episode_data, num_scenes, num_pairs, max_num_rays, num_params = _load_episode(file_path)
-        except Exception as exc:
-            # Skip files that cannot be read
-            print(f"Warning: could not process {file_path}: {exc}")
-            continue
-        # Iterate through scenes and receivers
-        for scene_idx in range(num_scenes):
-            for pair_idx in range(num_pairs):
-                channel = episode_data[scene_idx, pair_idx]  # shape (max_num_rays, num_params)
-                # Skip channels where all entries are NaN
-                if np.isnan(channel).all():
-                    continue
-                # Determine LOS/NLOS status
-                if _is_los(channel, los_index=6):
-                    los_features.append(_flatten_channel(channel))
-                else:
-                    nlos_features.append(_flatten_channel(channel))
+            return int(m.group(1))
+        except ValueError:
+            return None
+    return None
 
-    # Convert lists to arrays.  We use object dtype because the flattened
-    # channels can have different lengths if max_num_rays varies across
-    # episodes.  If all episodes share the same max number of rays (as is
-    # typical for a single simulation), the resulting array will have
-    # homogeneous shape and NumPy will upcast automatically.
-    X_los = np.array(los_features)
-    y_los = np.ones(len(los_features), dtype=int)
-    X_nlos = np.array(nlos_features)
-    y_nlos = np.zeros(len(nlos_features), dtype=int)
-    
-    # Print the shapes of the resulting arrays for debugging purposes
-    print(f"LOS features shape: {X_los.shape}, LOS labels shape: {y_los.shape}")
-    print(f"NLOS features shape: {X_nlos.shape}, NLOS labels shape: {y_nlos.shape}")
 
-    return (X_los, y_los), (X_nlos, y_nlos)
+def load_hdf5_folder(
+    folder_path: str,
+    dataset_key: str = "allEpisodeData",
+    pattern: str = "*.hdf5",
+    sort_by_episode: bool = True,
+) -> Dict[Union[int, str], np.ndarray]:
+    """
+    Load all .hdf5 episode files in a folder.
+
+    Args:
+        folder_path: Path to the folder containing .hdf5 files.
+        dataset_key: Dataset key inside each HDF5 file to load. Defaults to "allEpisodeData".
+        pattern: Glob pattern to match files. Defaults to "*.hdf5".
+        sort_by_episode: If True, sort using the episode number extracted from the
+            filename pattern '*_e<ep>.hdf5'. Files without a parsable episode use
+            their basename as key and are placed after numeric keys.
+
+    Returns:
+        A dict mapping episode number (int) or filename (str) to the loaded NumPy array.
+
+    Raises:
+        FileNotFoundError: If the folder does not exist or no files match the pattern.
+    """
+    if not os.path.isdir(folder_path):
+        raise FileNotFoundError(f"Folder not found: {folder_path}")
+
+    file_paths = sorted(glob.glob(os.path.join(folder_path, pattern)))
+    if not file_paths:
+        raise FileNotFoundError(
+            f"No .hdf5 files found in {folder_path!r} with pattern {pattern!r}"
+        )
+
+    # Optionally sort by parsed episode number, keeping unparsed at the end
+    if sort_by_episode:
+        def sort_key(p: str) -> Tuple[int, str]:
+            ep = _extract_episode_number(os.path.basename(p))
+            # Use large sentinel for files without episode number to push them to the end
+            return (ep if ep is not None else 1_000_000_000, os.path.basename(p))
+
+        file_paths = sorted(file_paths, key=sort_key)
+
+    data_map: Dict[Union[int, str], np.ndarray] = {}
+    for p in file_paths:
+        key: Union[int, str]
+        ep = _extract_episode_number(os.path.basename(p))
+        key = ep if ep is not None else os.path.basename(p)
+        data_map[key] = load_hdf5_file(p, dataset_key=dataset_key)
+
+    return data_map
+
+
+if __name__ == "__main__":
+    # Example usage preserved from the original script, refactored for clarity.
+    # Adjust paths and limits as needed.
+
+    HDF5_FOLDER_PATH = (
+        "/home/matheus/src/datasets/RayWise/Raymobtime_s008/raw_data/ray_tracing_data_s008_carrier60GHz/"
+    )
+    CSV_FILE_PATH = (
+        "/home/matheus/src/datasets/RayWise/Raymobtime_s008/raw_data/CoordVehiclesRxPerScene_s008.csv"
+    )
+
+    # load an npz file:
+    npz_file_path = "/home/matheus/src/datasets/RayWise/Raymobtime_s008/processed_raw_data/lidar_data_s008/obstacles_e_0.npz"
+    npz_data = np.load(npz_file_path, allow_pickle=True)
+
+    # print shape of arrays in the npz file
+    for key in npz_data.files:
+        print(f"Key: {key}, Shape: {npz_data[key].shape}")
+
+    Episodios = 10  # 2085 (total of 2086)
+    Cenas = 1  # Number of scenes per episode
+    Pares = 10
+
+    # Load coordinate CSV and prepare a 'Rays' column to receive arrays
+    df_coord = pd.read_csv(CSV_FILE_PATH)
+    df_coord["Rays"] = np.nan
+    df_coord["Rays"] = df_coord["Rays"].astype(object)
+
+    # Iterate over a few example episodes
+    for ep in range(Episodios):
+        hdf5_name = os.path.join(
+            HDF5_FOLDER_PATH,
+            f"rosslyn_mobile_60GHz_ts0.1s_V_Lidar_e{ep}.hdf5",
+        )
+        hdf5_data = load_hdf5_file(hdf5_name, dataset_key="allEpisodeData")
+        # hdf5_data[0][0][0][0]  # Cena 0, Par 0, Raio 0, Parâmetro 0
+
+        for c in range(Cenas):
+            for p in range(Pares):
+                idx = ep * Cenas * Pares + c * Pares + p
+                df_coord.at[idx, "Rays"] = hdf5_data[c][p].copy()
+
+    print(df_coord.iloc[1])
+    print(df_coord.iloc[1]["Rays"][0][0])
+    # Acesso a primeira linha do dataframe, que corresponde ao Ep 0, Sc 0, e veículo 1
+    # Parâmetros referente aos raios, raio 0, parâmetro 0 (Received power)
