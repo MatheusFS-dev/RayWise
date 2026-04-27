@@ -71,23 +71,6 @@ Some older scripts and notebooks include historical mistakes that were documente
 - See `docs/ErrorsCaller.md` for a public-facing warning and review checklist.
 - Recommendation: verify dataset paths, callback wiring, and tensor shape assumptions before reusing old experiment files.
 
-### Araras (Private Utility Toolkit)
-
-This repository depends on an internal package named `araras`. It centralizes helpers for callbacks, Optuna utilities, model builders, and logging.
-
-Important:
-
-- You do not need this exact private package to reproduce the core ideas.
-- You can replace `araras.*` imports with your own equivalents.
-- Core training logic (data loading, model definition, trial objective, and evaluation) is in this repository scripts and can be adapted independently.
-
-If you are replacing the private utilities, start from:
-
-- `src/_imports.py`
-- `src/imports_keras.py`
-
-and progressively swap the `araras` symbols with local implementations.
-
 ## Installation Instructions
 
 ### Prerequisites
