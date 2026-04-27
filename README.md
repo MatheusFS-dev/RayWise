@@ -26,8 +26,6 @@ RayWise is a research repository focused on mmWave beam prediction with CNN1D, N
   - [What Is In This Repository](#what-is-in-this-repository)
   - [Repository Layout](#repository-layout)
   - [Known Historical Errors](#known-historical-errors)
-  - [Araras (Private Utility Toolkit)](#araras-private-utility-toolkit)
-- [Installation Instructions](#installation-instructions)
   - [Prerequisites](#prerequisites)
   - [Steps](#steps)
 - [Usage](#usage)
