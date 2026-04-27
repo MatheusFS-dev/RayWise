@@ -1,0 +1,147 @@
+Rank: 3
+Trial ID: 877
+Value: 4.2633855343×10^-1
+Convergence Epoch: 8
+
+Number of Parameters: 1000562 parameters (1.00 M)
+Model Size: 4002248 B (3.82 MB)
+FLOPs (batch size: 1): 2793108252 FLOPs (2.79 G)
+MACs: 1396554126 MACs (1.40 G)
+
+GPU Inference:
+    - System Memory: N/A B (N/A)
+    - GPU Memory: N/A B (N/A)
+    - GPU Usage: N/A
+    - GPU Power: N/A W
+    - Inference Time (avg/peak): 4.9896×10^-4 s / 6.0647×10^-4 s
+    - Energy Consumption: N/A J
+
+Model Summary:
+Model: "functional"
+┏━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━┓
+┃ Layer (type)      ┃ Output Shape    ┃   Param # ┃ Connected to   ┃ Trai… ┃
+┡━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━━━━━━━━━╇━━━━━━━┩
+│ lidar_input       │ (None, 20, 200, │         0 │ -              │   -   │
+│ (InputLayer)      │ 10)             │           │                │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ lidar_channel_on… │ (None, 20, 200, │         0 │ lidar_input[0… │   -   │
+│ (LidarChannelOne… │ 10, 4)          │           │                │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ lidar_channels    │ (None, 20, 200, │         0 │ lidar_channel… │   -   │
+│ (Reshape)         │ 40)             │           │                │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ conv2d_0 (Conv2D) │ (None, 20, 200, │   215,040 │ lidar_channel… │   Y   │
+│                   │ 256)            │           │                │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ conv2d_0_bn       │ (None, 20, 200, │     1,024 │ conv2d_0[0][0] │   Y   │
+│ (BatchNormalizat… │ 256)            │           │                │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ conv2d_0_act      │ (None, 20, 200, │         0 │ conv2d_0_bn[0… │   -   │
+│ (Activation)      │ 256)            │           │                │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ max_pool2d_0      │ (None, 20, 50,  │         0 │ conv2d_0_act[… │   -   │
+│ (MaxPooling2D)    │ 256)            │           │                │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ conv2d_1 (Conv2D) │ (None, 20, 50,  │   516,096 │ max_pool2d_0[… │   Y   │
+│                   │ 96)             │           │                │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ conv2d_1_bn       │ (None, 20, 50,  │       384 │ conv2d_1[0][0] │   Y   │
+│ (BatchNormalizat… │ 96)             │           │                │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ max_pool2d_1      │ (None, 6, 12,   │         0 │ conv2d_1_bn[0… │   -   │
+│ (MaxPooling2D)    │ 96)             │           │                │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ conv2d_2 (Conv2D) │ (None, 6, 12,   │   258,048 │ max_pool2d_1[… │   Y   │
+│                   │ 128)            │           │                │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ conv2d_2_bn       │ (None, 6, 12,   │       512 │ conv2d_2[0][0] │   Y   │
+│ (BatchNormalizat… │ 128)            │           │                │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ coord_input       │ (None, 2)       │         0 │ -              │   -   │
+│ (InputLayer)      │                 │           │                │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ conv2d_2_act      │ (None, 6, 12,   │         0 │ conv2d_2_bn[0… │   -   │
+│ (Activation)      │ 128)            │           │                │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ coord_dense_0     │ (None, 16)      │        48 │ coord_input[0… │   Y   │
+│ (Dense)           │                 │           │                │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ max_pool2d_2      │ (None, 2, 4,    │         0 │ conv2d_2_act[… │   -   │
+│ (MaxPooling2D)    │ 128)            │           │                │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ coord_dense_0_act │ (None, 16)      │         0 │ coord_dense_0… │   -   │
+│ (Activation)      │                 │           │                │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ lidar_global_avg… │ (None, 128)     │         0 │ max_pool2d_2[… │   -   │
+│ (GlobalAveragePo… │                 │           │                │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ coord_dense_0_dr… │ (None, 16)      │         0 │ coord_dense_0… │   -   │
+│ (Dropout)         │                 │           │                │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ fusion_concat     │ (None, 144)     │         0 │ lidar_global_… │   -   │
+│ (Concatenate)     │                 │           │ coord_dense_0… │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ fusion_dense_0    │ (None, 64)      │     9,280 │ fusion_concat… │   Y   │
+│ (Dense)           │                 │           │                │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ output (Dense)    │ (None, 2)       │       130 │ fusion_dense_… │   Y   │
+└───────────────────┴─────────────────┴───────────┴────────────────┴───────┘
+ Total params: 2,999,768 (11.44 MB)
+ Trainable params: 999,602 (3.81 MB)
+ Non-trainable params: 960 (3.75 KB)
+ Optimizer params: 1,999,206 (7.63 MB)
+
+best_epoch: 4
+best_train_loss: 0.14465437829494476
+best_val_loss: 0.4263385534286499
+best_train_accuracy: 0.9415283203125
+best_val_accuracy: 0.8115234375
+train_precision: 0.6837141820819732
+train_recall: 1.0
+train_f1: 0.8121499353726842
+val_precision: 0.6953298739807264
+val_recall: 0.9957537154989384
+val_f1: 0.8188563945875164
+s009_loss: 3.3445281982421875
+s009_accuracy: 0.8079833984375
+s009_precision: 0.8678069777979157
+s009_recall: 0.9382731169626455
+s009_f1: 0.9016653916318484
+confusion_matrix_train: 
+      LOS NLOS
+ LOS 3441 1744
+NLOS    0 3770
+confusion_matrix_val: 
+      LOS NLOS
+ LOS  886  411
+NLOS    4  938
+confusion_matrix_s009: 
+      LOS NLOS
+ LOS  306 1167
+NLOS  504 7661
+Sampler: TPESampler
+
+Trial hyperparameters:
+  num_conv_layers: 3
+  conv2d_0_filters: 256
+  conv2d_0_act: elu
+  pool2d_width_0: 4
+  pool2d_height_0: 1
+  conv2d_1_filters: 96
+  conv2d_1_act: none
+  pool2d_width_1: 4
+  pool2d_height_1: 3
+  conv2d_2_filters: 128
+  conv2d_2_act: elu
+  pool2d_width_2: 3
+  pool2d_height_2: 3
+  coord_num_layers: 1
+  coord_dense_0_units: 16
+  coord_dense_0_dropout: 0.4
+  coord_dense_0_act: elu
+  fusion_layers: 1
+  fusion_dense_0_units: 64
+  fusion_dense_0_dropout: 0.0
+  fusion_dense_0_act: none
+  optimizer: adamw
+  learning_rate: 0.0006737238384939292

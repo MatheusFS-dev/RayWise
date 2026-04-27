@@ -1,0 +1,38 @@
+Parameter,Mean,Std,Median,Min (25% quantile),Max (75% quantile),Min (5% quantile),Max (95% quantile)
+params_conv2d_0_filters,248.67,33.27,256,256,256,256,256
+params_conv2d_0_kernel_h,4.02,0.27,4,4,4,4,4
+params_conv2d_0_kernel_w,3.78,0.5,4,3.5,4,3,4
+params_conv2d_1_filters,222.46,64.56,256,256,256,96,256
+params_conv2d_1_kernel_h,3.96,1.39,3,3,6,3,6
+params_conv2d_1_kernel_w,5.55,0.5,6,5,6,5,6
+params_conv2d_2_filters,111.04,31.34,128,96,128,32,128
+params_conv2d_2_kernel_h,5.82,0.67,6,5,6,5,7
+params_conv2d_2_kernel_w,3.28,0.87,3,3,3,3,6
+params_conv2d_3_filters,No data,No data,No data,No data,No data,No data,No data
+params_conv2d_3_kernel_h,No data,No data,No data,No data,No data,No data,No data
+params_conv2d_3_kernel_w,No data,No data,No data,No data,No data,No data,No data
+params_conv2d_4_filters,No data,No data,No data,No data,No data,No data,No data
+params_conv2d_4_kernel_h,No data,No data,No data,No data,No data,No data,No data
+params_conv2d_4_kernel_w,No data,No data,No data,No data,No data,No data,No data
+params_coord_dense_0_dropout,0.13,0.12,0.1,0.1,0.1,1.00e-02,0.5
+params_coord_dense_0_units,67.86,31.76,80,64,80,16,112
+params_coord_dense_1_dropout,0.3,0,0.3,0.3,0.3,0.3,0.3
+params_coord_dense_1_units,68.8,7.73,64,64,76,64,80
+params_coord_num_layers,1.12,0.33,1,1,1,1,2
+params_fusion_dense_0_dropout,0.28,7.61e-02,0.3,0.2,0.3,0.2,0.4
+params_fusion_dense_0_units,109.11,61.21,64,64,192,64,192
+params_fusion_dense_1_dropout,0.3,0,0.3,0.3,0.3,0.3,0.3
+params_fusion_dense_1_units,96,0,96,96,96,96,96
+params_fusion_layers,1.05,0.22,1,1,1,1,1
+params_learning_rate,4.76e-04,1.36e-04,4.49e-04,4.00e-04,5.19e-04,3.12e-04,7.31e-04
+params_num_conv_layers,3,0,3,3,3,3,3
+params_pool2d_height_0,3,0,3,3,3,3,3
+params_pool2d_height_1,2,0,2,2,2,2,2
+params_pool2d_height_2,2.02,0.15,2,2,2,2,2
+params_pool2d_height_3,No data,No data,No data,No data,No data,No data,No data
+params_pool2d_height_4,No data,No data,No data,No data,No data,No data,No data
+params_pool2d_width_0,3.95,0.22,4,4,4,4,4
+params_pool2d_width_1,3.98,0.15,4,4,4,4,4
+params_pool2d_width_2,4,0,4,4,4,4,4
+params_pool2d_width_3,No data,No data,No data,No data,No data,No data,No data
+params_pool2d_width_4,No data,No data,No data,No data,No data,No data,No data

@@ -1,0 +1,28 @@
+Parameter,Mean,Std,Median,Min (25% quantile),Max (75% quantile),Min (5% quantile),Max (95% quantile)
+params_conv2d_0_filters,110.33,58.09,128,64,128,32,256
+params_conv2d_1_filters,104.34,37.02,96,96,128,32,128
+params_conv2d_2_filters,124.48,47.44,128,96,128,64,256
+params_conv2d_3_filters,176,113.14,176,136,216,104,248
+params_conv2d_4_filters,No data,No data,No data,No data,No data,No data,No data
+params_coord_dense_0_dropout,0.34,9.90e-02,0.4,0.3,0.4,0.1,0.4
+params_coord_dense_0_units,30.75,27.25,16,16,32,16,96
+params_coord_dense_1_dropout,0.2,0.1,0.2,0.1,0.3,0.1,0.3
+params_coord_dense_1_units,57.6,14.31,48,48,64,48,76.8
+params_coord_num_layers,1.03,0.16,1,1,1,1,1
+params_fusion_dense_0_dropout,6.77e-02,0.11,0,0,0.1,0,0.3
+params_fusion_dense_0_units,77.5,31.82,64,64,64,64,128
+params_fusion_dense_1_dropout,0.2,0.2,0.2,0,0.4,0,0.4
+params_fusion_dense_1_units,115.2,36.49,128,96,128,70.4,153.6
+params_fusion_layers,1.03,0.16,1,1,1,1,1
+params_learning_rate,1.19e-03,1.49e-03,5.72e-04,4.53e-04,7.81e-04,2.83e-04,4.67e-03
+params_num_conv_layers,2.94,0.35,3,3,3,2.55,3
+params_pool2d_height_0,1.07,0.35,1,1,1,1,1.45
+params_pool2d_height_1,2.97,0.43,3,3,3,2,3.65
+params_pool2d_height_2,3.02,0.41,3,3,3,2.05,4
+params_pool2d_height_3,2,1.41,2,1.5,2.5,1.1,2.9
+params_pool2d_height_4,No data,No data,No data,No data,No data,No data,No data
+params_pool2d_width_0,3.9,0.39,4,4,4,3,4
+params_pool2d_width_1,3.62,0.61,4,3,4,2,4
+params_pool2d_width_2,2.65,0.61,3,2,3,2,3
+params_pool2d_width_3,2,1.41,2,1.5,2.5,1.1,2.9
+params_pool2d_width_4,No data,No data,No data,No data,No data,No data,No data

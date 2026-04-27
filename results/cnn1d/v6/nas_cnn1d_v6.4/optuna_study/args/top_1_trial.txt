@@ -1,0 +1,79 @@
+Rank: 1
+Trial ID: 0
+Loss: 3.1346652508
+Convergence Epoch: 1
+
+Number of Parameters: 780480 parameters (780.48 K)
+Model Size: 3121920 B (2.98 MB)
+FLOPs: 100102144 FLOPs (100.10 M)
+MACs: 50051072 MACs (50.05 M)
+
+GPU Inference:
+    - System Memory: N/A B (N/A)
+    - GPU Memory: N/A B (N/A)
+    - GPU Usage: N/A
+    - GPU Power: N/A W
+    - Inference Time (avg/peak): 6.5896×10^-4 s / 9.7656×10^-4 s
+    - Energy Consumption: N/A J
+
+Model Summary:
+Model: "functional"
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━┳━━━━━━━━┓
+┃ Layer (type)                    ┃ Output Shape             ┃      Param # ┃ Train… ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━╇━━━━━━━━┩
+│ coord_input (InputLayer)        │ (None, 2)                │            0 │   -    │
+├─────────────────────────────────┼──────────────────────────┼──────────────┼────────┤
+│ dense_0 (Dense)                 │ (None, 128)              │          384 │   Y    │
+├─────────────────────────────────┼──────────────────────────┼──────────────┼────────┤
+│ dense_0_act (Activation)        │ (None, 128)              │            0 │   -    │
+├─────────────────────────────────┼──────────────────────────┼──────────────┼────────┤
+│ dense_0_dropout (Dropout)       │ (None, 128)              │            0 │   -    │
+├─────────────────────────────────┼──────────────────────────┼──────────────┼────────┤
+│ dense_1 (Dense)                 │ (None, 640)              │       82,560 │   Y    │
+├─────────────────────────────────┼──────────────────────────┼──────────────┼────────┤
+│ dense_1_act (Activation)        │ (None, 640)              │            0 │   -    │
+├─────────────────────────────────┼──────────────────────────┼──────────────┼────────┤
+│ dense_1_dropout (Dropout)       │ (None, 640)              │            0 │   -    │
+├─────────────────────────────────┼──────────────────────────┼──────────────┼────────┤
+│ dense_2 (Dense)                 │ (None, 640)              │      410,240 │   Y    │
+├─────────────────────────────────┼──────────────────────────┼──────────────┼────────┤
+│ dense_2_act (Activation)        │ (None, 640)              │            0 │   -    │
+├─────────────────────────────────┼──────────────────────────┼──────────────┼────────┤
+│ dense_2_dropout (Dropout)       │ (None, 640)              │            0 │   -    │
+├─────────────────────────────────┼──────────────────────────┼──────────────┼────────┤
+│ dense_3 (Dense)                 │ (None, 320)              │      205,120 │   Y    │
+├─────────────────────────────────┼──────────────────────────┼──────────────┼────────┤
+│ dense_3_act (Activation)        │ (None, 320)              │            0 │   -    │
+├─────────────────────────────────┼──────────────────────────┼──────────────┼────────┤
+│ output (Dense)                  │ (None, 256)              │       82,176 │   Y    │
+└─────────────────────────────────┴──────────────────────────┴──────────────┴────────┘
+ Total params: 2,341,442 (8.93 MB)
+ Trainable params: 780,480 (2.98 MB)
+ Non-trainable params: 0 (0.00 B)
+ Optimizer params: 1,560,962 (5.95 MB)
+
+best_train_accuracy: 0.4644252359867096
+best_val_accuracy: 0.52685546875
+test_accuracy_s009_full: 0.5863037109375
+test_loss_s009_full: 1.6930055618286133
+test_accuracy_s008_full: 0.45683592557907104
+test_loss_s008_full: 2.244164228439331
+test_accuracy_test_set: 0.51708984375
+test_loss_test_set: 2.0179593563079834
+Sampler: TPESampler
+
+Trial hyperparameters:
+  num_dense_layers: 4
+  dense_0_units: 128
+  dense_0_dropout: 0.2
+  dense_0_act: relu
+  dense_1_units: 640
+  dense_1_dropout: 0.1
+  dense_1_act: gelu
+  dense_2_units: 640
+  dense_2_dropout: 0.4
+  dense_2_act: silu
+  dense_3_units: 320
+  dense_3_dropout: 0.0
+  dense_3_act: sigmoid
+  optimizer: adamw

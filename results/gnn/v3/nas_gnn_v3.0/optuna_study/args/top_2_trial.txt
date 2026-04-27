@@ -1,0 +1,107 @@
+Rank: 2
+Trial ID: 480
+Value: 2.1037547588
+Convergence Epoch: 44
+
+Number of Parameters: 229786 parameters (229.79 K)
+Model Size: 919144 B (897.6 KB)
+FLOPs: 33680050304 FLOPs (33.68 G)
+MACs: 16840025152 MACs (16.84 G)
+
+GPU Inference:
+    - System Memory: N/A B (N/A)
+    - GPU Memory: N/A B (N/A)
+    - GPU Usage: N/A
+    - GPU Power: N/A W
+    - Inference Time (avg/peak): 2.236×10^-2 s / 2.2455×10^-2 s
+    - Energy Consumption: N/A J
+
+Model Summary:
+Model: "functional"
+┏━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━┓
+┃ Layer (type)      ┃ Output Shape    ┃   Param # ┃ Connected to   ┃ Trai… ┃
+┡━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━━━━━━━━━╇━━━━━━━┩
+│ lidar_input       │ (None, 20, 200, │         0 │ -              │   -   │
+│ (InputLayer)      │ 10)             │           │                │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ lidar_transform_… │ (None, 20, 200, │         0 │ lidar_input[0… │   -   │
+│ (Lambda)          │ 4)              │           │                │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ coord_input       │ (None, 2)       │         0 │ -              │   -   │
+│ (InputLayer)      │                 │           │                │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ lidar_flatten_4_… │ (None, 4000, 4) │         0 │ lidar_transfo… │   -   │
+│ (Reshape)         │                 │           │                │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ coord_tile_flat   │ (None, 4000, 2) │         0 │ coord_input[0… │   -   │
+│ (Lambda)          │                 │           │                │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ combine_lidar_co… │ (None, 4000, 6) │         0 │ lidar_flatten… │   -   │
+│ (Concatenate)     │                 │           │ coord_tile_fl… │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ graph_masking     │ [(None, 4000,   │         0 │ combine_lidar… │   -   │
+│ (GraphMasking)    │ 5), (4000,      │           │                │       │
+│                   │ 4000)]          │           │                │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ cheb_0 (ChebConv) │ (None, 4000,    │       880 │ graph_masking… │   Y   │
+│                   │ 80)             │           │ graph_masking… │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ cheb_0_act        │ (None, 4000,    │         0 │ cheb_0[0][0]   │   -   │
+│ (Activation)      │ 80)             │           │                │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ cheb_0_dropout    │ (None, 4000,    │         0 │ cheb_0_act[0]… │   -   │
+│ (Dropout)         │ 80)             │           │                │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ cheb_1 (ChebConv) │ (None, 4000,    │    64,400 │ cheb_0_dropou… │   Y   │
+│                   │ 400)            │           │ graph_masking… │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ cheb_1_act        │ (None, 4000,    │         0 │ cheb_1[0][0]   │   -   │
+│ (Activation)      │ 400)            │           │                │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ cheb_1_dropout    │ (None, 4000,    │         0 │ cheb_1_act[0]… │   -   │
+│ (Dropout)         │ 400)            │           │                │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ global_avg_pool   │ (None, 400)     │         0 │ cheb_1_dropou… │   -   │
+│ (GlobalAvgPool)   │                 │           │                │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ dense_0 (Dense)   │ (None, 250)     │   100,250 │ global_avg_po… │   Y   │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ dense_0_act       │ (None, 250)     │         0 │ dense_0[0][0]  │   -   │
+│ (Activation)      │                 │           │                │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ dense_0_dropout   │ (None, 250)     │         0 │ dense_0_act[0… │   -   │
+│ (Dropout)         │                 │           │                │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ output (Dense)    │ (None, 256)     │    64,256 │ dense_0_dropo… │   Y   │
+└───────────────────┴─────────────────┴───────────┴────────────────┴───────┘
+ Total params: 689,360 (2.63 MB)
+ Trainable params: 229,786 (897.60 KB)
+ Non-trainable params: 0 (0.00 B)
+ Optimizer params: 459,574 (1.75 MB)
+
+best_epoch: 49
+best_train_loss: 1.7454171180725098
+best_val_loss: 2.103754758834839
+s008_loss: 1.7471603155136108
+s009_loss: 2.6059839725494385
+best_train_accuracy: 0.4946956932544708
+best_val_accuracy: 0.48905760049819946
+s008_accuracy: 0.5154547095298767
+s009_accuracy: 0.39748910069465637
+Sampler: TPESampler
+
+Trial hyperparameters:
+  knn_k: 8
+  num_gnn_layers: 2
+  cheb_0_units: 80
+  cheb_0_dropout: 0.0
+  cheb_0_act: relu
+  cheb_1_units: 400
+  cheb_1_dropout: 0.30000000000000004
+  cheb_1_act: relu
+  num_dense_layers: 1
+  dense_0_units: 250
+  dense_0_dropout: 0.2
+  dense_0_act: gelu
+  optimizer: adamw
+  learning_rate: 0.008120729656301692

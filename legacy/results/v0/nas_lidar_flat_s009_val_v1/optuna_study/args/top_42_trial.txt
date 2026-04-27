@@ -1,0 +1,35 @@
+rank: 42
+trial_id: 117
+loss: 1.7378586530685425
+val_accuracy: 0.5608351230621338
+train_accuracy: 0.5417085289955139
+test_accuracy: 0.5731517672538757
+test_accuracy_full: 0.573355495929718
+sampler: TPESampler
+Parameters:
+  lidar_norm: none
+  coord_norm: standard
+  lidar_channel_option: 4
+  num_layers: 3
+  cnn1d_pool_size_0: 11
+  cnn1d_filters_0: 160
+  cnn1d_kernel_size_0: 5
+  cnn1d_activation_0: leaky_relu
+  cnn1d_use_batch_norm_0: True
+  cnn1d_pool_size_1: 13
+  cnn1d_filters_1: 320
+  cnn1d_kernel_size_1: 2
+  cnn1d_activation_1: leaky_relu
+  cnn1d_use_batch_norm_1: True
+  cnn1d_pool_size_2: 15
+  cnn1d_filters_2: 512
+  cnn1d_kernel_size_2: 2
+  cnn1d_activation_2: tanh
+  cnn1d_use_batch_norm_2: False
+  num_dense_layers: 2
+  dense_1_units: 192
+  dense_1_activation: sigmoid
+  dense_2_units: 320
+  dense_2_activation: swish
+  optimizer: Lion
+  learning_rate: 8.312405549765423e-05

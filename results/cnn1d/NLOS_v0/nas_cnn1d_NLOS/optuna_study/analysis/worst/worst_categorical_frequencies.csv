@@ -1,0 +1,14 @@
+Parameter,Category,Fraction,Count
+params_conv1d_0_act,gelu,0.4615,6
+params_conv1d_0_act,silu,0.3846,5
+params_conv1d_0_act,elu,0.1538,2
+params_conv1d_1_act,relu,0.4545,5
+params_conv1d_1_act,none,0.1818,2
+params_conv1d_1_act,elu,0.1818,2
+params_conv1d_1_act,sigmoid,0.0909,1
+params_conv1d_1_act,gelu,0.0909,1
+params_dense_0_act,relu,0.5455,6
+params_dense_0_act,gelu,0.2727,3
+params_dense_0_act,elu,0.1818,2
+params_pooling_type,max,0.7692,10
+params_pooling_type,average,0.2308,3

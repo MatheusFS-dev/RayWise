@@ -1,0 +1,11 @@
+Parameter,Category,Fraction,Count
+params_skip_from_dnn1_to_dnn2,True,1.0,6
+params_skip_from_dnn1_to_dnn3,False,1.0,6
+params_skip_from_dnn1_to_dnn4,False,1.0,6
+params_skip_from_dnn2_to_dnn3,True,0.5,3
+params_skip_from_dnn2_to_dnn3,False,0.5,3
+params_skip_from_dnn2_to_dnn4,False,1.0,6
+params_skip_from_dnn3_to_dnn4,False,1.0,6
+params_skip_from_gnn1_to_gnn2,True,1.0,6
+params_skip_from_gnn1_to_gnn3,True,1.0,6
+params_skip_from_gnn2_to_gnn3,True,1.0,6

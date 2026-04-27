@@ -1,0 +1,2 @@
+Parameter,Mean,Std,Median,Min (25% quantile),Max (75% quantile),Min (5% quantile),Max (95% quantile)
+params_train_seed,28.81,9.25,33,30,34,10.2,37.7

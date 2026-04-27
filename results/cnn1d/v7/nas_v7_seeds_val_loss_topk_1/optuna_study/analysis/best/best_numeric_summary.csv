@@ -1,0 +1,4 @@
+Parameter,Mean,Std,Median,Min (25% quantile),Max (75% quantile),Min (5% quantile),Max (95% quantile)
+params_batch_size,70.34,29.34,64,64,64,64,128
+params_data_seed,7413.19,1744.54,8050,6977,8540,4074,9161
+params_train_seed,5086.88,2505.13,6244,2127,6788,785,7605

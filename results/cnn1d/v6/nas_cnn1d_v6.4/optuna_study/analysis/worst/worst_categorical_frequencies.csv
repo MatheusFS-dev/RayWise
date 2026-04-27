@@ -1,0 +1,3 @@
+Parameter,Category,Fraction,Count
+params_dense_0_act,gelu,1.0,28
+params_optimizer,sgd,1.0,28

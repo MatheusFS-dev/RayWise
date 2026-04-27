@@ -1,0 +1,43 @@
+Parameter,Mean,Std,Median,Min (25% quantile),Max (75% quantile),Min (5% quantile),Max (95% quantile)
+params_cheb_0_K,4.96,0.19,5,5,5,5,5
+params_cheb_0_dropout,0.2,4.20e-02,0.2,0.2,0.2,0.16,0.24
+params_cheb_0_units,242.46,42.67,256,256,256,128,256
+params_cheb_1_K,3.81,0.4,4,4,4,3,4
+params_cheb_1_dropout,0.4,5.05e-02,0.4,0.4,0.4,0.4,0.44
+params_cheb_1_units,177.23,62.88,128,128,256,128,256
+params_cheb_2_K,3,1.41,3,2.5,3.5,2.1,3.9
+params_cheb_2_dropout,0.1,0.14,0.1,5.00e-02,0.15,1.00e-02,0.19
+params_cheb_2_units,192,90.51,192,160,224,134.4,249.6
+params_cheb_3_K,No data,No data,No data,No data,No data,No data,No data
+params_cheb_3_dropout,No data,No data,No data,No data,No data,No data,No data
+params_cheb_3_units,No data,No data,No data,No data,No data,No data,No data
+params_dense_0_dropout,2.86e-02,9.67e-02,0,0,0,0,0.25
+params_dense_0_units,387.5,33.37,400,400,400,300,400
+params_dense_1_dropout,3.57e-02,9.43e-02,0,0,0,0,0.2
+params_dense_1_units,310.71,28.15,300,300,300,300,400
+params_dense_2_dropout,2.14e-02,7.31e-02,0,0,0,0,0.2
+params_dense_2_units,335.71,35.31,350,350,350,250,350
+params_gat_0_dropout,No data,No data,No data,No data,No data,No data,No data
+params_gat_0_heads,No data,No data,No data,No data,No data,No data,No data
+params_gat_0_units,No data,No data,No data,No data,No data,No data,No data
+params_gat_1_dropout,No data,No data,No data,No data,No data,No data,No data
+params_gat_1_heads,No data,No data,No data,No data,No data,No data,No data
+params_gat_1_units,No data,No data,No data,No data,No data,No data,No data
+params_gat_2_dropout,No data,No data,No data,No data,No data,No data,No data
+params_gat_2_heads,No data,No data,No data,No data,No data,No data,No data
+params_gat_2_units,No data,No data,No data,No data,No data,No data,No data
+params_gat_3_dropout,No data,No data,No data,No data,No data,No data,No data
+params_gat_3_heads,No data,No data,No data,No data,No data,No data,No data
+params_gat_3_units,No data,No data,No data,No data,No data,No data,No data
+params_gcn_0_dropout,0,0,0,0,0,0,0
+params_gcn_0_units,192,73.9,192,128,256,128,256
+params_gcn_1_dropout,0.2,0.1,0.2,0.15,0.25,0.11,0.29
+params_gcn_1_units,85.33,36.95,64,64,96,64,121.6
+params_gcn_2_dropout,5.00e-02,7.07e-02,5.00e-02,2.50e-02,7.50e-02,5.00e-03,9.50e-02
+params_gcn_2_units,160,135.76,160,112,208,73.6,246.4
+params_gcn_3_dropout,No data,No data,No data,No data,No data,No data,No data
+params_gcn_3_units,No data,No data,No data,No data,No data,No data,No data
+params_knn_k,15,3.06,16,16,16,6.2,16
+params_lr,6.88e-05,8.01e-06,7.04e-05,6.56e-05,7.57e-05,5.25e-05,7.78e-05
+params_num_dense_layers,3,0,3,3,3,3,3
+params_num_gcn_layers,2.95,0.3,3,3,3,3,3

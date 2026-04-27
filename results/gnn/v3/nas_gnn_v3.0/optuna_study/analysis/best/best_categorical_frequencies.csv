@@ -1,0 +1,6 @@
+Parameter,Category,Fraction,Count
+params_cheb_0_act,relu,1.0,34
+params_cheb_1_act,relu,1.0,34
+params_dense_0_act,gelu,1.0,34
+params_optimizer,adamw,0.7353,25
+params_optimizer,adam,0.2647,9

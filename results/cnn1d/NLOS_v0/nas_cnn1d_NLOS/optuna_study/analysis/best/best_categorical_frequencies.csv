@@ -1,0 +1,6 @@
+Parameter,Category,Fraction,Count
+params_conv1d_0_act,relu,0.5385,7
+params_conv1d_0_act,gelu,0.4615,6
+params_conv1d_1_act,elu,1.0,13
+params_dense_0_act,gelu,1.0,13
+params_pooling_type,max,1.0,13

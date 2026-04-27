@@ -1,0 +1,123 @@
+Rank: 3
+Trial ID: 198
+Loss: 1.7243740559
+Number of parameters: 350,062
+Model size: 1.34 MB
+FLOPs: 658.87 MFLOPs
+MACs: 329.43 MMACs
+Peak memory usage: 926.89 MB
+Inference time: 5.7809×10^-2 s
+Average power consumption: 1.7088×10^1 W
+Average energy consumption: 5.315×10^-1 J
+Sampler: AutoSampler
+best_train_accuracy: 0.567169189453125
+best_val_accuracy: 0.5951523780822754
+test_accuracy_s009: 0.60856032371521
+test_accuracy_s009_full: 0.6115376353263855
+
+Model summary: Model: "functional"
+┏━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━┓
+┃ Layer (type)      ┃ Output Shape    ┃   Param # ┃ Connected to   ┃ Trai… ┃
+┡━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━━━━━━━━━╇━━━━━━━┩
+│ lidar_input       │ (None, 20, 200, │         0 │ -              │   -   │
+│ (InputLayer)      │ 10)             │           │                │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ lidar_transform_… │ (None, 20, 200, │         0 │ lidar_input[0… │   -   │
+│ (Lambda)          │ 4)              │           │                │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ coord_input       │ (None, 2)       │         0 │ -              │   -   │
+│ (InputLayer)      │                 │           │                │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ lidar_flatten_4_… │ (None, 4000, 4) │         0 │ lidar_transfo… │   -   │
+│ (Reshape)         │                 │           │                │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ coord_tile_flat   │ (None, 4000, 2) │         0 │ coord_input[0… │   -   │
+│ (Lambda)          │                 │           │                │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ combine_lidar_co… │ (None, 4000, 6) │         0 │ lidar_flatten… │   -   │
+│ (Concatenate)     │                 │           │ coord_tile_fl… │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ graph_masking     │ [(None, 4000,   │         0 │ combine_lidar… │   -   │
+│ (GraphMasking)    │ 5), (4000,      │           │                │       │
+│                   │ 4000)]          │           │                │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ get_item          │ (None, 4000, 1) │         0 │ combine_lidar… │   -   │
+│ (GetItem)         │                 │           │                │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ cheb_0 (ChebConv) │ (None, 4000,    │     4,160 │ graph_masking… │   Y   │
+│                   │ 160)            │           │ graph_masking… │       │
+│                   │                 │           │ get_item[0][0] │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ cheb_0_act        │ (None, 4000,    │         0 │ cheb_0[0][0]   │   -   │
+│ (Activation)      │ 160)            │           │                │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ cheb_0_dropout    │ (None, 4000,    │         0 │ cheb_0_act[0]… │   -   │
+│ (Dropout)         │ 160)            │           │                │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ cheb_1 (ChebConv) │ (None, 4000,    │    76,896 │ cheb_0_dropou… │   Y   │
+│                   │ 96)             │           │ graph_masking… │       │
+│                   │                 │           │ get_item[0][0] │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ cheb_1_act        │ (None, 4000,    │         0 │ cheb_1[0][0]   │   -   │
+│ (Activation)      │ 96)             │           │                │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ cheb_1_dropout    │ (None, 4000,    │         0 │ cheb_1_act[0]… │   -   │
+│ (Dropout)         │ 96)             │           │                │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ global_avg_pool   │ (None, 96)      │         0 │ cheb_1_dropou… │   -   │
+│ (GlobalAvgPool)   │                 │           │                │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ dense_0 (Dense)   │ (None, 400)     │    38,800 │ global_avg_po… │   Y   │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ dense_0_act       │ (None, 400)     │         0 │ dense_0[0][0]  │   -   │
+│ (Activation)      │                 │           │                │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ dense_0_dropout   │ (None, 400)     │         0 │ dense_0_act[0… │   -   │
+│ (Dropout)         │                 │           │                │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ dense_1 (Dense)   │ (None, 350)     │   140,350 │ dense_0_dropo… │   Y   │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ dense_1_act       │ (None, 350)     │         0 │ dense_1[0][0]  │   -   │
+│ (Activation)      │                 │           │                │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ dense_1_dropout   │ (None, 350)     │         0 │ dense_1_act[0… │   -   │
+│ (Dropout)         │                 │           │                │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ output (Dense)    │ (None, 256)     │    89,856 │ dense_1_dropo… │   Y   │
+└───────────────────┴─────────────────┴───────────┴────────────────┴───────┘
+ Total params: 700,126 (2.67 MB)
+ Trainable params: 350,062 (1.34 MB)
+ Non-trainable params: 0 (0.00 B)
+ Optimizer params: 350,064 (1.34 MB)
+
+
+Trial hyperparameters:
+  proj_dense_units: 600
+  proj_dense_act: swish
+  se_proj_dense_se_ratio: 32
+  se_proj_dense_se_act_reduce: None
+  se_proj_dense_se_act_expand: tanh
+  knn_k: 16
+  num_gnn_layers: 2
+  cheb_0_units: 160
+  cheb_0_K: 5
+  cheb_0_dropout: 0.0
+  cheb_0_act: swish
+  se_cheb_0_se_ratio: 16
+  se_cheb_0_se_act_reduce: None
+  se_cheb_0_se_act_expand: tanh
+  cheb_1_units: 96
+  cheb_1_K: 5
+  cheb_1_dropout: 0.1
+  cheb_1_act: tanh
+  se_cheb_1_se_ratio: 64
+  se_cheb_1_se_act_reduce: None
+  se_cheb_1_se_act_expand: tanh
+  num_dense_layers: 2
+  dense_0_units: 400
+  dense_0_dropout: 0.2
+  dense_0_act: tanh
+  dense_1_units: 350
+  dense_1_dropout: 0.2
+  dense_1_act: tanh
+  lr: 6.728354442688755e-05

@@ -1,0 +1,19 @@
+Parameter,Mean,Std,Median,Min (25% quantile),Max (75% quantile),Min (5% quantile),Max (95% quantile)
+params_conv1d_0_filters,96,0,96,96,96,96,96
+params_conv1d_0_kernel_size,3,0,3,3,3,3,3
+params_conv1d_1_filters,96,0,96,96,96,96,96
+params_conv1d_1_kernel_size,7,0,7,7,7,7,7
+params_conv1d_2_filters,96,0,96,96,96,96,96
+params_conv1d_2_kernel_size,5,0,5,5,5,5,5
+params_conv1d_3_filters,128,,128,128,128,128,128
+params_conv1d_3_kernel_size,7,,7,7,7,7,7
+params_conv2d_stem_filters,16,0,16,16,16,16,16
+params_dense_0_dropout,0.18,5.60e-02,0.2,0.2,0.2,0,0.2
+params_dense_0_units,96,0,96,96,96,96,96
+params_learning_rate,1.25e-04,1.88e-05,1.19e-04,1.10e-04,1.43e-04,1.00e-04,1.56e-04
+params_num_conv_layers,3.02,0.14,3,3,3,3,3
+params_num_dense_layers,1,0,1,1,1,1,1
+params_pool_size_0,2,0,2,2,2,2,2
+params_pool_size_1,1.46,0.5,1,1,2,1,2
+params_pool_size_2,1.96,0.2,2,2,2,2,2
+params_pool_size_3,2,,2,2,2,2,2

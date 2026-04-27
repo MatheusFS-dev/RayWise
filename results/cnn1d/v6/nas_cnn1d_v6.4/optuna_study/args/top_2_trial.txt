@@ -1,0 +1,61 @@
+Rank: 2
+Trial ID: 4
+Loss: 4.531686306
+Convergence Epoch: 1
+
+Number of Parameters: 317440 parameters (317.44 K)
+Model Size: 1269760 B (1.21 MB)
+FLOPs: 40697856 FLOPs (40.70 M)
+MACs: 20348928 MACs (20.35 M)
+
+GPU Inference:
+    - System Memory: N/A B (N/A)
+    - GPU Memory: N/A B (N/A)
+    - GPU Usage: N/A
+    - GPU Power: N/A W
+    - Inference Time (avg/peak): 5.9176×10^-4 s / 7.0851×10^-4 s
+    - Energy Consumption: N/A J
+
+Model Summary:
+Model: "functional"
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━┳━━━━━━━━┓
+┃ Layer (type)                    ┃ Output Shape             ┃      Param # ┃ Train… ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━╇━━━━━━━━┩
+│ coord_input (InputLayer)        │ (None, 2)                │            0 │   -    │
+├─────────────────────────────────┼──────────────────────────┼──────────────┼────────┤
+│ dense_0 (Dense)                 │ (None, 448)              │        1,344 │   Y    │
+├─────────────────────────────────┼──────────────────────────┼──────────────┼────────┤
+│ dense_0_act (Activation)        │ (None, 448)              │            0 │   -    │
+├─────────────────────────────────┼──────────────────────────┼──────────────┼────────┤
+│ dense_0_dropout (Dropout)       │ (None, 448)              │            0 │   -    │
+├─────────────────────────────────┼──────────────────────────┼──────────────┼────────┤
+│ dense_1 (Dense)                 │ (None, 448)              │      201,152 │   Y    │
+├─────────────────────────────────┼──────────────────────────┼──────────────┼────────┤
+│ dense_1_act (Activation)        │ (None, 448)              │            0 │   -    │
+├─────────────────────────────────┼──────────────────────────┼──────────────┼────────┤
+│ output (Dense)                  │ (None, 256)              │      114,944 │   Y    │
+└─────────────────────────────────┴──────────────────────────┴──────────────┴────────┘
+ Total params: 634,882 (2.42 MB)
+ Trainable params: 317,440 (1.21 MB)
+ Non-trainable params: 0 (0.00 B)
+ Optimizer params: 317,442 (1.21 MB)
+
+best_train_accuracy: 0.3666294515132904
+best_val_accuracy: 0.37744140625
+test_accuracy_s009_full: 0.4818115234375
+test_loss_s009_full: 2.164468288421631
+test_accuracy_s008_full: 0.3365234434604645
+test_loss_s008_full: 2.6795084476470947
+test_accuracy_test_set: 0.3671875
+test_loss_test_set: 2.4600203037261963
+Sampler: TPESampler
+
+Trial hyperparameters:
+  num_dense_layers: 2
+  dense_0_units: 448
+  dense_0_dropout: 0.2
+  dense_0_act: tanh
+  dense_1_units: 448
+  dense_1_dropout: 0.0
+  dense_1_act: silu
+  optimizer: rmsprop

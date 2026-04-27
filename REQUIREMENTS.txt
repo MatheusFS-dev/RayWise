@@ -1,0 +1,24 @@
+# RayWise public dependencies
+#
+# Notes:
+# - Private internal package `araras` is intentionally NOT listed here.
+#   Replace those imports with your own utility functions as described in README.md.
+# - Python 3.10+ is recommended.
+
+# Core numerical/data stack
+numpy>=1.24,<3.0
+pandas>=2.0,<3.0
+matplotlib>=3.7,<4.0
+scikit-learn>=1.3,<2.0
+
+# Deep learning
+tensorflow>=2.15,<2.20
+h5py>=3.10,<4.0
+
+# Hyperparameter optimization
+optuna>=3.5,<5.0
+optunahub>=0.1,<1.0
+
+# Optional: ensemble/boosting experiments
+xgboost>=2.0,<3.0
+autogluon.tabular>=1.1,<2.0

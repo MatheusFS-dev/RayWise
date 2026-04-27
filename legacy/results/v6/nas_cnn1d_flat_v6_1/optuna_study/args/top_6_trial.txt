@@ -1,0 +1,39 @@
+rank: 6
+trial_id: 467
+loss: 1.7793614864349365
+num_params: 1051672
+model_size_mb: 4.011810302734375
+flops: 633597500
+macs: 316798750
+sampler: TPESampler
+val_accuracy: 0.5569954514503479
+train_accuracy: 0.6050251126289368
+test_accuracy: 0.5639429092407227
+test_accuracy_full: 0.5610085129737854
+
+Trial hyperparameters:
+  conv1d_0_filters: 256
+  conv1d_0_kernel_size: 10
+  conv1d_0_act: relu
+  pool_size_0: 3
+  conv1d_1_filters: 128
+  conv1d_1_kernel_size: 5
+  conv1d_1_act: swish
+  pool_size_1: 7
+  conv1d_2_filters: 256
+  conv1d_2_kernel_size: 5
+  conv1d_2_act: swish
+  pool_size_2: 6
+  conv1d_3_filters: 128
+  conv1d_3_kernel_size: 3
+  conv1d_3_act: swish
+  pool_size_3: 2
+  output_strategy: flatten
+  dense_0_units: 250
+  dense_0_dropout: 0.30000000000000004
+  dense_0_act: relu
+  dense_1_units: 250
+  dense_1_dropout: 0.5
+  dense_1_act: tanh
+  lr: 0.00018790812637129839
+  batch_size: 64

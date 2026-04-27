@@ -1,0 +1,17 @@
+Parameter,Mean,Std,Median,Min (25% quantile),Max (75% quantile),Min (5% quantile),Max (95% quantile)
+params_conv1d_0_filters,256,0,256,256,256,256,256
+params_conv1d_1_filters,256,0,256,256,256,256,256
+params_conv1d_2_filters,501.33,52.26,512,512,512,512,512
+params_conv1d_2_kernel_size,4.04,0.2,4,4,4,4,4
+params_conv1d_3_filters,128,0,128,128,128,128,128
+params_dense_0_dropout,0.2,0,0.2,0.2,0.2,0.2,0.2
+params_dense_0_units,397.92,10.21,400,400,400,400,400
+params_dense_1_dropout,0,0,0,0,0,0,0
+params_dense_1_units,264.58,23.22,250,250,300,250,300
+params_dense_2_dropout,1.67e-02,5.65e-02,0,0,0,0,0.17
+params_dense_2_units,343.75,16.89,350,350,350,300,350
+params_lr,3.16e-05,1.45e-06,3.10e-05,3.06e-05,3.22e-05,3.04e-05,3.41e-05
+params_num_dense_layers,3,0,3,3,3,3,3
+params_se_0_se_ratio,20,7.08,16,16,20,16,32
+params_se_1_se_ratio,15,18.92,8,8,8,8,64
+params_se_3_se_ratio,62.67,6.53,64,64,64,64,64

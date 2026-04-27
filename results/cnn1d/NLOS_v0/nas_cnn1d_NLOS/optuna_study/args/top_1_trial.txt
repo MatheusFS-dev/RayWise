@@ -1,0 +1,114 @@
+Rank: 1
+Trial ID: 188
+Value: 2.8582422733
+Convergence Epoch: 25
+
+Number of Parameters: 128478 parameters (128.48 K)
+Model Size: 513912 B (501.87 KB)
+FLOPs: 8036563456 FLOPs (8.04 G)
+MACs: 4018281728 MACs (4.02 G)
+
+GPU Inference:
+    - System Memory: N/A B (N/A)
+    - GPU Memory: N/A B (N/A)
+    - GPU Usage: N/A
+    - GPU Power: N/A W
+    - Inference Time (avg/peak): 1.0025×10^-2 s / 1.4315×10^-2 s
+    - Energy Consumption: N/A J
+
+Model Summary:
+Model: "functional"
+┏━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━━━━━━┳━━━━━━━┓
+┃ Layer (type)      ┃ Output Shape    ┃   Param # ┃ Connected to   ┃ Trai… ┃
+┡━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━━━━━━━━━╇━━━━━━━┩
+│ lidar_input       │ (None, 20, 200, │         0 │ -              │   -   │
+│ (InputLayer)      │ 10)             │           │                │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ lidar_transform_… │ (None, 20, 200, │         0 │ lidar_input[0… │   -   │
+│ (Lambda)          │ 4)              │           │                │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ coord_input       │ (None, 2)       │         0 │ -              │   -   │
+│ (InputLayer)      │                 │           │                │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ lidar_flatten_4_… │ (None, 4000, 4) │         0 │ lidar_transfo… │   -   │
+│ (Reshape)         │                 │           │                │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ coord_tile_flat   │ (None, 4000, 2) │         0 │ coord_input[0… │   -   │
+│ (Lambda)          │                 │           │                │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ combine_lidar_co… │ (None, 4000, 6) │         0 │ lidar_flatten… │   -   │
+│ (Concatenate)     │                 │           │ coord_tile_fl… │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ conv1d_0 (Conv1D) │ (None, 4000,    │     6,912 │ combine_lidar… │   Y   │
+│                   │ 128)            │           │                │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ conv1d_0_bn       │ (None, 4000,    │       512 │ conv1d_0[0][0] │   Y   │
+│ (BatchNormalizat… │ 128)            │           │                │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ conv1d_0_act      │ (None, 4000,    │         0 │ conv1d_0_bn[0… │   -   │
+│ (Activation)      │ 128)            │           │                │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ max_pool_0        │ (None, 4000,    │         0 │ conv1d_0_act[… │   -   │
+│ (MaxPooling1D)    │ 128)            │           │                │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ conv1d_1 (Conv1D) │ (None, 4000,    │     8,192 │ max_pool_0[0]… │   Y   │
+│                   │ 64)             │           │                │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ conv1d_1_bn       │ (None, 4000,    │       256 │ conv1d_1[0][0] │   Y   │
+│ (BatchNormalizat… │ 64)             │           │                │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ conv1d_1_act      │ (None, 4000,    │         0 │ conv1d_1_bn[0… │   -   │
+│ (Activation)      │ 64)             │           │                │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ max_pool_1        │ (None, 1000,    │         0 │ conv1d_1_act[… │   -   │
+│ (MaxPooling1D)    │ 64)             │           │                │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ global_max_pooli… │ (None, 64)      │         0 │ max_pool_1[0]… │   -   │
+│ (GlobalMaxPoolin… │                 │           │                │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ dense_0 (Dense)   │ (None, 350)     │    22,750 │ global_max_po… │   Y   │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ dense_0_act       │ (None, 350)     │         0 │ dense_0[0][0]  │   -   │
+│ (Activation)      │                 │           │                │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ dense_0_dropout   │ (None, 350)     │         0 │ dense_0_act[0… │   -   │
+│ (Dropout)         │                 │           │                │       │
+├───────────────────┼─────────────────┼───────────┼────────────────┼───────┤
+│ output (Dense)    │ (None, 256)     │    89,856 │ dense_0_dropo… │   Y   │
+└───────────────────┴─────────────────┴───────────┴────────────────┴───────┘
+ Total params: 384,668 (1.47 MB)
+ Trainable params: 128,094 (500.37 KB)
+ Non-trainable params: 384 (1.50 KB)
+ Optimizer params: 256,190 (1000.75 KB)
+
+best_epoch: 29
+best_train_loss: 2.538698196411133
+best_val_loss: 2.8582422733306885
+s008_loss: 2.572009801864624
+s009_loss: 2.2928850650787354
+best_train_accuracy: 0.2695675194263458
+best_val_accuracy: 0.25662779808044434
+s008_accuracy: 0.282026082277298
+s009_accuracy: 0.4465656876564026
+s008_nlos_loss: 2.547024965286255
+s009_nlos_loss: 2.128309726715088
+s008_nlos_accuracy: 0.29414260387420654
+s009_nlos_accuracy: 0.4923453629016876
+Sampler: TPESampler
+
+Trial hyperparameters:
+  num_conv_layers: 2
+  conv1d_0_filters: 128
+  conv1d_0_kernel_size: 9
+  conv1d_0_act: gelu
+  pool_size_0: 1
+  conv1d_1_filters: 64
+  conv1d_1_kernel_size: 1
+  conv1d_1_act: elu
+  pool_size_1: 4
+  pooling_type: max
+  num_dense_layers: 1
+  dense_0_units: 350
+  dense_0_dropout: 0.5
+  dense_0_act: gelu
+  learning_rate: 0.002084333951275712

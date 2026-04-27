@@ -1,0 +1,16 @@
+Parameter,Mean,Std,Median,Min (25% quantile),Max (75% quantile),Min (5% quantile),Max (95% quantile)
+params_batch_size,67.56,14.69,64,64,64,64,128
+params_conv1d_0_filters,159.24,90.42,128,128,128,128,256
+params_conv1d_0_kernel_size,3,0.83,3,3,3,2,5
+params_conv1d_1_filters,308.32,213.9,512,64,512,64,512
+params_conv1d_1_kernel_size,3.4,0.62,3,3,4,3,4
+params_conv1d_2_filters,161.78,101.94,128,64,256,64,256
+params_conv1d_2_kernel_size,4.63,0.65,5,4,5,4,5
+params_conv1d_3_filters,247.37,74.42,256,256,256,128,256
+params_conv1d_3_kernel_size,3.04,0.46,3,3,3,3,3.45
+params_dense_2_units,240.48,14.5,240,230,250,220,260
+params_lr,5.16e-05,7.37e-05,4.04e-05,3.29e-05,5.03e-05,2.14e-05,9.16e-05
+params_pool_size_0,2.13,0.51,2,2,2,2,3
+params_pool_size_1,4.5,0.86,5,4,5,3,5
+params_pool_size_2,2.55,0.88,2,2,3,2,4
+params_pool_size_3,4.33,0.95,5,4,5,2,5

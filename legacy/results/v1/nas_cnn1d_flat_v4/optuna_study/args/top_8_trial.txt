@@ -1,0 +1,46 @@
+rank: 8
+trial_id: 8
+loss: 1.7550488710403442
+num_params: 485318
+model_size_mb: 1.8513412475585938
+sampler: TPESampler
+val_accuracy: 0.5373170375823975
+train_accuracy: 0.6041317582130432
+test_accuracy: 0.5411154627799988
+test_accuracy_full: 0.5405685901641846
+
+Trial hyperparameters:
+  num_layers: 5
+  conv1d_filters_0: 352
+  conv1d_pool_size_0: 5
+  conv1d_kernel_size_0: 1
+  conv1d_activation_0: swish
+  conv1d_bn_0: False
+  conv1d_filters_1: 64
+  conv1d_pool_size_1: 3
+  conv1d_kernel_size_1: 5
+  conv1d_activation_1: tanh
+  conv1d_bn_1: True
+  conv1d_filters_2: 192
+  conv1d_pool_size_2: 5
+  conv1d_kernel_size_2: 2
+  conv1d_activation_2: tanh
+  conv1d_bn_2: True
+  conv1d_filters_3: 224
+  conv1d_pool_size_3: 4
+  conv1d_kernel_size_3: 3
+  conv1d_activation_3: relu
+  conv1d_bn_3: True
+  conv1d_filters_4: 192
+  conv1d_pool_size_4: 5
+  conv1d_kernel_size_4: 2
+  conv1d_activation_4: swish
+  conv1d_bn_4: False
+  extra_dense_0_units_0: 100
+  extra_dense_0_activation_0: relu
+  extra_dense_0_dropout_0: 0.1
+  extra_dense_1_units_0: 250
+  extra_dense_1_activation_0: sigmoid
+  extra_dense_1_dropout_0: 0.1
+  optimizer: AdamW
+  lr: 0.00040138232147496144

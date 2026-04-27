@@ -1,0 +1,38 @@
+Parameter,Mean,Std,Median,Min (25% quantile),Max (75% quantile),Min (5% quantile),Max (95% quantile)
+params_conv2d_0_filters,96.77,72.24,96,32,96,32,256
+params_conv2d_0_kernel_h,4.9,0.69,5,5,5,4,6
+params_conv2d_0_kernel_w,3.4,0.96,3,3,3,3,5.9
+params_conv2d_1_filters,168.98,75.8,128,128,256,33.6,256
+params_conv2d_1_kernel_h,5.7,0.88,6,6,6,3,6
+params_conv2d_1_kernel_w,4.32,0.68,4,4,4,4,6
+params_conv2d_2_filters,179.79,82.45,256,128,256,56,256
+params_conv2d_2_kernel_h,6.62,0.89,7,7,7,5,7
+params_conv2d_2_kernel_w,3.28,0.81,3,3,3,3,5.25
+params_conv2d_3_filters,No data,No data,No data,No data,No data,No data,No data
+params_conv2d_3_kernel_h,No data,No data,No data,No data,No data,No data,No data
+params_conv2d_3_kernel_w,No data,No data,No data,No data,No data,No data,No data
+params_conv2d_4_filters,No data,No data,No data,No data,No data,No data,No data
+params_conv2d_4_kernel_h,No data,No data,No data,No data,No data,No data,No data
+params_conv2d_4_kernel_w,No data,No data,No data,No data,No data,No data,No data
+params_coord_dense_0_dropout,0.37,0.12,0.4,0.4,0.4,0.1,0.5
+params_coord_dense_0_units,53.78,19.45,48,48,64,16,80
+params_coord_dense_1_dropout,0.12,8.33e-02,0.1,0.1,0.1,0,0.3
+params_coord_dense_1_units,40.22,20.09,32,32,48,16,64
+params_coord_num_layers,1.87,0.34,2,2,2,1,2
+params_fusion_dense_0_dropout,0.44,0.12,0.5,0.5,0.5,0.2,0.5
+params_fusion_dense_0_units,148.43,37.92,160,160,160,64,192
+params_fusion_dense_1_dropout,0.34,7.43e-02,0.3,0.3,0.4,0.25,0.4
+params_fusion_dense_1_units,111.54,39.57,128,64,128,64,177.6
+params_fusion_layers,1.84,0.37,2,2,2,1,2
+params_learning_rate,4.20e-04,1.08e-03,2.27e-04,1.85e-04,3.40e-04,1.09e-04,9.32e-04
+params_num_conv_layers,2.9,0.34,3,3,3,2,3
+params_pool2d_height_0,2.87,0.44,3,3,3,2,3
+params_pool2d_height_1,1.95,0.22,2,2,2,2,2
+params_pool2d_height_2,2.86,0.51,3,3,3,2,3
+params_pool2d_height_3,No data,No data,No data,No data,No data,No data,No data
+params_pool2d_height_4,No data,No data,No data,No data,No data,No data,No data
+params_pool2d_width_0,2.52,0.77,2,2,3,2,4
+params_pool2d_width_1,3.87,0.44,4,4,4,3,4
+params_pool2d_width_2,3.67,0.82,4,4,4,1.75,4
+params_pool2d_width_3,No data,No data,No data,No data,No data,No data,No data
+params_pool2d_width_4,No data,No data,No data,No data,No data,No data,No data

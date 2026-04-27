@@ -1,0 +1,14 @@
+Parameter,Category,Fraction,Count
+params_cheb_0_act,relu,1.0,33
+params_cheb_1_act,tanh,0.8788,29
+params_cheb_1_act,none,0.1212,4
+params_cheb_2_act,elu,0.7576,25
+params_cheb_2_act,tanh,0.2424,8
+params_dense_0_act,elu,0.8485,28
+params_dense_0_act,silu,0.1515,5
+params_dense_1_act,relu,0.5758,19
+params_dense_1_act,tanh,0.4242,14
+params_dense_2_act,silu,0.7273,24
+params_dense_2_act,tanh,0.2727,9
+params_dense_3_act,none,0.6364,21
+params_dense_3_act,elu,0.3636,12

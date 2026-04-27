@@ -1,0 +1,43 @@
+Parameter,Mean,Std,Median,Min (25% quantile),Max (75% quantile),Min (5% quantile),Max (95% quantile)
+params_cheb_0_K,3.55,1.04,4,3,4,2,5
+params_cheb_0_dropout,0.16,0.16,0.1,5.00e-02,0.2,0,0.45
+params_cheb_0_units,256,0,256,256,256,256,256
+params_cheb_1_K,3.4,1.14,3,3,4,2.2,4.8
+params_cheb_1_dropout,0.2,0.12,0.2,0.1,0.2,0.1,0.36
+params_cheb_1_units,140.8,70.11,128,128,128,76.8,230.4
+params_cheb_2_K,2.86,0.9,3,2,3.5,2,4
+params_cheb_2_dropout,0.11,6.90e-02,0.1,0.1,0.15,3.00e-02,0.2
+params_cheb_2_units,146.29,48.38,128,128,128,128,217.6
+params_cheb_3_K,3.5,2.12,3.5,2.75,4.25,2.15,4.85
+params_cheb_3_dropout,0.45,7.07e-02,0.45,0.43,0.48,0.4,0.5
+params_cheb_3_units,192,90.51,192,160,224,134.4,249.6
+params_dense_0_dropout,0.2,0.17,0.2,0,0.4,0,0.4
+params_dense_0_units,335.71,51.09,350,300,362.5,250,400
+params_dense_1_dropout,0.19,0.16,0.2,0,0.4,0,0.4
+params_dense_1_units,293.75,53.14,250,250,350,250,400
+params_dense_2_dropout,0.21,0.2,0.4,0,0.4,0,0.4
+params_dense_2_units,287.04,47.22,250,250,325,250,350
+params_gat_0_dropout,0.32,0.15,0.3,0.2,0.4,5.00e-02,0.5
+params_gat_0_heads,4.71,2.08,5,3,6,1.5,8
+params_gat_0_units,142.45,61.19,128,128,128,64,256
+params_gat_1_dropout,0.22,0.15,0.2,0.1,0.3,0,0.48
+params_gat_1_heads,4.42,2.22,4,2.75,6,1.15,8
+params_gat_1_units,138.67,87.85,96,64,256,64,256
+params_gat_2_dropout,0.22,0.16,0.2,0.1,0.33,0,0.43
+params_gat_2_heads,4.56,2.39,4.5,2.75,6.25,1,8
+params_gat_2_units,128,70.11,128,64,128,64,256
+params_gat_3_dropout,0.33,0.19,0.3,0.25,0.5,6.00e-02,0.5
+params_gat_3_heads,3.71,2.93,4,1,5.5,1,7.7
+params_gat_3_units,128,90.51,64,64,192,64,256
+params_gcn_0_dropout,0.11,0.12,0.1,0,0.18,0,0.3
+params_gcn_0_units,160,65.22,128,128,224,105.6,256
+params_gcn_1_dropout,0.15,0.13,0.1,0.1,0.2,0,0.42
+params_gcn_1_units,139.29,72.39,128,64,128,64,256
+params_gcn_2_dropout,0.2,0.14,0.2,0.12,0.28,2.50e-02,0.38
+params_gcn_2_units,181.33,85.07,192,128,256,80,256
+params_gcn_3_dropout,No data,No data,No data,No data,No data,No data,No data
+params_gcn_3_units,No data,No data,No data,No data,No data,No data,No data
+params_knn_k,9.92,5.18,12,4,16,4,16
+params_lr,5.00e-05,1.19e-05,4.93e-05,4.12e-05,5.91e-05,3.15e-05,6.82e-05
+params_num_dense_layers,2.48,0.5,2,2,3,2,3
+params_num_gcn_layers,2.75,1.01,3,2,4,1,4

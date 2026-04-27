@@ -1,0 +1,6 @@
+Parameter,Category,Fraction,Count
+params_conv1d_0_act,silu,1.0,27
+params_conv1d_1_act,tanh,1.0,27
+params_coord_mode,polar_sincos,1.0,27
+params_dense_0_act,gelu,1.0,27
+params_pooling_type,max,1.0,27

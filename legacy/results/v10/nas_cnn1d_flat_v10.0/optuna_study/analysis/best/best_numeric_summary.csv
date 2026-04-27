@@ -1,0 +1,11 @@
+Parameter,Mean,Std,Median,Min (25% quantile),Max (75% quantile),Min (5% quantile),Max (95% quantile)
+params_conv1d_0_kernel_size,4.92,2.2,4,4,5,3,9.6
+params_conv1d_1_kernel_size,7.92,2.77,8,8,9,3,12
+params_conv1d_2_kernel_size,5.92,2.41,5,4,7,4,11
+params_conv1d_3_kernel_size,8.36,2.4,9,8,10,3,10.8
+params_lr,1.28e-04,4.01e-05,1.11e-04,9.39e-05,1.62e-04,8.54e-05,1.90e-04
+params_pool_size_0,3.4,0.65,3,3,4,3,4.8
+params_pool_size_1,3.72,0.94,3,3,5,3,5
+params_pool_size_2,3.92,0.64,4,4,4,3,5
+params_pool_size_3,3.36,0.57,3,3,4,3,4
+params_seed,646.4,306.2,620,410,960,112,980

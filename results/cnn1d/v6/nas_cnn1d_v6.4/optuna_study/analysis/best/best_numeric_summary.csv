@@ -1,0 +1,12 @@
+Parameter,Mean,Std,Median,Min (25% quantile),Max (75% quantile),Min (5% quantile),Max (95% quantile)
+params_dense_0_dropout,0.33,0.12,0.3,0.28,0.4,0.2,0.5
+params_dense_0_units,176,154.45,128,64,208,64,448
+params_dense_1_dropout,0.27,0.15,0.3,0.1,0.4,8.00e-02,0.5
+params_dense_1_units,195.76,173.02,128,64,256,64,486.4
+params_dense_2_dropout,0.3,0.23,0.4,0.1,0.5,0,0.5
+params_dense_2_units,292.57,227.35,256,96,448,64,601.6
+params_dense_3_dropout,0.22,0.22,0.2,7.50e-02,0.35,1.50e-02,0.47
+params_dense_3_units,448,138.26,416,368,496,329.6,611.2
+params_dense_4_dropout,No data,No data,No data,No data,No data,No data,No data
+params_dense_4_units,No data,No data,No data,No data,No data,No data,No data
+params_num_dense_layers,2,1.05,2,1,2.25,1,4

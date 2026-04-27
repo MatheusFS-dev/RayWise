@@ -1,0 +1,43 @@
+Rank: 1
+Trial ID: 493
+Loss: 1.9801319475
+Number of parameters: 514,046
+Model size: Invalid input: '<' not supported between instances of 'NoneType' and 'int'
+FLOPs: 1.90 GFLOPs
+MACs: 950.38 MMACs
+Peak memory usage: Invalid input: '<' not supported between instances of 'NoneType' and 'int'
+Inference time: Invalid input: must be real number, not NoneTypes
+Sampler: TPESampler
+best_train_accuracy: 0.4245672821998596
+best_val_accuracy: 0.5298776030540466
+test_accuracy_s009: 0.573800265789032
+test_accuracy_s009_full: 0.5688939690589905
+
+Model summary: None
+
+Trial hyperparameters:
+  strides_layer_0: 1
+  conv1d_layer_0_filters: 70
+  conv1d_layer_0_kernel_size: 2
+  conv1d_layer_0_act: sigmoid
+  strides_layer_1: 2
+  conv1d_layer_1_filters: 100
+  conv1d_layer_1_kernel_size: 1
+  conv1d_layer_1_act: swish
+  strides_layer_2: 1
+  conv1d_layer_2_filters: 50
+  conv1d_layer_2_kernel_size: 1
+  conv1d_layer_2_act: sigmoid
+  strides_layer_3: 1
+  conv1d_layer_3_filters: 80
+  conv1d_layer_3_kernel_size: 4
+  conv1d_layer_3_act: swish
+  max_dense_layers: 3
+  dense_as_conv1d_layer_0_filters: 800
+  dense_as_conv1d_layer_0_act: relu
+  dense_as_conv1d_layer_1_filters: 400
+  dense_as_conv1d_layer_1_act: tanh
+  dense_as_conv1d_layer_2_filters: 150
+  dense_as_conv1d_layer_2_act: swish
+  output_strategy: global_average_pooling
+  lr: 7.937487101572316e-05
