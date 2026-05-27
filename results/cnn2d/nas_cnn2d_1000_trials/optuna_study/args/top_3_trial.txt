@@ -1,0 +1,57 @@
+Rank: 3
+Trial ID: 69
+Value: 1.6956243515
+Convergence Epoch: N/A
+
+Number of Parameters: N/A parameters (N/A)
+Model Size: N/A B (N/A)
+FLOPs: N/A FLOPs (N/A)
+
+
+Model Summary:
+N/A
+
+best_epoch: None
+best_train_loss: None
+best_val_loss: None
+s008_loss: None
+s009_loss: None
+best_train_accuracy: None
+best_val_accuracy: None
+s008_accuracy: None
+s009_accuracy: None
+Sampler: TPESampler
+
+Trial hyperparameters:
+  num_conv_blocks: 4
+  conv2d_block_0_filters: 64
+  conv2d_block_0_kernel_size: 3x5
+  conv2d_block_0_layers: 2
+  conv2d_block_0_normalization: none
+  conv2d_block_0_activation: relu
+  conv2d_block_0_pooling: average_pool_2d
+  conv2d_block_0_pool_size: 1x2
+  conv2d_block_1_filters: 128
+  conv2d_block_1_kernel_size: 1x5
+  conv2d_block_1_layers: 1
+  conv2d_block_1_normalization: batch_norm
+  conv2d_block_1_activation: relu
+  conv2d_block_1_pooling: max_pool_2d
+  conv2d_block_1_pool_size: 2x2
+  conv2d_block_2_filters: 128
+  conv2d_block_2_kernel_size: 3x3
+  conv2d_block_2_layers: 1
+  conv2d_block_2_normalization: none
+  conv2d_block_2_activation: relu
+  conv2d_block_2_pooling: max_pool_2d
+  conv2d_block_2_pool_size: 1x2
+  conv2d_block_3_filters: 128
+  conv2d_block_3_kernel_size: 1x5
+  conv2d_block_3_layers: 2
+  conv2d_block_3_normalization: batch_norm
+  conv2d_block_3_activation: swish
+  conv2d_block_3_pooling: max_pool_2d
+  conv2d_block_3_pool_size: 1x2
+  global_pooling: concat_avg_max
+  num_dense_layers: 0
+  learning_rate: 0.0004315314715539796
