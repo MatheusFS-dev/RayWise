@@ -1,0 +1,23 @@
+{
+  "reference_model": "/home/matheus/src/RayWise/weights/nas_best_architectures_cnn1d/optuna_study/model/top_1_trial_4026.keras",
+  "candidate_model": "/home/matheus/src/RayWise/weights/nas_multiobjective_best_knowledge_distillation/optuna_study/model/top_1_trial_721.keras",
+  "num_bootstrap_samples": 10000,
+  "confidence_level": 0.95,
+  "random_seed": 20260528,
+  "summary": {
+    "top_1": {
+      "reference_accuracy": 0.6114339074496784,
+      "candidate_accuracy": 0.6147540983606558,
+      "accuracy_difference": 0.0033201909109773498,
+      "confidence_interval_low": -0.0024901628494262695,
+      "confidence_interval_high": 0.009026765823364258
+    },
+    "top_10": {
+      "reference_accuracy": 0.920626686034447,
+      "candidate_accuracy": 0.923013073251712,
+      "accuracy_difference": 0.002386387217265029,
+      "confidence_interval_low": -0.0006225705146789551,
+      "confidence_interval_high": 0.005395352840423584
+    }
+  }
+}
